@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { colors, spacing, breakPoints } from '../../styles/base';
+import { colors, spacing, breakPoints } from 'src/styles/base';
 
 const hamburgerLineMixin = (top, transition) => `
   position: absolute;
