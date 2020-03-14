@@ -1,7 +1,7 @@
 {
   "name": "my-portfolio-site",
   "private": true,
-  "description": "Portfolio site for beginning fron en developer",
+  "description": "Portfolio site for beginning front-end developer",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
