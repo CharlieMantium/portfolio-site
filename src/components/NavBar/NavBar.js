@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
-import { colors, spacing } from '../../styles/base';
+import { colors, spacing, breakPoints } from '../../styles/base';
 
 const NavBarWrapper = styled.nav`
   position: ${props => (props.isNavActive ? 'fixed' : 'absolute')};
@@ -14,7 +14,7 @@ const NavBarWrapper = styled.nav`
   width: 100%;
   overflow: hidden;
 
-  @media (min-width: ${spacing.desktopBreakpoint}) {
+  @media (min-width: ${breakPoints.desktop}) {
     padding: ${spacing.xsSize} 0 0 0;
   }
 `;

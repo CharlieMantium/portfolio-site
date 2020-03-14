@@ -5,7 +5,7 @@ import LandingSection from '../components/LandingSection';
 import ProjectsSection from '../components/ProjectsSection';
 import ContactSection from '../components/ContactSection';
 
-const aaa = () => {
+const IndexPage = () => {
   return (
     <Layout>
       <LandingSection />
@@ -15,4 +15,8 @@ const aaa = () => {
   );
 };
 
-export default aaa;
+export default IndexPage;
+
+// TODO: add gatsby-plugin-intl
+// TODO: add gatsby-plugin-eslint
+// TODO: absolute paths

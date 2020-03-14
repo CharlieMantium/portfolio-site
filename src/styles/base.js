@@ -17,12 +17,25 @@ export const spacing = {
   xxlSize: '35px',
   xxxlSize: '50px',
   xxxxlSize: '100px',
-  desktopBreakpoint: '680px',
-  largeDesktopBreakpoint: '1000px',
 };
 
-export const fontSizes = {
-  lFontSize: '1.1rem',
-  xlFontSize: '3rem',
-  xxlFontSize: '5rem',
+export const breakPoints = {
+  desktop: '680px',
+  largeDesktop: '1000px',
+};
+
+export const fonts = {
+  families: {
+    basicFont: 'Noticia Text',
+    headerFont: 'Alfa Slab One',
+  },
+  sizes: {
+    lFontSize: '1.1rem',
+    xlFontSize: '3rem',
+    xxlFontSize: '5rem',
+  },
+  weights: {
+    regular: '400',
+    bold: '700',
+  },
 };

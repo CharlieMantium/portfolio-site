@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Normalize } from 'styled-normalize';
 
-import { colors } from '../../styles/base';
+import { colors, fonts } from '../../styles/base';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -20,17 +20,15 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   background: ${colors.alpha};
   color: ${colors.beta};
-  font-family: 'Noticia Text';
+  font-family: ${fonts.families.basicFont};
 `;
 
-const Layout = ({ children }) => {
-  return (
-    <>
-      <Normalize />
-      <GlobalStyle />
-      <StyledWrapper>{children}</StyledWrapper>
-    </>
-  );
-};
+const Layout = ({ children }) => (
+  <>
+    <Normalize />
+    <GlobalStyle />
+    <StyledWrapper>{children}</StyledWrapper>
+  </>
+);
 
 export default Layout;

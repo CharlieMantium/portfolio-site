@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+import { fonts } from '../../styles/base';
 import SectionWrapper from '../../styles/elements/SectionWrapper';
 import HamburgerMenu from '../HamburgerMenu';
 import NavBar from '../NavBar';
@@ -10,8 +11,8 @@ const LandingSectionWrapper = styled(SectionWrapper)`
 `;
 
 const LandingHeader = styled.h1`
-  font-family: 'Alfa Slab One';
-  font-weight: 400;
+  font-family: ${fonts.families.headerFont};
+  font-weight: ${fonts.weights.regular};
   width: 80%;
   word-break: break-all;
 `;

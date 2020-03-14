@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { colors, spacing } from '../../base';
+import { colors, spacing, breakPoints } from '../../base';
 
 const SectionHeader = styled.h2`
   margin-top: ${spacing.xxxxlSize};
@@ -8,7 +8,7 @@ const SectionHeader = styled.h2`
   border: ${spacing.xxsSize} solid ${colors.delta};
   border-radius: 100px;
 
-  @media (min-width: ${spacing.desktopBreakpoint}) {
+  @media (min-width: ${breakPoints.desktop}) {
     padding: ${spacing.sSize} ${spacing.xxxlSize};
   }
 `;
