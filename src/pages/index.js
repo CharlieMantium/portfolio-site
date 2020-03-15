@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Layout from '../components/Layout/Layout';
-import LandingSection from '../components/LandingSection';
-import ProjectsSection from '../components/ProjectsSection';
-import ContactSection from '../components/ContactSection';
+import Layout from 'src/components/Layout/Layout';
+import LandingSection from 'src/components/LandingSection';
+import ProjectsSection from 'src/components/ProjectsSection';
+import ContactSection from 'src/components/ContactSection';
 
 const IndexPage = () => {
   return (
@@ -19,4 +19,5 @@ export default IndexPage;
 
 // TODO: add gatsby-plugin-intl
 // TODO: add gatsby-plugin-eslint
-// TODO: absolute paths
+// TODO: babel configuration
+// TODO: change favicon

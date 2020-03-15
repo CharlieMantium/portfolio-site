@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
-import { colors, spacing, breakPoints } from '../../styles/base';
+import { colors, spacing, breakPoints } from 'src/styles/base';
 
 const NavBarWrapper = styled.nav`
   position: ${props => (props.isNavActive ? 'fixed' : 'absolute')};

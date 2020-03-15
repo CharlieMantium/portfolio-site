@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { colors, spacing, breakPoints } from '../../base';
+import { colors, spacing, breakPoints } from 'src/styles/base';
 
 const SectionHeader = styled.h2`
   margin-top: ${spacing.xxxxlSize};
@@ -12,6 +12,5 @@ const SectionHeader = styled.h2`
     padding: ${spacing.sSize} ${spacing.xxxlSize};
   }
 `;
-// any ideas how to do that border-radius effect with "%"?
 
 export default SectionHeader;

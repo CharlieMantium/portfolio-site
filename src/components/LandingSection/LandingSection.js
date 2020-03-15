@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { fonts } from '../../styles/base';
-import SectionWrapper from '../../styles/elements/SectionWrapper';
+import { fonts } from 'src/styles/base';
+import SectionWrapper from 'src/styles/elements/SectionWrapper';
+
 import HamburgerMenu from '../HamburgerMenu';
 import NavBar from '../NavBar';
 
