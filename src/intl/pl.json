@@ -1,0 +1,12 @@
+{
+  "header": {
+    "contactSection": "Kontakt",
+    "landingSection": "Cześć! Nazywam się Karol Zieniewicz",
+    "projectsSection": "Projekty"
+  },
+  "navTo": {
+    "landingSection": "Start",
+    "contactSection": "Kontakt",
+    "projectsSection": "Projekty"
+  }
+}
