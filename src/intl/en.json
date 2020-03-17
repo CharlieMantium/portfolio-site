@@ -1,0 +1,12 @@
+{
+  "header": {
+    "contactSection": "Contact me",
+    "landingSection": "Hi! My name is Karol Zieniewicz",
+    "projectsSection": "Projects"
+  },
+  "navTo": {
+    "landingSection": "Home",
+    "contactSection": "Contact me",
+    "projectsSection": "Projects"
+  }
+}

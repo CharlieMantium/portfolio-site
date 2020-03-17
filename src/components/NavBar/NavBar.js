@@ -1,18 +1,20 @@
 import React from 'react';
+import { FormattedMessage } from 'gatsby-plugin-intl';
 import styled from 'styled-components';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
 import { colors, spacing, breakPoints } from 'src/styles/base';
 
 const NavBarWrapper = styled.nav`
-  position: ${props => (props.isNavActive ? 'fixed' : 'absolute')};
+  position: ${({ isNavActive }) => (isNavActive ? 'fixed' : 'absolute')};
   top: 0;
-  background-color: ${colors.alpha};
-  box-shadow: ${props =>
-    props.isNavActive ? `0px 1px 5px 0px ${colors.epsilon}` : 'none'};
   padding: ${spacing.xsSize} ${spacing.xxxlSize} 0 ${spacing.mSize};
   width: 100%;
+  box-shadow: 0px 1px 5px 0px ${colors.epsilon};
+  background-color: ${colors.alpha};
+  opacity: ${({ isNavActive }) => (isNavActive ? '1' : '0')};
   overflow: hidden;
+  transition: opacity 0.5s ease-in-out;
 
   @media (min-width: ${breakPoints.desktop}) {
     padding: ${spacing.xsSize} 0 0 0;
@@ -29,7 +31,8 @@ const NavList = styled.ul`
 const NavListItem = styled.li`
   position: relative;
   top: -50px;
-  transform: ${props => (props.isNavActive ? 'translateY(50px)' : 'none')};
+  transform: ${({ isNavActive }) =>
+    isNavActive ? 'translateY(50px)' : 'translateY(0)'};
   transition: transform 0.5s ease-in-out;
 `;
 
@@ -48,26 +51,26 @@ const NavListLink = styled.button`
   }
 `;
 
-const NavBar = ({ isNavActive }) => {
-  return (
-    <NavBarWrapper isNavActive={isNavActive}>
-      <NavList>
-        <NavListItem isNavActive={isNavActive}>
-          <NavListLink onClick={() => scrollTo('#landing')}>Home</NavListLink>
-        </NavListItem>
-        <NavListItem isNavActive={isNavActive}>
-          <NavListLink onClick={() => scrollTo('#projects')}>
-            Projects
-          </NavListLink>
-        </NavListItem>
-        <NavListItem isNavActive={isNavActive}>
-          <NavListLink onClick={() => scrollTo('#contact')}>
-            Contact me
-          </NavListLink>
-        </NavListItem>
-      </NavList>
-    </NavBarWrapper>
-  );
-};
+const NavBar = ({ isNavActive }) => (
+  <NavBarWrapper isNavActive={isNavActive}>
+    <NavList>
+      <NavListItem isNavActive={isNavActive}>
+        <NavListLink onClick={() => scrollTo('#landing')}>
+          <FormattedMessage id="navTo.landingSection" />
+        </NavListLink>
+      </NavListItem>
+      <NavListItem isNavActive={isNavActive}>
+        <NavListLink onClick={() => scrollTo('#projects')}>
+          <FormattedMessage id="navTo.projectsSection" />
+        </NavListLink>
+      </NavListItem>
+      <NavListItem isNavActive={isNavActive}>
+        <NavListLink onClick={() => scrollTo('#contact')}>
+          <FormattedMessage id="navTo.contactSection" />
+        </NavListLink>
+      </NavListItem>
+    </NavList>
+  </NavBarWrapper>
+);
 
 export default NavBar;
