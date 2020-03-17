@@ -17,7 +17,6 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-// TODO: add gatsby-plugin-intl
 // TODO: add gatsby-plugin-eslint
 // TODO: babel configuration
 // TODO: change favicon
