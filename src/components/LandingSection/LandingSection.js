@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useIntl, changeLocale } from 'gatsby-plugin-intl';
+import { FormattedMessage, changeLocale } from 'gatsby-plugin-intl';
 import styled from 'styled-components';
 import ReactCountryFlag from 'react-country-flag';
 
@@ -25,23 +25,18 @@ const ChangeLocaleWrapper = styled.div`
   left: -${spacing.xxxxlSize};
 
   transform: ${({ isNavActive }) =>
-    isNavActive ? 'none' : 'translateX(120px)'};
+    isNavActive ? 'translateX(0)' : 'translateX(120px)'};
   transition: transform 0.5s ease-in-out;
 `;
 
 const ChangeLocaleButton = styled.button`
   margin-right: ${spacing.mSize};
-  background: inherit;
+  background: none;
   border: none;
   cursor: pointer;
-
-  &:focus {
-    outline: none;
-  }
 `;
 
 const LandingSection = () => {
-  const intl = useIntl();
   const [isNavActive, setNavActive] = useState(false);
   const navActiveToggle = () => setNavActive(!isNavActive);
   return (
@@ -57,7 +52,7 @@ const LandingSection = () => {
         </ChangeLocaleButton>
       </ChangeLocaleWrapper>
       <LandingHeader>
-        {intl.formatMessage({ id: 'header.landingSection' })}
+        <FormattedMessage id="header.landingSection" />
       </LandingHeader>
     </LandingSectionWrapper>
   );

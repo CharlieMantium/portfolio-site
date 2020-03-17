@@ -1,5 +1,5 @@
 import React from 'react';
-import { useIntl } from 'gatsby-plugin-intl';
+import { FormattedMessage } from 'gatsby-plugin-intl';
 import styled from 'styled-components';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
@@ -32,7 +32,7 @@ const NavListItem = styled.li`
   position: relative;
   top: -50px;
   transform: ${({ isNavActive }) =>
-    isNavActive ? 'translateY(50px)' : 'none'};
+    isNavActive ? 'translateY(50px)' : 'translateY(0)'};
   transition: transform 0.5s ease-in-out;
 `;
 
@@ -51,29 +51,26 @@ const NavListLink = styled.button`
   }
 `;
 
-const NavBar = ({ isNavActive }) => {
-  const intl = useIntl();
-  return (
-    <NavBarWrapper isNavActive={isNavActive}>
-      <NavList>
-        <NavListItem isNavActive={isNavActive}>
-          <NavListLink onClick={() => scrollTo('#landing')}>
-            {intl.formatMessage({ id: 'navTo.landingSection' })}
-          </NavListLink>
-        </NavListItem>
-        <NavListItem isNavActive={isNavActive}>
-          <NavListLink onClick={() => scrollTo('#projects')}>
-            {intl.formatMessage({ id: 'navTo.projectsSection' })}
-          </NavListLink>
-        </NavListItem>
-        <NavListItem isNavActive={isNavActive}>
-          <NavListLink onClick={() => scrollTo('#contact')}>
-            {intl.formatMessage({ id: 'navTo.contactSection' })}
-          </NavListLink>
-        </NavListItem>
-      </NavList>
-    </NavBarWrapper>
-  );
-};
+const NavBar = ({ isNavActive }) => (
+  <NavBarWrapper isNavActive={isNavActive}>
+    <NavList>
+      <NavListItem isNavActive={isNavActive}>
+        <NavListLink onClick={() => scrollTo('#landing')}>
+          <FormattedMessage id="navTo.landingSection" />
+        </NavListLink>
+      </NavListItem>
+      <NavListItem isNavActive={isNavActive}>
+        <NavListLink onClick={() => scrollTo('#projects')}>
+          <FormattedMessage id="navTo.projectsSection" />
+        </NavListLink>
+      </NavListItem>
+      <NavListItem isNavActive={isNavActive}>
+        <NavListLink onClick={() => scrollTo('#contact')}>
+          <FormattedMessage id="navTo.contactSection" />
+        </NavListLink>
+      </NavListItem>
+    </NavList>
+  </NavBarWrapper>
+);
 
 export default NavBar;
