@@ -16,8 +16,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-// test comment #3
-
 const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
