@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { colors, spacing, breakPoints } from 'src/styles/base';
+import { colors, spacing, breakPoints } from 'styles/base';
 
 const SectionHeader = styled.h2`
   margin-top: ${spacing.xxxxlSize};

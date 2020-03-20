@@ -1,8 +1,8 @@
 import React from 'react';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 
-import SectionHeader from 'src/styles/elements/SectionHeader';
-import SectionWrapper from 'src/styles/elements/SectionWrapper';
+import SectionHeader from 'styles/elements/SectionHeader';
+import SectionWrapper from 'styles/elements/SectionWrapper';
 
 const ContactSection = () => (
   <SectionWrapper id="contact">

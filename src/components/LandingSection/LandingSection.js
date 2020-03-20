@@ -3,11 +3,10 @@ import { FormattedMessage, changeLocale } from 'gatsby-plugin-intl';
 import styled from 'styled-components';
 import ReactCountryFlag from 'react-country-flag';
 
-import { fonts, spacing } from 'src/styles/base';
-import SectionWrapper from 'src/styles/elements/SectionWrapper';
-
-import HamburgerMenu from '../HamburgerMenu';
-import NavBar from '../NavBar';
+import { fonts, spacing } from 'styles/base';
+import SectionWrapper from 'styles/elements/SectionWrapper';
+import HamburgerMenu from 'components/HamburgerMenu';
+import NavBar from 'components/NavBar';
 
 const LandingSectionWrapper = styled(SectionWrapper)`
   align-items: center;

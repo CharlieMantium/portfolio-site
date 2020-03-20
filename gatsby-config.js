@@ -1,15 +1,8 @@
-const path = require('path');
-
 module.exports = {
   plugins: [
+    'gatsby-plugin-eslint',
     'gatsby-plugin-styled-components',
     'babel-plugin-styled-components',
-    {
-      resolve: 'gatsby-plugin-root-import',
-      options: {
-        src: path.join(__dirname, 'src'),
-      },
-    },
     {
       resolve: 'gatsby-plugin-intl',
       options: {
