@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-// test comment
+// test comment #3
 
 const StyledWrapper = styled.div`
   display: flex;
