@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 import styled from 'styled-components';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
-import { colors, spacing, breakPoints } from 'src/styles/base';
+import { colors, spacing, breakPoints } from 'styles/base';
 
 const NavBarWrapper = styled.nav`
   position: ${({ isNavActive }) => (isNavActive ? 'fixed' : 'absolute')};
@@ -72,5 +73,13 @@ const NavBar = ({ isNavActive }) => (
     </NavList>
   </NavBarWrapper>
 );
+
+NavBar.propTypes = {
+  isNavActive: PropTypes.bool,
+};
+
+NavBar.defaultProps = {
+  isNavActive: false,
+};
 
 export default NavBar;

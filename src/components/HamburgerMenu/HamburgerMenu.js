@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { colors, spacing, breakPoints } from 'src/styles/base';
+import { colors, spacing, breakPoints } from 'styles/base';
 
 const hamburgerLineMixin = (top, transition) => `
   position: absolute;
@@ -71,10 +72,14 @@ const HamburgerMenu = ({ navActiveToggle }) => {
   return (
     <HamburgerButton onClick={handleClick}>
       <HamburgerBox>
-        <HamburgerLine isClicked={isClicked}></HamburgerLine>
+        <HamburgerLine isClicked={isClicked} />
       </HamburgerBox>
     </HamburgerButton>
   );
+};
+
+HamburgerMenu.propTypes = {
+  navActiveToggle: PropTypes.func.isRequired,
 };
 
 export default HamburgerMenu;

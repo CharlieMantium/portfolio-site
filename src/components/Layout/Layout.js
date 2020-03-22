@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Normalize } from 'styled-normalize';
 
-import { colors, fonts } from 'src/styles/base';
+import { colors, fonts } from 'styles/base';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -30,5 +31,9 @@ const Layout = ({ children }) => (
     <StyledWrapper>{children}</StyledWrapper>
   </>
 );
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Layout;
