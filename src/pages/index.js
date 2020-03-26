@@ -17,6 +17,5 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-// TODO: add gatsby-plugin-eslint
-// TODO: babel configuration
+// TODO: create screen shots from hangman and school-app
 // TODO: change favicon

@@ -9,7 +9,7 @@ import HamburgerMenu from 'components/HamburgerMenu';
 import NavBar from 'components/NavBar';
 
 const LandingSectionWrapper = styled(SectionWrapper)`
-  align-items: center;
+  justify-content: center;
 `;
 
 const LandingHeader = styled.h1`
