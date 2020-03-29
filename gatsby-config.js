@@ -2,6 +2,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-eslint',
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-polished',
     'babel-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-intl',

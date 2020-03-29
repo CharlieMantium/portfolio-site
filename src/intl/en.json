@@ -8,5 +8,14 @@
     "landingSection": "Home",
     "contactSection": "Contact me",
     "projectsSection": "Projects"
+  },
+  "linkTo": {
+    "linkedIn": "Contact me on LinkedIn"
+  },
+  "description": {
+    "projectsSection": {
+      "hangman": "Hangman - well known and fun guessing game",
+      "schoolApp": "SchoolApp - colorful and convenient app to store your weekly classes plan"
+    }
   }
 }

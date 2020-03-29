@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import { rem } from 'polished';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 import { Image } from '@styled-icons/boxicons-regular/Image';
 
 import { breakPoints } from 'styles/base';
-import SectionHeader from 'styles/elements/SectionHeader';
-import SectionWrapper from 'styles/elements/SectionWrapper';
-import SectionItemWrapper from 'styles/elements/SectionItemWrapper';
-import SectionItemIcon from 'styles/elements/SectionItemIcon';
+
+import SectionHeader from '../SectionHeader';
+import SectionWrapper from '../SectionWrapper';
+import SectionItemWrapper from '../SectionItemWrapper';
+import SectionItemIcon from '../SectionItemIcon';
 
 const ProjectsSectionItemWrapper = styled(SectionItemWrapper)`
   flex-direction: column;
@@ -15,18 +17,18 @@ const ProjectsSectionItemWrapper = styled(SectionItemWrapper)`
   width: 90%;
 
   @media (min-width: ${breakPoints.desktop}) {
-    flex-direction: ${({ reversed }) => (reversed ? 'row-reverse' : 'row')};
+    flex-direction: ${({ isReversed }) => (isReversed ? 'row-reverse' : 'row')};
     width: 60%;
   }
 `;
 
 const ProjectsSectionItemIcon = styled(SectionItemIcon)`
   width: 50%;
-  max-width: 150px;
+  max-width: ${rem('150px')};
 
   @media (min-width: ${breakPoints.desktop}) {
     width: 30%;
-    max-width: unset;
+    max-width: none;
     height: unset;
   }
 `;
@@ -34,7 +36,7 @@ const ProjectsSectionItemIcon = styled(SectionItemIcon)`
 const ProjectsSectionItemText = styled.p`
   @media (min-width: ${breakPoints.desktop}) {
     width: 70%;
-    text-align: ${({ reversed }) => (reversed ? 'right' : 'left')};
+    text-align: ${({ isReversed }) => (isReversed ? 'right' : 'left')};
   }
 `;
 
@@ -48,16 +50,15 @@ const ProjectsSection = () => (
         <Image />
       </ProjectsSectionItemIcon>
       <ProjectsSectionItemText>
-        Hangman - well known and fun game
+        <FormattedMessage id="description.projectsSection.hangman" />
       </ProjectsSectionItemText>
     </ProjectsSectionItemWrapper>
-    <ProjectsSectionItemWrapper reversed>
+    <ProjectsSectionItemWrapper isReversed>
       <ProjectsSectionItemIcon>
         <Image />
       </ProjectsSectionItemIcon>
-      <ProjectsSectionItemText reversed>
-        SchoolApp - colorful and convenient app to store your weekly classes
-        plan
+      <ProjectsSectionItemText isReversed>
+        <FormattedMessage id="description.projectsSection.schoolApp" />
       </ProjectsSectionItemText>
     </ProjectsSectionItemWrapper>
   </SectionWrapper>

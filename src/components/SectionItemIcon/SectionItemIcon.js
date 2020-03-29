@@ -9,8 +9,8 @@ const SectionItemIcon = styled.div`
   color: ${colors.beta};
 
   @media (min-width: ${breakPoints.desktop}) {
-    width: ${spacing.xxxxlSize};
-    height: ${spacing.xxxxlSize};
+    width: 100px;
+    height: 100px;
   }
 `;
 

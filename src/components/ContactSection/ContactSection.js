@@ -5,11 +5,11 @@ import { LinkedinSquare } from '@styled-icons/boxicons-logos/LinkedinSquare';
 import { Envelope } from '@styled-icons/boxicons-regular/Envelope';
 import { Phone } from '@styled-icons/boxicons-regular/Phone';
 
-import { colors, breakPoints } from 'styles/base';
-import SectionWrapper from 'styles/elements/SectionWrapper';
-import SectionHeader from 'styles/elements/SectionHeader';
-import SectionItemWrapper from 'styles/elements/SectionItemWrapper';
-import SectionItemIcon from 'styles/elements/SectionItemIcon';
+import { breakPoints } from 'styles/base';
+import SectionWrapper from '../SectionWrapper';
+import SectionHeader from '../SectionHeader';
+import SectionItemWrapper from '../SectionItemWrapper';
+import SectionItemIcon from '../SectionItemIcon';
 
 const ContactSectionItemWrapper = styled(SectionItemWrapper)`
   width: 80%;
@@ -19,36 +19,32 @@ const ContactSectionItemWrapper = styled(SectionItemWrapper)`
   }
 `;
 
-const LinkedInLink = styled.a`
-  text-decoration: none;
-
-  :visited {
-    color: ${colors.delta};
-  }
-`;
-
 const ContactSection = () => (
   <SectionWrapper id="contact">
     <SectionHeader>
       <FormattedMessage id="header.contactSection" />
     </SectionHeader>
     <ContactSectionItemWrapper>
-      <LinkedInLink
+      <a
         href="https://www.linkedin.com/in/karol-zieniewicz"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <SectionItemIcon>
           <LinkedinSquare />
         </SectionItemIcon>
-      </LinkedInLink>
-      <LinkedInLink
+      </a>
+      <a
         href="https://www.linkedin.com/in/karol-zieniewicz"
         target="_blank"
+        rel="noopener noreferrer"
       >
-        <p>Contact me on LinkedIn</p>
-      </LinkedInLink>
+        <p>
+          <FormattedMessage id="linkTo.linkedIn" />
+        </p>
+      </a>
     </ContactSectionItemWrapper>
-    <ContactSectionItemWrapper reversed>
+    <ContactSectionItemWrapper isReversed>
       <SectionItemIcon>
         <Envelope />
       </SectionItemIcon>

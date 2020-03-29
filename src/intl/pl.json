@@ -8,5 +8,14 @@
     "landingSection": "Start",
     "contactSection": "Kontakt",
     "projectsSection": "Projekty"
+  },
+  "linkTo": {
+    "linkedIn": "Najdź mnie na LinkedIn"
+  },
+  "description": {
+    "projectsSection": {
+      "hangman": "Wisielec - znana i lubiana gra słowna",
+      "schoolApp": "SchoolApp - kolorowa i wygodna aplikacja do tworzenia tygodniowego planu zajęć"
+    }
   }
 }

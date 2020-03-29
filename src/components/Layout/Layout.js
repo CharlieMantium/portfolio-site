@@ -14,6 +14,14 @@ const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
     box-sizing: border-box;
   }
+
+  a {
+    text-decoration: none;
+
+    &:visited {
+      color: ${colors.delta};
+    }
+  }
 `;
 
 const StyledWrapper = styled.div`

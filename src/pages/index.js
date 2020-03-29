@@ -16,6 +16,3 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
-
-// TODO: create screen shots from hangman and school-app
-// TODO: change favicon
