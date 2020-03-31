@@ -6,10 +6,12 @@ import { Envelope } from '@styled-icons/boxicons-regular/Envelope';
 import { Phone } from '@styled-icons/boxicons-regular/Phone';
 
 import { breakPoints } from 'styles/base';
-import SectionWrapper from '../SectionWrapper';
-import SectionHeader from '../SectionHeader';
-import SectionItemWrapper from '../SectionItemWrapper';
-import SectionItemIcon from '../SectionItemIcon';
+import {
+  SectionItemIcon,
+  SectionItemWrapper,
+  SectionHeader,
+  SectionWrapper,
+} from '../styled';
 
 const ContactSectionItemWrapper = styled(SectionItemWrapper)`
   width: 80%;

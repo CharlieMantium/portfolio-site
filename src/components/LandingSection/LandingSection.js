@@ -7,7 +7,7 @@ import { fonts, spacing } from 'styles/base';
 import HamburgerMenu from 'components/HamburgerMenu';
 import NavBar from 'components/NavBar';
 
-import SectionWrapper from '../SectionWrapper';
+import { SectionWrapper } from '../styled';
 
 const LandingSectionWrapper = styled(SectionWrapper)`
   justify-content: center;

@@ -6,10 +6,12 @@ import { Image } from '@styled-icons/boxicons-regular/Image';
 
 import { breakPoints } from 'styles/base';
 
-import SectionHeader from '../SectionHeader';
-import SectionWrapper from '../SectionWrapper';
-import SectionItemWrapper from '../SectionItemWrapper';
-import SectionItemIcon from '../SectionItemIcon';
+import {
+  SectionItemIcon,
+  SectionItemWrapper,
+  SectionHeader,
+  SectionWrapper,
+} from '../styled';
 
 const ProjectsSectionItemWrapper = styled(SectionItemWrapper)`
   flex-direction: column;
