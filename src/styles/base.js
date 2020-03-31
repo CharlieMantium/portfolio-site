@@ -16,7 +16,6 @@ export const spacing = {
   xlSize: '20px',
   xxlSize: '35px',
   xxxlSize: '50px',
-  xxxxlSize: '100px',
 };
 
 export const breakPoints = {
