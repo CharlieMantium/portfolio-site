@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { rem } from 'polished';
 
-import { colors, spacing, breakPoints } from 'styles/base';
+import { colors, breakPoints } from 'styles/base';
 
 export const SectionWrapper = styled.div`
   height: 100vh;
@@ -8,7 +9,7 @@ export const SectionWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: ${spacing.xxxlSize} 0;
+  padding: ${rem('50px')} 0;
 `;
 
 export const SectionItemWrapper = styled.div`
@@ -19,23 +20,23 @@ export const SectionItemWrapper = styled.div`
 `;
 
 export const SectionItemIcon = styled.div`
-  margin: ${spacing.lSize};
-  width: ${spacing.xxxlSize};
-  height: ${spacing.xxxlSize};
+  margin: ${rem('15px')};
+  width: ${rem('50px')};
+  height: ${rem('50px')};
   color: ${colors.beta};
 
   @media (min-width: ${breakPoints.desktop}) {
-    width: 100px;
-    height: 100px;
+    width: ${rem('100px')};
+    height: ${rem('100px')};
   }
 `;
 
 export const SectionHeader = styled.h2`
-  padding: ${spacing.xsSize} ${spacing.xxxlSize};
-  border: ${spacing.xxsSize} solid ${colors.delta};
-  border-radius: 100px;
+  padding: ${rem('3px')} ${rem('50px')};
+  border: ${rem('1px')} solid ${colors.delta};
+  border-radius: ${rem('100px')};
 
   @media (min-width: ${breakPoints.desktop}) {
-    padding: ${spacing.sSize} ${spacing.xxxlSize};
+    padding: ${rem('5px')} ${rem('50px')};
   }
 `;

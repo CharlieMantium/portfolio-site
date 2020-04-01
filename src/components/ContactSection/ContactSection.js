@@ -11,7 +11,7 @@ import {
   SectionItemWrapper,
   SectionHeader,
   SectionWrapper,
-} from '../styled';
+} from 'components/styled/styled';
 
 const ContactSectionItemWrapper = styled(SectionItemWrapper)`
   width: 80%;

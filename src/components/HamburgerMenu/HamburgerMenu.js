@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { rem } from 'polished';
 
-import { colors, spacing, breakPoints } from 'styles/base';
+import { colors, breakPoints } from 'styles/base';
 
 const hamburgerLineMixin = (top, transition) => `
   position: absolute;
   width: 100%;
-  height: ${spacing.xsSize};
+  height: ${rem('3px')};
   background-color: ${colors.beta};
   left: 0;
   top: ${top};
@@ -15,8 +16,8 @@ const hamburgerLineMixin = (top, transition) => `
 `;
 
 const HamburgerButton = styled.button`
-  margin: ${spacing.lSize};
-  padding: ${spacing.lSize};
+  margin: ${rem('15px')};
+  padding: ${rem('15px')};
   position: fixed;
   right: 0;
   top: 0;
@@ -30,13 +31,13 @@ const HamburgerButton = styled.button`
   }
 
   @media (min-width: ${breakPoints.desktop}) {
-    margin: ${spacing.lSize};
+    margin: ${rem('15px')};
   }
 `;
 
 const HamburgerBox = styled.span`
-  width: ${spacing.xxlSize};
-  height: ${spacing.xlSize};
+  width: ${rem('35px')};
+  height: ${rem('20px')};
 `;
 
 const HamburgerLine = styled.span`
@@ -47,19 +48,19 @@ const HamburgerLine = styled.span`
     isClicked ? 'transparent' : colors.beta};
 
   &::before {
-    ${hamburgerLineMixin('-10px', 'transform 0.2s ease-in-out')};
+    ${hamburgerLineMixin(`${rem('-10px')}`, 'transform 0.2s ease-in-out')};
 
     content: '';
     transform: ${({ isClicked }) =>
-      isClicked && 'translateY(10px) rotate(45deg)'};
+      isClicked && `translateY(${rem('10px')}) rotate(45deg)`};
   }
 
   &::after {
-    ${hamburgerLineMixin('10px', 'transform 0.2s ease-in-out')};
+    ${hamburgerLineMixin(`${rem('10px')}`, 'transform 0.2s ease-in-out')};
 
     content: '';
     transform: ${({ isClicked }) =>
-      isClicked && 'translateY(-10px) rotate(-45deg)'};
+      isClicked && `translateY(${rem('-10px')}) rotate(-45deg)`};
   }
 `;
 

@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { FormattedMessage, changeLocale } from 'gatsby-plugin-intl';
 import styled from 'styled-components';
 import ReactCountryFlag from 'react-country-flag';
+import { FormattedMessage, changeLocale } from 'gatsby-plugin-intl';
+import { rem } from 'polished';
 
-import { fonts, spacing } from 'styles/base';
-import HamburgerMenu from 'components/HamburgerMenu';
-import NavBar from 'components/NavBar';
+import { fonts } from 'styles/base';
+import HamburgerMenu from 'components/HamburgerMenu/HamburgerMenu';
+import NavBar from 'components/NavBar/NavBar';
 
-import { SectionWrapper } from '../styled';
+import { SectionWrapper } from 'components/styled/styled';
 
 const LandingSectionWrapper = styled(SectionWrapper)`
   justify-content: center;
@@ -21,16 +22,16 @@ const LandingHeader = styled.h1`
 
 const ChangeLocaleWrapper = styled.div`
   position: fixed;
-  top: ${spacing.xlSize};
-  left: -100px;
+  top: ${rem('20px')};
+  left: ${rem('-100px')};
 
   transform: ${({ isNavActive }) =>
-    isNavActive ? 'translateX(0)' : 'translateX(120px)'};
+    isNavActive ? 'translateX(0)' : `translateX(${rem('120px')})`};
   transition: transform 0.5s ease-in-out;
 `;
 
 const ChangeLocaleButton = styled.button`
-  margin-right: ${spacing.mSize};
+  margin-right: ${rem('10px')};
   background: none;
   border: none;
   cursor: pointer;
