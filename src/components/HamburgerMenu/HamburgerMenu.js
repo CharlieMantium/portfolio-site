@@ -8,7 +8,7 @@ import { colors, breakPoints } from 'styles/base';
 const hamburgerLineMixin = (top, transition) => `
   position: absolute;
   width: 100%;
-  height: ${rem('3px')};
+  height: ${rem(3)};
   background-color: ${colors.beta};
   left: 0;
   top: ${top};
@@ -16,8 +16,8 @@ const hamburgerLineMixin = (top, transition) => `
 `;
 
 const HamburgerButton = styled.button`
-  margin: ${rem('15px')};
-  padding: ${rem('15px')};
+  margin: ${rem(15)};
+  padding: ${rem(15)};
   position: fixed;
   right: 0;
   top: 0;
@@ -31,13 +31,13 @@ const HamburgerButton = styled.button`
   }
 
   @media (min-width: ${breakPoints.desktop}) {
-    margin: ${rem('15px')};
+    margin: ${rem(15)};
   }
 `;
 
 const HamburgerBox = styled.span`
-  width: ${rem('35px')};
-  height: ${rem('20px')};
+  width: ${rem(35)};
+  height: ${rem(20)};
 `;
 
 const HamburgerLine = styled.span`
@@ -48,19 +48,19 @@ const HamburgerLine = styled.span`
     isClicked ? 'transparent' : colors.beta};
 
   &::before {
-    ${hamburgerLineMixin(`${rem('-10px')}`, 'transform 0.2s ease-in-out')};
+    ${hamburgerLineMixin(`${rem(-10)}`, 'transform 0.2s ease-in-out')};
 
     content: '';
     transform: ${({ isClicked }) =>
-      isClicked && `translateY(${rem('10px')}) rotate(45deg)`};
+      isClicked && `translateY(${rem(10)}) rotate(45deg)`};
   }
 
   &::after {
-    ${hamburgerLineMixin(`${rem('10px')}`, 'transform 0.2s ease-in-out')};
+    ${hamburgerLineMixin(`${rem(10)}`, 'transform 0.2s ease-in-out')};
 
     content: '';
     transform: ${({ isClicked }) =>
-      isClicked && `translateY(${rem('-10px')}) rotate(-45deg)`};
+      isClicked && `translateY(${rem(-10)}) rotate(-45deg)`};
   }
 `;
 

@@ -9,7 +9,7 @@ export const SectionWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: ${rem('50px')} 0;
+  padding: ${rem(50)} 0;
 `;
 
 export const SectionItemWrapper = styled.div`
@@ -20,23 +20,23 @@ export const SectionItemWrapper = styled.div`
 `;
 
 export const SectionItemIcon = styled.div`
-  margin: ${rem('15px')};
-  width: ${rem('50px')};
-  height: ${rem('50px')};
+  margin: ${rem(15)};
+  width: ${rem(50)};
+  height: ${rem(50)};
   color: ${colors.beta};
 
   @media (min-width: ${breakPoints.desktop}) {
-    width: ${rem('100px')};
-    height: ${rem('100px')};
+    width: ${rem(100)};
+    height: ${rem(100)};
   }
 `;
 
 export const SectionHeader = styled.h2`
-  padding: ${rem('3px')} ${rem('50px')};
-  border: ${rem('1px')} solid ${colors.delta};
-  border-radius: ${rem('100px')};
+  padding: ${rem(3)} ${rem(50)};
+  border: ${rem(1)} solid ${colors.delta};
+  border-radius: ${rem(100)};
 
   @media (min-width: ${breakPoints.desktop}) {
-    padding: ${rem('5px')} ${rem('50px')};
+    padding: ${rem(5)} ${rem(50)};
   }
 `;

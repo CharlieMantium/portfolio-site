@@ -8,7 +8,7 @@ import { fonts } from 'styles/base';
 import HamburgerMenu from 'components/HamburgerMenu/HamburgerMenu';
 import NavBar from 'components/NavBar/NavBar';
 
-import { SectionWrapper } from 'components/styled/styled';
+import { SectionWrapper } from 'components/Section/styled';
 
 const LandingSectionWrapper = styled(SectionWrapper)`
   justify-content: center;
@@ -22,16 +22,16 @@ const LandingHeader = styled.h1`
 
 const ChangeLocaleWrapper = styled.div`
   position: fixed;
-  top: ${rem('20px')};
-  left: ${rem('-100px')};
+  top: ${rem(20)};
+  left: ${rem(-100)};
 
   transform: ${({ isNavActive }) =>
-    isNavActive ? 'translateX(0)' : `translateX(${rem('120px')})`};
+    isNavActive ? 'translateX(0)' : `translateX(${rem(120)})`};
   transition: transform 0.5s ease-in-out;
 `;
 
 const ChangeLocaleButton = styled.button`
-  margin-right: ${rem('10px')};
+  margin-right: ${rem(10)};
   background: none;
   border: none;
   cursor: pointer;

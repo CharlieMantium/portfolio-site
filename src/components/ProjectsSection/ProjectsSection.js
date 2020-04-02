@@ -11,7 +11,7 @@ import {
   SectionItemWrapper,
   SectionHeader,
   SectionWrapper,
-} from 'components/styled/styled';
+} from 'components/Section/styled';
 
 const ProjectsSectionItemWrapper = styled(SectionItemWrapper)`
   flex-direction: column;
@@ -26,7 +26,7 @@ const ProjectsSectionItemWrapper = styled(SectionItemWrapper)`
 
 const ProjectsSectionItemIcon = styled(SectionItemIcon)`
   width: 50%;
-  max-width: ${rem('150px')};
+  max-width: ${rem(150)};
 
   @media (min-width: ${breakPoints.desktop}) {
     width: 30%;

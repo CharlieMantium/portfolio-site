@@ -10,16 +10,16 @@ import { colors, breakPoints } from 'styles/base';
 const NavBarWrapper = styled.nav`
   position: ${({ isNavActive }) => (isNavActive ? 'fixed' : 'absolute')};
   top: 0;
-  padding: ${rem('3px')} ${rem('50px')} 0 ${rem('10px')};
+  padding: ${rem(3)} ${rem(50)} 0 ${rem(10)};
   width: 100%;
-  box-shadow: 0 ${rem('1px')} ${rem('5px')} 0 ${colors.epsilon};
+  box-shadow: 0 ${rem(1)} ${rem(5)} 0 ${colors.epsilon};
   background-color: ${colors.alpha};
   opacity: ${({ isNavActive }) => (isNavActive ? '1' : '0')};
   overflow: hidden;
   transition: opacity 0.5s ease-in-out;
 
   @media (min-width: ${breakPoints.desktop}) {
-    padding: ${rem('3px')} 0 0 0;
+    padding: ${rem(3)} 0 0 0;
   }
 `;
 
@@ -32,9 +32,9 @@ const NavList = styled.ul`
 
 const NavListItem = styled.li`
   position: relative;
-  top: ${rem('-50px')};
+  top: ${rem(-50)};
   transform: ${({ isNavActive }) =>
-    isNavActive ? `translateY(${rem('50px')})` : 'translateY(0)'};
+    isNavActive ? `translateY(${rem(50)})` : 'translateY(0)'};
   transition: transform 0.5s ease-in-out;
 `;
 
