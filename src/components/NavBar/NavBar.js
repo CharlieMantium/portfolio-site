@@ -1,24 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'gatsby-plugin-intl';
 import styled from 'styled-components';
 import scrollTo from 'gatsby-plugin-smoothscroll';
+import { FormattedMessage } from 'gatsby-plugin-intl';
+import { rem } from 'polished';
 
-import { colors, spacing, breakPoints } from 'styles/base';
+import { colors, breakPoints } from 'styles/base';
 
 const NavBarWrapper = styled.nav`
   position: ${({ isNavActive }) => (isNavActive ? 'fixed' : 'absolute')};
   top: 0;
-  padding: ${spacing.xsSize} ${spacing.xxxlSize} 0 ${spacing.mSize};
+  padding: ${rem(3)} ${rem(50)} 0 ${rem(10)};
   width: 100%;
-  box-shadow: 0px 1px 5px 0px ${colors.epsilon};
+  box-shadow: 0 ${rem(1)} ${rem(5)} 0 ${colors.epsilon};
   background-color: ${colors.alpha};
   opacity: ${({ isNavActive }) => (isNavActive ? '1' : '0')};
   overflow: hidden;
   transition: opacity 0.5s ease-in-out;
 
   @media (min-width: ${breakPoints.desktop}) {
-    padding: ${spacing.xsSize} 0 0 0;
+    padding: ${rem(3)} 0 0 0;
   }
 `;
 
@@ -31,9 +32,9 @@ const NavList = styled.ul`
 
 const NavListItem = styled.li`
   position: relative;
-  top: -50px;
+  top: ${rem(-50)};
   transform: ${({ isNavActive }) =>
-    isNavActive ? 'translateY(50px)' : 'translateY(0)'};
+    isNavActive ? `translateY(${rem(50)})` : 'translateY(0)'};
   transition: transform 0.5s ease-in-out;
 `;
 

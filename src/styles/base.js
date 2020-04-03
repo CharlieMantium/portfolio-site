@@ -7,17 +7,6 @@ export const colors = {
   omega: '#D62828',
 };
 
-export const spacing = {
-  xxsSize: '1px',
-  xsSize: '3px',
-  sSize: '5px',
-  mSize: '10px',
-  lSize: '15px',
-  xlSize: '20px',
-  xxlSize: '35px',
-  xxxlSize: '50px',
-};
-
 export const breakPoints = {
   desktop: '680px',
   largeDesktop: '1000px',
