@@ -1,5 +1,6 @@
 {
   "header": {
+    "aboutMeSection": "About me",
     "contactSection": "Contact me",
     "landingSection": "Hi! My name is Karol Zieniewicz",
     "projectsSection": "Projects"
@@ -13,6 +14,7 @@
     "linkedIn": "Contact me on LinkedIn"
   },
   "description": {
+    "aboutMeSection": "I'm a self-taught beginner front-end developer. Always hardworking and fast learning I'm ready to start my first job.",
     "projectsSection": {
       "hangman": "Hangman - well known and fun guessing game",
       "schoolApp": "SchoolApp - colorful and convenient app to store your weekly classes plan"

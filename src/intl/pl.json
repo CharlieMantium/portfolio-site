@@ -1,5 +1,6 @@
 {
   "header": {
+    "aboutMeSection": "O mnie",
     "contactSection": "Kontakt",
     "landingSection": "Cześć! Nazywam się Karol Zieniewicz",
     "projectsSection": "Projekty"
@@ -13,6 +14,7 @@
     "linkedIn": "Znajdź mnie na LinkedIn"
   },
   "description": {
+    "aboutMeSection": "Jestem początkującym front-end developerem samoukiem. Czuję się gotowy by rozpocząć swą pierwszą pracę, by jeszcze szybciej poszerzać i rozwijać swe umiejętności.",
     "projectsSection": {
       "hangman": "Wisielec - znana i lubiana gra słowna",
       "schoolApp": "SchoolApp - kolorowa i wygodna aplikacja do tworzenia tygodniowego planu zajęć"
