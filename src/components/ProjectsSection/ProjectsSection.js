@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import Img from 'gatsby-image';
 import { rem } from 'polished';
+import { graphql, useStaticQuery } from 'gatsby';
 import { FormattedMessage } from 'gatsby-plugin-intl';
-import { Image } from '@styled-icons/boxicons-regular/Image';
 
 import { breakPoints } from 'styles/base';
-
 import {
-  SectionItemIcon,
   SectionItemWrapper,
   SectionHeader,
   SectionWrapper,
@@ -15,7 +14,7 @@ import {
 
 const ProjectsSectionItemWrapper = styled(SectionItemWrapper)`
   flex-direction: column;
-  height: 43%;
+  max-height: 43%;
   width: 90%;
 
   @media (min-width: ${breakPoints.desktop}) {
@@ -24,46 +23,85 @@ const ProjectsSectionItemWrapper = styled(SectionItemWrapper)`
   }
 `;
 
-const ProjectsSectionItemIcon = styled(SectionItemIcon)`
-  width: 50%;
-  max-width: ${rem(150)};
+const StyledImg = styled(Img)`
+  width: 90%;
+
+  @media (min-width: ${breakPoints.largeMobile}) {
+    width: 60%;
+  }
 
   @media (min-width: ${breakPoints.desktop}) {
-    width: 30%;
-    max-width: none;
-    height: unset;
+    width: 40%;
   }
 `;
 
 const ProjectsSectionItemText = styled.p`
+  text-align: center;
+
   @media (min-width: ${breakPoints.desktop}) {
-    width: 70%;
+    width: 60%;
+    padding: 0 ${rem(20)};
     text-align: ${({ isReversed }) => (isReversed ? 'right' : 'left')};
   }
 `;
 
-const ProjectsSection = () => (
-  <SectionWrapper id="projects">
-    <SectionHeader>
-      <FormattedMessage id="header.projectsSection" />
-    </SectionHeader>
-    <ProjectsSectionItemWrapper>
-      <ProjectsSectionItemIcon>
-        <Image />
-      </ProjectsSectionItemIcon>
-      <ProjectsSectionItemText>
-        <FormattedMessage id="description.projectsSection.hangman" />
-      </ProjectsSectionItemText>
-    </ProjectsSectionItemWrapper>
-    <ProjectsSectionItemWrapper isReversed>
-      <ProjectsSectionItemIcon>
-        <Image />
-      </ProjectsSectionItemIcon>
-      <ProjectsSectionItemText isReversed>
-        <FormattedMessage id="description.projectsSection.schoolApp" />
-      </ProjectsSectionItemText>
-    </ProjectsSectionItemWrapper>
-  </SectionWrapper>
-);
+const ProjectsSection = () => {
+  const images = useStaticQuery(graphql`
+    query {
+      hangman: file(relativePath: { eq: "screenshots/hangman-desktop-1.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      schoolApp: file(
+        relativePath: { eq: "screenshots/schoolapp-desktop-0.png" }
+      ) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
+  return (
+    <SectionWrapper id="projects">
+      <SectionHeader>
+        <FormattedMessage id="header.projectsSection" />
+      </SectionHeader>
+      <ProjectsSectionItemWrapper>
+        <StyledImg fluid={images.hangman.childImageSharp.fluid} />
+
+        <ProjectsSectionItemText>
+          <a
+            href="https://charliemantium.github.io/hangman/"
+            target="_blank"
+            rel="noopener noreferrer"
+            display="block"
+          >
+            Hangman
+          </a>
+          <FormattedMessage id="description.projectsSection.hangman" />
+        </ProjectsSectionItemText>
+      </ProjectsSectionItemWrapper>
+      <ProjectsSectionItemWrapper isReversed>
+        <StyledImg fluid={images.schoolApp.childImageSharp.fluid} />
+        <ProjectsSectionItemText isReversed>
+          <a
+            href="https://charliemantium.github.io/hangman/"
+            target="_blank"
+            rel="noopener noreferrer"
+            display="block"
+          >
+            SchoolApp
+          </a>
+          <FormattedMessage id="description.projectsSection.schoolApp" />
+        </ProjectsSectionItemText>
+      </ProjectsSectionItemWrapper>
+    </SectionWrapper>
+  );
+};
 
 export default ProjectsSection;
