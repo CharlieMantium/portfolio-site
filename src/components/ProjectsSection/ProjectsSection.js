@@ -90,7 +90,7 @@ const ProjectsSection = () => {
         <StyledImg fluid={images.schoolApp.childImageSharp.fluid} />
         <ProjectsSectionItemText isReversed>
           <a
-            href="https://charliemantium.github.io/hangman/"
+            href="https://mantium-school-app.herokuapp.com/"
             target="_blank"
             rel="noopener noreferrer"
             display="block"
