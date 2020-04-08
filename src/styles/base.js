@@ -8,9 +8,8 @@ export const colors = {
 };
 
 export const breakPoints = {
-  largeMobile: '470px',
-  desktop: '680px',
-  largeDesktop: '1000px',
+  largeMobile: '768px',
+  desktop: '1224px',
 };
 
 export const fonts = {

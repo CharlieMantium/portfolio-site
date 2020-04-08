@@ -6,31 +6,26 @@ import { rem } from 'polished';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 
 import { breakPoints } from 'styles/base';
+
 import { SectionWrapper, SectionHeader } from '../Section/styled';
 
 const StyledImg = styled(Img)`
-  width: 90%;
+  width: 100%;
   border-radius: ${rem(5)};
 
   @media (min-width: ${breakPoints.desktop}) {
-    width: 40%;
     border-radius: ${rem(10)};
   }
 `;
 
 const SectionText = styled.p`
-  width: 90%;
   text-align: center;
-
-  @media (min-width: ${breakPoints.desktop}) {
-    width: 40%;
-  }
 `;
 
 const AboutMeSection = () => {
   const photo = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "photos/photo1.jpg" }) {
+      file(relativePath: { eq: "photos/photo-author.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
@@ -39,12 +34,20 @@ const AboutMeSection = () => {
       }
     }
   `);
+
   return (
     <SectionWrapper>
       <SectionHeader>
         <FormattedMessage id="header.aboutMeSection" />
       </SectionHeader>
-      <StyledImg fluid={photo.file.childImageSharp.fluid} alt="Author" />
+      <FormattedMessage id="alternativeDescription.authorsPhoto">
+        {formattedValue => (
+          <StyledImg
+            fluid={photo.file.childImageSharp.fluid}
+            alt={formattedValue}
+          />
+        )}
+      </FormattedMessage>
       <SectionText>
         <FormattedMessage id="description.aboutMeSection" />
       </SectionText>

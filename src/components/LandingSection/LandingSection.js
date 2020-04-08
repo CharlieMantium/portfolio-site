@@ -17,7 +17,6 @@ const LandingSectionWrapper = styled(SectionWrapper)`
 const LandingHeader = styled.h1`
   font-family: ${fonts.families.headerFont};
   font-weight: ${fonts.weights.regular};
-  width: 80%;
 `;
 
 const ChangeLocaleWrapper = styled.div`

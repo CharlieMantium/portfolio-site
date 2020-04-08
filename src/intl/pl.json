@@ -11,13 +11,16 @@
     "projectsSection": "Projekty"
   },
   "linkTo": {
-    "linkedIn": "Znajdź mnie na LinkedIn"
+    "linkedIn": "Znajdź mnie na LinkedIn",
+    "hangman": "<a>{appName}</a> - znana i lubiana gra słowna",
+    "schoolApp": "<a>{appName}</a> - kolorowa i wygodna aplikacja do tworzenia tygodniowego planu zajęć"
   },
   "description": {
-    "aboutMeSection": "Jestem początkującym front-end developerem samoukiem. Czuję się gotowy by rozpocząć swą pierwszą pracę, by jeszcze szybciej poszerzać i rozwijać swe umiejętności.",
-    "projectsSection": {
-      "hangman": "Wisielec - znana i lubiana gra słowna",
-      "schoolApp": "SchoolApp - kolorowa i wygodna aplikacja do tworzenia tygodniowego planu zajęć"
-    }
+    "aboutMeSection": "Jestem początkującym front-end developerem samoukiem. Czuję się gotowy by rozpocząć swą pierwszą pracę, by jeszcze szybciej poszerzać i rozwijać swe umiejętności."
+  },
+  "alternativeDescription": {
+    "authorsPhoto": "Czarno-białe zdjęcie rozmarzonego autora tej strony.",
+    "hangman": "Zrzut ekranu startowego gry Hangman",
+    "schoolApp": "Zrzut ekranu logowania aplikacji SchoolApp"
   }
 }

@@ -14,25 +14,14 @@ import {
 
 const ProjectsSectionItemWrapper = styled(SectionItemWrapper)`
   flex-direction: column;
-  max-height: 43%;
-  width: 90%;
 
   @media (min-width: ${breakPoints.desktop}) {
     flex-direction: ${({ isReversed }) => (isReversed ? 'row-reverse' : 'row')};
-    width: 60%;
   }
 `;
 
 const StyledImg = styled(Img)`
-  width: 90%;
-
-  @media (min-width: ${breakPoints.largeMobile}) {
-    width: 60%;
-  }
-
-  @media (min-width: ${breakPoints.desktop}) {
-    width: 40%;
-  }
+  width: 100%;
 `;
 
 const ProjectsSectionItemText = styled.p`
@@ -48,7 +37,7 @@ const ProjectsSectionItemText = styled.p`
 const ProjectsSection = () => {
   const images = useStaticQuery(graphql`
     query {
-      hangman: file(relativePath: { eq: "screenshots/hangman-desktop-1.png" }) {
+      hangman: file(relativePath: { eq: "screenshots/hangman-desktop.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
@@ -56,7 +45,7 @@ const ProjectsSection = () => {
         }
       }
       schoolApp: file(
-        relativePath: { eq: "screenshots/schoolapp-desktop-0.png" }
+        relativePath: { eq: "screenshots/schoolapp-desktop.png" }
       ) {
         childImageSharp {
           fluid {
@@ -72,32 +61,58 @@ const ProjectsSection = () => {
         <FormattedMessage id="header.projectsSection" />
       </SectionHeader>
       <ProjectsSectionItemWrapper>
-        <StyledImg fluid={images.hangman.childImageSharp.fluid} />
-
+        <FormattedMessage id="alternativeDescription.hangman">
+          {formattedValue => (
+            <StyledImg
+              fluid={images.hangman.childImageSharp.fluid}
+              alt={formattedValue}
+            />
+          )}
+        </FormattedMessage>
         <ProjectsSectionItemText>
-          <a
-            href="https://charliemantium.github.io/hangman/"
-            target="_blank"
-            rel="noopener noreferrer"
-            display="block"
-          >
-            Hangman
-          </a>
-          <FormattedMessage id="description.projectsSection.hangman" />
+          <FormattedMessage
+            id="linkTo.hangman"
+            values={{
+              a: (...chunks) => (
+                <a
+                  href="https://charliemantium.github.io/hangman/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  display="block"
+                >
+                  {chunks}
+                </a>
+              ),
+              appName: 'Hangman',
+            }}
+          />
         </ProjectsSectionItemText>
       </ProjectsSectionItemWrapper>
       <ProjectsSectionItemWrapper isReversed>
-        <StyledImg fluid={images.schoolApp.childImageSharp.fluid} />
+        <FormattedMessage id="alternativeDescription.schoolApp">
+          {formattedValue => (
+            <StyledImg
+              fluid={images.schoolApp.childImageSharp.fluid}
+              alt={formattedValue}
+            />
+          )}
+        </FormattedMessage>
         <ProjectsSectionItemText isReversed>
-          <a
-            href="https://mantium-school-app.herokuapp.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            display="block"
-          >
-            SchoolApp
-          </a>
-          <FormattedMessage id="description.projectsSection.schoolApp" />
+          <FormattedMessage
+            id="linkTo.schoolApp"
+            values={{
+              a: (...chunks) => (
+                <a
+                  href="https://mantium-school-app.herokuapp.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {chunks}
+                </a>
+              ),
+              appName: 'SchoolApp',
+            }}
+          />
         </ProjectsSectionItemText>
       </ProjectsSectionItemWrapper>
     </SectionWrapper>
