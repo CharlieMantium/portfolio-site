@@ -5,7 +5,6 @@ import { LinkedinSquare } from '@styled-icons/boxicons-logos/LinkedinSquare';
 import { Envelope } from '@styled-icons/boxicons-regular/Envelope';
 import { Phone } from '@styled-icons/boxicons-regular/Phone';
 
-import { breakPoints } from 'styles/base';
 import {
   SectionItemIcon,
   SectionItemWrapper,
@@ -14,11 +13,7 @@ import {
 } from 'components/Section/styled';
 
 const ContactSectionItemWrapper = styled(SectionItemWrapper)`
-  width: 80%;
-
-  @media (min-width: ${breakPoints.desktop}) {
-    width: 40%;
-  }
+  justify-content: center;
 `;
 
 const ContactSection = () => (

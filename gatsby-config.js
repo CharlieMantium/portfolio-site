@@ -1,9 +1,27 @@
+const path = require('path');
+
 module.exports = {
   plugins: [
     'gatsby-plugin-eslint',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-polished',
     'babel-plugin-styled-components',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: path.join(__dirname, 'src', 'images'),
+      },
+    },
+    'gatsby-transformer-sharp',
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        useMozJpeg: false,
+        stripMetadata: true,
+        defaultQuality: 100,
+      },
+    },
     {
       resolve: 'gatsby-plugin-intl',
       options: {

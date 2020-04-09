@@ -1,2 +1,3 @@
 TODO: create screen shots from hangman and school-app
 TODO: change favicon
+TODO: move locale selection to navbar

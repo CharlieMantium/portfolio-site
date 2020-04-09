@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import Img from 'gatsby-image';
 import { rem } from 'polished';
+import { graphql, useStaticQuery } from 'gatsby';
 import { FormattedMessage } from 'gatsby-plugin-intl';
-import { Image } from '@styled-icons/boxicons-regular/Image';
 
 import { breakPoints } from 'styles/base';
-
 import {
-  SectionItemIcon,
   SectionItemWrapper,
   SectionHeader,
   SectionWrapper,
@@ -15,55 +14,109 @@ import {
 
 const ProjectsSectionItemWrapper = styled(SectionItemWrapper)`
   flex-direction: column;
-  height: 43%;
-  width: 90%;
 
   @media (min-width: ${breakPoints.desktop}) {
     flex-direction: ${({ isReversed }) => (isReversed ? 'row-reverse' : 'row')};
-    width: 60%;
   }
 `;
 
-const ProjectsSectionItemIcon = styled(SectionItemIcon)`
-  width: 50%;
-  max-width: ${rem(150)};
-
-  @media (min-width: ${breakPoints.desktop}) {
-    width: 30%;
-    max-width: none;
-    height: unset;
-  }
+const StyledImg = styled(Img)`
+  width: 100%;
 `;
 
 const ProjectsSectionItemText = styled.p`
+  text-align: center;
+
   @media (min-width: ${breakPoints.desktop}) {
-    width: 70%;
+    width: 60%;
+    padding: 0 ${rem(20)};
     text-align: ${({ isReversed }) => (isReversed ? 'right' : 'left')};
   }
 `;
 
-const ProjectsSection = () => (
-  <SectionWrapper id="projects">
-    <SectionHeader>
-      <FormattedMessage id="header.projectsSection" />
-    </SectionHeader>
-    <ProjectsSectionItemWrapper>
-      <ProjectsSectionItemIcon>
-        <Image />
-      </ProjectsSectionItemIcon>
-      <ProjectsSectionItemText>
-        <FormattedMessage id="description.projectsSection.hangman" />
-      </ProjectsSectionItemText>
-    </ProjectsSectionItemWrapper>
-    <ProjectsSectionItemWrapper isReversed>
-      <ProjectsSectionItemIcon>
-        <Image />
-      </ProjectsSectionItemIcon>
-      <ProjectsSectionItemText isReversed>
-        <FormattedMessage id="description.projectsSection.schoolApp" />
-      </ProjectsSectionItemText>
-    </ProjectsSectionItemWrapper>
-  </SectionWrapper>
-);
+const ProjectsSection = () => {
+  const images = useStaticQuery(graphql`
+    query {
+      hangman: file(relativePath: { eq: "screenshots/hangman-desktop.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      schoolApp: file(
+        relativePath: { eq: "screenshots/schoolapp-desktop.png" }
+      ) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
+  return (
+    <SectionWrapper id="projects">
+      <SectionHeader>
+        <FormattedMessage id="header.projectsSection" />
+      </SectionHeader>
+      <ProjectsSectionItemWrapper>
+        <FormattedMessage id="alternativeDescription.hangman">
+          {formattedValue => (
+            <StyledImg
+              fluid={images.hangman.childImageSharp.fluid}
+              alt={formattedValue}
+            />
+          )}
+        </FormattedMessage>
+        <ProjectsSectionItemText>
+          <FormattedMessage
+            id="linkTo.hangman"
+            values={{
+              a: (...chunks) => (
+                <a
+                  href="https://charliemantium.github.io/hangman/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  display="block"
+                >
+                  {chunks}
+                </a>
+              ),
+              appName: 'Hangman',
+            }}
+          />
+        </ProjectsSectionItemText>
+      </ProjectsSectionItemWrapper>
+      <ProjectsSectionItemWrapper isReversed>
+        <FormattedMessage id="alternativeDescription.schoolApp">
+          {formattedValue => (
+            <StyledImg
+              fluid={images.schoolApp.childImageSharp.fluid}
+              alt={formattedValue}
+            />
+          )}
+        </FormattedMessage>
+        <ProjectsSectionItemText isReversed>
+          <FormattedMessage
+            id="linkTo.schoolApp"
+            values={{
+              a: (...chunks) => (
+                <a
+                  href="https://mantium-school-app.herokuapp.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {chunks}
+                </a>
+              ),
+              appName: 'SchoolApp',
+            }}
+          />
+        </ProjectsSectionItemText>
+      </ProjectsSectionItemWrapper>
+    </SectionWrapper>
+  );
+};
 
 export default ProjectsSection;

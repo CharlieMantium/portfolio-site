@@ -1,5 +1,6 @@
 {
   "header": {
+    "aboutMeSection": "About me",
     "contactSection": "Contact me",
     "landingSection": "Hi! My name is Karol Zieniewicz",
     "projectsSection": "Projects"
@@ -10,12 +11,16 @@
     "projectsSection": "Projects"
   },
   "linkTo": {
-    "linkedIn": "Contact me on LinkedIn"
+    "linkedIn": "Contact me on LinkedIn",
+    "hangman": "<a>{appName}</a> - well known and fun guessing game",
+    "schoolApp": "<a>{appName}</a> - colorful and convenient app to store your weekly classes plan"
   },
   "description": {
-    "projectsSection": {
-      "hangman": "Hangman - well known and fun guessing game",
-      "schoolApp": "SchoolApp - colorful and convenient app to store your weekly classes plan"
-    }
+    "aboutMeSection": "I'm a self-taught beginner front-end developer. Always hardworking and fast learning I'm ready to start my first job."
+  },
+  "alternativeDescription": {
+    "authorsPhoto": "Black and white, artsy photography showing the author of this site.",
+    "hangman": "Screenshot of Hangman game main view",
+    "schoolApp": "Screenshot of SchoolApp application login screen"
   }
 }
