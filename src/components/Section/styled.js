@@ -8,7 +8,8 @@ export const SectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: ${({ justifyContent }) =>
+    justifyContent ? `${justifyContent}` : 'space-between'};
   padding: ${rem(50)} ${rem(10)};
 
   @media (min-width: ${breakPoints.largeMobile}) {
@@ -24,6 +25,7 @@ export const SectionItemWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: ${({ isReversed }) => isReversed && 'row-reverse'};
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 
@@ -32,15 +34,20 @@ export const SectionItemWrapper = styled.div`
   }
 `;
 
-export const SectionItemIcon = styled.div`
-  margin: ${rem(15)};
+export const Icon = styled.div`
+  margin: 0 auto;
+
+  & * {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+export const IconWrapper = styled.div`
   width: ${rem(50)};
-  height: ${rem(50)};
-  color: ${colors.beta};
 
   @media (min-width: ${breakPoints.desktop}) {
     width: ${rem(100)};
-    height: ${rem(100)};
   }
 `;
 
