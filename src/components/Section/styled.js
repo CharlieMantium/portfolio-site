@@ -8,8 +8,7 @@ export const SectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: ${({ justifyContent }) =>
-    justifyContent ? `${justifyContent}` : 'space-between'};
+  justify-content: space-between;
   padding: ${rem(50)} ${rem(10)};
 
   @media (min-width: ${breakPoints.largeMobile}) {

@@ -22,6 +22,10 @@ const ProjectsSectionItemWrapper = styled(SectionItemWrapper)`
 
 const StyledImg = styled(Img)`
   width: 100%;
+
+  @media (min-width: ${breakPoints.desktop}) {
+    width: 40%;
+  }
 `;
 
 const ProjectsSectionItemText = styled.p`

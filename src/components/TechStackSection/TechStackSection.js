@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FormattedMessage } from 'gatsby-plugin-intl';
 import { rem } from 'polished';
 import {
   DiCss3,
@@ -19,6 +20,10 @@ import {
 } from 'components/Section/styled';
 import { breakPoints } from 'styles/base';
 
+const TechStackSectionWrapper = styled(SectionWrapper)`
+  justify-content: flex-start;
+`;
+
 const TechStackIconWrapper = styled(IconWrapper)`
   width: 50%;
   padding: ${rem(10)} ${rem(40)};
@@ -30,8 +35,10 @@ const TechStackIconWrapper = styled(IconWrapper)`
 `;
 
 const TechStackSection = () => (
-  <SectionWrapper justifyContent="flex-start">
-    <SectionHeader>My Tech Stack</SectionHeader>
+  <TechStackSectionWrapper>
+    <SectionHeader>
+      <FormattedMessage id="header.techStackSection" />
+    </SectionHeader>
     <SectionItemWrapper>
       <TechStackIconWrapper>
         <Icon>
@@ -64,7 +71,7 @@ const TechStackSection = () => (
         </Icon>
       </TechStackIconWrapper>
     </SectionItemWrapper>
-  </SectionWrapper>
+  </TechStackSectionWrapper>
 );
 
 export default TechStackSection;

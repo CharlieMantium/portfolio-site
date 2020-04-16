@@ -10,6 +10,10 @@ import NavBar from 'components/NavBar/NavBar';
 
 import { SectionWrapper } from 'components/Section/styled';
 
+const LandingSectionWrapper = styled(SectionWrapper)`
+  justify-content: center;
+`;
+
 const LandingHeader = styled.h1`
   font-family: ${fonts.families.headerFont};
   font-weight: ${fonts.weights.regular};
@@ -36,7 +40,7 @@ const LandingSection = () => {
   const [isNavActive, setNavActive] = useState(false);
   const navActiveToggle = () => setNavActive(!isNavActive);
   return (
-    <SectionWrapper justifyContent="center" id="landing">
+    <LandingSectionWrapper id="landing">
       <HamburgerMenu navActiveToggle={navActiveToggle} />
       <NavBar isNavActive={isNavActive} />
       <ChangeLocaleWrapper isNavActive={isNavActive}>
@@ -50,7 +54,7 @@ const LandingSection = () => {
       <LandingHeader>
         <FormattedMessage id="header.landingSection" />
       </LandingHeader>
-    </SectionWrapper>
+    </LandingSectionWrapper>
   );
 };
 
