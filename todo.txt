@@ -1,4 +1,3 @@
-TODO: create screen shots from hangman and school-app
 TODO: change favicon
 TODO: move locale selection to navbar
 TODO: contact - na desktop wyglada jak na mobile => powinny sie ustawiac obok siebie (tak jak jest - na malych ekranach)

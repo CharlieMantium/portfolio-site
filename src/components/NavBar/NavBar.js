@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import scrollTo from 'gatsby-plugin-smoothscroll';
-import { FormattedMessage } from 'gatsby-plugin-intl';
+import ReactCountryFlag from 'react-country-flag';
+import { FormattedMessage, changeLocale } from 'gatsby-plugin-intl';
 import { rem } from 'polished';
 
 import { colors, breakPoints } from 'styles/base';
@@ -21,6 +22,23 @@ const NavBarWrapper = styled.nav`
   @media (min-width: ${breakPoints.desktop}) {
     padding: ${rem(3)} 0 0 0;
   }
+`;
+
+const ChangeLocaleWrapper = styled.div`
+  position: fixed;
+  top: ${rem(17)};
+  left: ${rem(-100)};
+
+  transform: ${({ isNavActive }) =>
+    isNavActive ? `translateX(${rem(120)})` : 'translateX(0)'};
+  transition: transform 0.5s ease-in-out;
+`;
+
+const ChangeLocaleButton = styled.button`
+  margin-right: ${rem(10)};
+  background: none;
+  border: none;
+  cursor: pointer;
 `;
 
 const NavList = styled.ul`
@@ -56,6 +74,14 @@ const NavListLink = styled.button`
 const NavBar = ({ isNavActive }) => (
   <NavBarWrapper isNavActive={isNavActive}>
     <NavList>
+      <ChangeLocaleWrapper isNavActive={isNavActive}>
+        <ChangeLocaleButton onClick={() => changeLocale('en')}>
+          <ReactCountryFlag countryCode="GB" />
+        </ChangeLocaleButton>
+        <ChangeLocaleButton onClick={() => changeLocale('pl')}>
+          <ReactCountryFlag countryCode="PL" />
+        </ChangeLocaleButton>
+      </ChangeLocaleWrapper>
       <NavListItem isNavActive={isNavActive}>
         <NavListLink onClick={() => scrollTo('#landing')}>
           <FormattedMessage id="navTo.landingSection" />
