@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'gatsby-plugin-intl';
-import { LinkedinSquare } from '@styled-icons/boxicons-logos/LinkedinSquare';
-import { Envelope } from '@styled-icons/boxicons-regular/Envelope';
-import { Phone } from '@styled-icons/boxicons-regular/Phone';
+import { FaLinkedin, FaRegEnvelope, FaPhone } from 'react-icons/fa';
 
 import {
-  SectionItemIcon,
+  Icon,
+  IconWrapper,
   SectionItemWrapper,
   SectionHeader,
   SectionWrapper,
@@ -27,9 +26,11 @@ const ContactSection = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <SectionItemIcon>
-          <LinkedinSquare />
-        </SectionItemIcon>
+        <IconWrapper>
+          <Icon>
+            <FaLinkedin />
+          </Icon>
+        </IconWrapper>
       </a>
       <a
         href="https://www.linkedin.com/in/karol-zieniewicz"
@@ -42,15 +43,19 @@ const ContactSection = () => (
       </a>
     </ContactSectionItemWrapper>
     <ContactSectionItemWrapper isReversed>
-      <SectionItemIcon>
-        <Envelope />
-      </SectionItemIcon>
+      <IconWrapper>
+        <Icon>
+          <FaRegEnvelope />
+        </Icon>
+      </IconWrapper>
       <p>karol.zieniewicz@gmail.com</p>
     </ContactSectionItemWrapper>
     <ContactSectionItemWrapper>
-      <SectionItemIcon>
-        <Phone />
-      </SectionItemIcon>
+      <IconWrapper>
+        <Icon>
+          <FaPhone />
+        </Icon>
+      </IconWrapper>
       <p>+48 697 333 486</p>
     </ContactSectionItemWrapper>
   </SectionWrapper>

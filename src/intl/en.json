@@ -3,7 +3,8 @@
     "aboutMeSection": "About me",
     "contactSection": "Contact me",
     "landingSection": "Hi! My name is Karol Zieniewicz",
-    "projectsSection": "Projects"
+    "projectsSection": "Projects",
+    "techStackSection": "My Tech Stack"
   },
   "navTo": {
     "landingSection": "Home",

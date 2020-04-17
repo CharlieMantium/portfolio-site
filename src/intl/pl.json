@@ -3,7 +3,8 @@
     "aboutMeSection": "O mnie",
     "contactSection": "Kontakt",
     "landingSection": "Cześć! Nazywam się Karol Zieniewicz",
-    "projectsSection": "Projekty"
+    "projectsSection": "Projekty",
+    "techStackSection": "Technologie"
   },
   "navTo": {
     "landingSection": "Start",
