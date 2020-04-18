@@ -36,7 +36,7 @@ const AboutMeSection = () => {
   `);
 
   return (
-    <SectionWrapper>
+    <SectionWrapper id="aboutMe">
       <SectionHeader>
         <FormattedMessage id="header.aboutMeSection" />
       </SectionHeader>

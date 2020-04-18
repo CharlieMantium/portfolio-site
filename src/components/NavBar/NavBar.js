@@ -9,33 +9,34 @@ import { rem } from 'polished';
 import { colors, breakPoints } from 'styles/base';
 
 const NavBarWrapper = styled.nav`
-  position: ${({ isNavActive }) => (isNavActive ? 'fixed' : 'absolute')};
+  position: fixed;
   top: 0;
-  padding: ${rem(3)} ${rem(50)} 0 ${rem(10)};
-  width: 100%;
-  box-shadow: 0 ${rem(1)} ${rem(5)} 0 ${colors.epsilon};
+  right: ${rem(-100)};
+  padding: ${rem(10)};
   background-color: ${colors.alpha};
-  opacity: ${({ isNavActive }) => (isNavActive ? '1' : '0')};
-  overflow: hidden;
-  transition: opacity 0.5s ease-in-out;
+  opacity: ${({ isNavActive }) => (isNavActive ? '0.9' : '0')};
+  transform: ${({ isNavActive }) =>
+    isNavActive ? `translateX(${rem(-100)})` : 'translateY(0)'};
+  transition: transform 0.5s ease-in-out, opacity 0.4s ease-in-out;
+  box-shadow: 0 ${rem(1)} ${rem(5)} 0 ${colors.epsilon};
 
-  @media (min-width: ${breakPoints.desktop}) {
-    padding: ${rem(3)} 0 0 0;
+  @media (min-width: ${breakPoints.largeMobile}) {
+    top: ${rem(-65)};
+    right: auto;
+    width: 100%;
+    padding: ${rem(20)} 0;
+    transform: ${({ isNavActive }) =>
+      isNavActive ? `translateY(${rem(65)})` : 'translateY(0)'};
   }
 `;
 
 const ChangeLocaleWrapper = styled.div`
-  position: fixed;
-  top: ${rem(17)};
-  left: ${rem(-100)};
-
-  transform: ${({ isNavActive }) =>
-    isNavActive ? `translateX(${rem(120)})` : 'translateX(0)'};
-  transition: transform 0.5s ease-in-out;
+  &:first-child {
+    margin-right: ${rem(10)};
+  }
 `;
 
 const ChangeLocaleButton = styled.button`
-  margin-right: ${rem(10)};
   background: none;
   border: none;
   cursor: pointer;
@@ -43,17 +44,29 @@ const ChangeLocaleButton = styled.button`
 
 const NavList = styled.ul`
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0;
   padding: 0;
-  justify-content: space-around;
   list-style: none;
+
+  @media (min-width: ${breakPoints.largeMobile}) {
+    flex-direction: row;
+    padding: 0 ${rem(70)} 0 ${rem(20)};
+    justify-content: space-between;
+  }
 `;
 
 const NavListItem = styled.li`
-  position: relative;
-  top: ${rem(-50)};
-  transform: ${({ isNavActive }) =>
-    isNavActive ? `translateY(${rem(50)})` : 'translateY(0)'};
-  transition: transform 0.5s ease-in-out;
+  padding: ${rem(8)} 0;
+
+  &:first-child {
+    align-self: flex-start;
+  }
+
+  @media (min-width: ${breakPoints.largeMobile}) {
+    padding: 0;
+  }
 `;
 
 const NavListLink = styled.button`
@@ -74,17 +87,29 @@ const NavListLink = styled.button`
 const NavBar = ({ isNavActive }) => (
   <NavBarWrapper isNavActive={isNavActive}>
     <NavList>
-      <ChangeLocaleWrapper isNavActive={isNavActive}>
-        <ChangeLocaleButton onClick={() => changeLocale('en')}>
-          <ReactCountryFlag countryCode="GB" />
-        </ChangeLocaleButton>
-        <ChangeLocaleButton onClick={() => changeLocale('pl')}>
-          <ReactCountryFlag countryCode="PL" />
-        </ChangeLocaleButton>
-      </ChangeLocaleWrapper>
+      <NavListItem isNavActive={isNavActive}>
+        <ChangeLocaleWrapper>
+          <ChangeLocaleButton onClick={() => changeLocale('en')}>
+            <ReactCountryFlag countryCode="GB" />
+          </ChangeLocaleButton>
+          <ChangeLocaleButton onClick={() => changeLocale('pl')}>
+            <ReactCountryFlag countryCode="PL" />
+          </ChangeLocaleButton>
+        </ChangeLocaleWrapper>
+      </NavListItem>
       <NavListItem isNavActive={isNavActive}>
         <NavListLink onClick={() => scrollTo('#landing')}>
           <FormattedMessage id="navTo.landingSection" />
+        </NavListLink>
+      </NavListItem>
+      <NavListItem isNavActive={isNavActive}>
+        <NavListLink onClick={() => scrollTo('#aboutMe')}>
+          <FormattedMessage id="navTo.aboutMeSection" />
+        </NavListLink>
+      </NavListItem>
+      <NavListItem isNavActive={isNavActive}>
+        <NavListLink onClick={() => scrollTo('#techStack')}>
+          <FormattedMessage id="navTo.techStackSection" />
         </NavListLink>
       </NavListItem>
       <NavListItem isNavActive={isNavActive}>
