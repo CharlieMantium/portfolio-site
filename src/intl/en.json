@@ -9,7 +9,9 @@
   "navTo": {
     "landingSection": "Home",
     "contactSection": "Contact me",
-    "projectsSection": "Projects"
+    "projectsSection": "Projects",
+    "aboutMeSection": "About me",
+    "techStackSection": "My Tech Stack"
   },
   "linkTo": {
     "linkedIn": "Contact me on LinkedIn",

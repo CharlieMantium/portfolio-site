@@ -9,7 +9,9 @@
   "navTo": {
     "landingSection": "Start",
     "contactSection": "Kontakt",
-    "projectsSection": "Projekty"
+    "projectsSection": "Projekty",
+    "aboutMeSection": "O mnie",
+    "techStackSection": "Technologie"
   },
   "linkTo": {
     "linkedIn": "Znajdź mnie na LinkedIn",

@@ -35,7 +35,7 @@ const TechStackIconWrapper = styled(IconWrapper)`
 `;
 
 const TechStackSection = () => (
-  <TechStackSectionWrapper>
+  <TechStackSectionWrapper id="techStack">
     <SectionHeader>
       <FormattedMessage id="header.techStackSection" />
     </SectionHeader>
