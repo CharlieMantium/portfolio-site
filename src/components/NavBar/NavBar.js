@@ -15,8 +15,7 @@ const NavBarWrapper = styled.nav`
   padding: ${rem(10)};
   background-color: ${colors.alpha};
   opacity: ${({ isNavActive }) => (isNavActive ? '0.9' : '0')};
-  transform: ${({ isNavActive }) =>
-    isNavActive ? `translateX(${rem(-100)})` : 'translateY(0)'};
+  transform: ${({ isNavActive }) => isNavActive && `translateX(${rem(-100)})`};
   transition: transform 0.5s ease-in-out, opacity 0.4s ease-in-out;
   box-shadow: 0 ${rem(1)} ${rem(5)} 0 ${colors.epsilon};
 
@@ -25,8 +24,7 @@ const NavBarWrapper = styled.nav`
     right: auto;
     width: 100%;
     padding: ${rem(20)} 0;
-    transform: ${({ isNavActive }) =>
-      isNavActive ? `translateY(${rem(65)})` : 'translateY(0)'};
+    transform: ${({ isNavActive }) => isNavActive && `translateY(${rem(65)})`};
   }
 `;
 
