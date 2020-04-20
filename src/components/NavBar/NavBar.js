@@ -12,6 +12,7 @@ const NavBarWrapper = styled.nav`
   position: fixed;
   top: 0;
   right: ${rem(-100)};
+  z-index: 1;
   padding: ${rem(10)};
   background-color: ${colors.alpha};
   opacity: ${({ isNavActive }) => (isNavActive ? '0.9' : '0')};
