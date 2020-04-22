@@ -2,14 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 import { rem } from 'polished';
-import {
-  DiCss3,
-  DiGit,
-  DiGithub,
-  DiHtml5,
-  DiJavascript,
-  DiReact,
-} from 'react-icons/di';
+import { DiCss3, DiGit, DiHtml5, DiJavascript, DiReact } from 'react-icons/di';
 
 import {
   SectionWrapper,
@@ -19,6 +12,10 @@ import {
 } from 'components/Section/styled';
 import { breakPoints } from 'styles/base';
 import SectionHeader from 'components/Section/SectionHeader';
+
+import ReduxLogo from '../../../static/ReduxLogo.svg';
+import WebpackLogo from '../../../static/WebpackLogo.svg';
+import GatsbyLogo from '../../../static/GatsbyLogo.svg';
 
 const TechStackSectionWrapper = styled(SectionWrapper)`
   justify-content: flex-start;
@@ -34,6 +31,11 @@ const TechStackIconWrapper = styled(IconWrapper)`
   }
 `;
 
+const TechStackText = styled.p`
+  margin-top: 0;
+  text-align: center;
+`;
+
 const TechStackSection = () => (
   <TechStackSectionWrapper id="techStack">
     <SectionHeader>
@@ -44,31 +46,49 @@ const TechStackSection = () => (
         <Icon>
           <DiHtml5 />
         </Icon>
+        <TechStackText>HTML 5</TechStackText>
       </TechStackIconWrapper>
       <TechStackIconWrapper>
         <Icon>
           <DiCss3 />
         </Icon>
+        <TechStackText>CSS 3</TechStackText>
       </TechStackIconWrapper>
       <TechStackIconWrapper>
         <Icon>
           <DiJavascript />
         </Icon>
+        <TechStackText>JavaScript</TechStackText>
       </TechStackIconWrapper>
       <TechStackIconWrapper>
         <Icon>
           <DiReact />
         </Icon>
+        <TechStackText>React</TechStackText>
       </TechStackIconWrapper>
       <TechStackIconWrapper>
         <Icon>
           <DiGit />
         </Icon>
+        <TechStackText>Git</TechStackText>
       </TechStackIconWrapper>
       <TechStackIconWrapper>
         <Icon>
-          <DiGithub />
+          <ReduxLogo />
         </Icon>
+        <TechStackText>Redux</TechStackText>
+      </TechStackIconWrapper>
+      <TechStackIconWrapper>
+        <Icon>
+          <WebpackLogo />
+        </Icon>
+        <TechStackText>Webpack</TechStackText>
+      </TechStackIconWrapper>
+      <TechStackIconWrapper>
+        <Icon>
+          <GatsbyLogo />
+        </Icon>
+        <TechStackText>Gatsby</TechStackText>
       </TechStackIconWrapper>
     </SectionItemWrapper>
   </TechStackSectionWrapper>

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
 
-import { breakPoints } from 'styles/base';
+import { breakPoints, colors } from 'styles/base';
 
 export const SectionWrapper = styled.div`
   min-height: 100vh;
@@ -39,6 +39,7 @@ export const Icon = styled.div`
   & * {
     width: 100%;
     height: 100%;
+    fill: ${colors.beta};
   }
 `;
 
