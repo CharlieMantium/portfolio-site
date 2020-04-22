@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import ReactCountryFlag from 'react-country-flag';
 import { FormattedMessage, changeLocale } from 'gatsby-plugin-intl';
-import { rem } from 'polished';
+import { rem, lighten } from 'polished';
 
 import { colors, breakPoints } from 'styles/base';
 
@@ -14,7 +14,7 @@ const NavBarWrapper = styled.nav`
   right: ${rem(-100)};
   z-index: 1;
   padding: ${rem(10)};
-  background-color: ${colors.alpha};
+  background-color: ${lighten(0.06, colors.alpha)};
   opacity: ${({ isNavActive }) => (isNavActive ? '0.9' : '0')};
   transform: ${({ isNavActive }) => isNavActive && `translateX(${rem(-100)})`};
   transition: transform 0.5s ease-in-out, opacity 0.4s ease-in-out;
@@ -73,6 +73,7 @@ const NavListLink = styled.button`
   background: inherit;
   border: none;
   cursor: pointer;
+  transition: color 0.5s ease-in-out;
 
   &:hover {
     color: ${colors.gamma};
@@ -86,7 +87,7 @@ const NavListLink = styled.button`
 const NavBar = ({ isNavActive }) => (
   <NavBarWrapper isNavActive={isNavActive}>
     <NavList>
-      <NavListItem isNavActive={isNavActive}>
+      <NavListItem>
         <ChangeLocaleWrapper>
           <ChangeLocaleButton onClick={() => changeLocale('en')}>
             <ReactCountryFlag countryCode="GB" />
@@ -96,27 +97,27 @@ const NavBar = ({ isNavActive }) => (
           </ChangeLocaleButton>
         </ChangeLocaleWrapper>
       </NavListItem>
-      <NavListItem isNavActive={isNavActive}>
+      <NavListItem>
         <NavListLink onClick={() => scrollTo('#landing')}>
           <FormattedMessage id="navTo.landingSection" />
         </NavListLink>
       </NavListItem>
-      <NavListItem isNavActive={isNavActive}>
+      <NavListItem>
         <NavListLink onClick={() => scrollTo('#aboutMe')}>
           <FormattedMessage id="navTo.aboutMeSection" />
         </NavListLink>
       </NavListItem>
-      <NavListItem isNavActive={isNavActive}>
+      <NavListItem>
         <NavListLink onClick={() => scrollTo('#techStack')}>
           <FormattedMessage id="navTo.techStackSection" />
         </NavListLink>
       </NavListItem>
-      <NavListItem isNavActive={isNavActive}>
+      <NavListItem>
         <NavListLink onClick={() => scrollTo('#projects')}>
           <FormattedMessage id="navTo.projectsSection" />
         </NavListLink>
       </NavListItem>
-      <NavListItem isNavActive={isNavActive}>
+      <NavListItem>
         <NavListLink onClick={() => scrollTo('#contact')}>
           <FormattedMessage id="navTo.contactSection" />
         </NavListLink>
