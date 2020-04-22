@@ -13,12 +13,12 @@ import {
 
 import {
   SectionWrapper,
-  SectionHeader,
   SectionItemWrapper,
   Icon,
   IconWrapper,
 } from 'components/Section/styled';
 import { breakPoints } from 'styles/base';
+import SectionHeader from 'components/Section/SectionHeader';
 
 const TechStackSectionWrapper = styled(SectionWrapper)`
   justify-content: flex-start;

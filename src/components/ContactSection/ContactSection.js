@@ -5,12 +5,12 @@ import { FaLinkedin, FaRegEnvelope, FaPhoneSquare } from 'react-icons/fa';
 import { rem } from 'polished';
 
 import { breakPoints } from 'styles/base';
+import SectionHeader from 'components/Section/SectionHeader';
 
 import {
   Icon,
   IconWrapper,
   SectionItemWrapper,
-  SectionHeader,
   SectionWrapper,
 } from 'components/Section/styled';
 

@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
+    color: ${colors.gamma};
     text-decoration: none;
 
     &:visited {
