@@ -26,10 +26,6 @@ const HamburgerButton = styled.button`
   background-color: inherit;
   border: 0;
 
-  &:focus {
-    outline: none;
-  }
-
   @media (min-width: ${breakPoints.desktop}) {
     margin: ${rem(15)};
   }

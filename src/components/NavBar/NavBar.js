@@ -73,14 +73,9 @@ const NavListLink = styled.button`
   background: inherit;
   border: none;
   cursor: pointer;
-  transition: color 0.5s ease-in-out;
 
   &:hover {
     color: ${colors.gamma};
-  }
-
-  &:focus {
-    outline: none;
   }
 `;
 
@@ -89,36 +84,57 @@ const NavBar = ({ isNavActive }) => (
     <NavList>
       <NavListItem>
         <ChangeLocaleWrapper>
-          <ChangeLocaleButton onClick={() => changeLocale('en')}>
+          <ChangeLocaleButton
+            onClick={() => changeLocale('en')}
+            disabled={!isNavActive}
+          >
             <ReactCountryFlag countryCode="GB" />
           </ChangeLocaleButton>
-          <ChangeLocaleButton onClick={() => changeLocale('pl')}>
+          <ChangeLocaleButton
+            onClick={() => changeLocale('pl')}
+            disabled={!isNavActive}
+          >
             <ReactCountryFlag countryCode="PL" />
           </ChangeLocaleButton>
         </ChangeLocaleWrapper>
       </NavListItem>
       <NavListItem>
-        <NavListLink onClick={() => scrollTo('#landing')}>
+        <NavListLink
+          onClick={() => scrollTo('#landing')}
+          disabled={!isNavActive}
+        >
           <FormattedMessage id="navTo.landingSection" />
         </NavListLink>
       </NavListItem>
       <NavListItem>
-        <NavListLink onClick={() => scrollTo('#aboutMe')}>
+        <NavListLink
+          onClick={() => scrollTo('#aboutMe')}
+          disabled={!isNavActive}
+        >
           <FormattedMessage id="navTo.aboutMeSection" />
         </NavListLink>
       </NavListItem>
       <NavListItem>
-        <NavListLink onClick={() => scrollTo('#techStack')}>
+        <NavListLink
+          onClick={() => scrollTo('#techStack')}
+          disabled={!isNavActive}
+        >
           <FormattedMessage id="navTo.techStackSection" />
         </NavListLink>
       </NavListItem>
       <NavListItem>
-        <NavListLink onClick={() => scrollTo('#projects')}>
+        <NavListLink
+          onClick={() => scrollTo('#projects')}
+          disabled={!isNavActive}
+        >
           <FormattedMessage id="navTo.projectsSection" />
         </NavListLink>
       </NavListItem>
       <NavListItem>
-        <NavListLink onClick={() => scrollTo('#contact')}>
+        <NavListLink
+          onClick={() => scrollTo('#contact')}
+          disabled={!isNavActive}
+        >
           <FormattedMessage id="navTo.contactSection" />
         </NavListLink>
       </NavListItem>

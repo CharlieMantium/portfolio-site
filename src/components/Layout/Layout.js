@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { createGlobalStyle } from 'styled-components';
+import { rem } from 'polished';
 import { Normalize } from 'styled-normalize';
 
 import { colors, fonts } from 'styles/base';
@@ -21,6 +22,21 @@ const GlobalStyle = createGlobalStyle`
 
     &:visited {
       color: ${colors.delta};
+    }
+
+    &:hover {
+      color: ${colors.omega};
+    }
+  }
+
+  a, button {
+    transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+
+    &:focus {
+      outline: solid ${rem(1)} ${colors.beta};
+      outline-offset: ${rem(1)};
+      background: ${colors.delta};
+      color: ${colors.epsilon};
     }
   }
 `;

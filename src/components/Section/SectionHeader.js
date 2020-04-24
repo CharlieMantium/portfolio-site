@@ -15,8 +15,8 @@ const Line = styled.hr`
   width: ${rem(50)};
   border: 0;
   height: 1px;
-  background-image: ${({ reversed }) =>
-    reversed
+  background-image: ${({ isReversed }) =>
+    isReversed
       ? `linear-gradient(to right, ${colors.beta}, ${colors.alpha})`
       : `linear-gradient(to right, ${colors.alpha}, ${colors.beta})`};
 
@@ -34,7 +34,7 @@ const SectionHeader = ({ children }) => (
   <SectionHeaderWrapper>
     <Line />
     <HeaderText>{children}</HeaderText>
-    <Line reversed />
+    <Line isReversed />
   </SectionHeaderWrapper>
 );
 
