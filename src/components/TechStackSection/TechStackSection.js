@@ -21,6 +21,10 @@ const TechStackSectionWrapper = styled(SectionWrapper)`
   justify-content: flex-start;
 `;
 
+const TechStackSectionItemWrapper = styled(SectionItemWrapper)`
+  justify-content: space-around;
+`;
+
 const TechStackIconWrapper = styled(IconWrapper)`
   width: 50%;
   padding: ${rem(10)} ${rem(40)};
@@ -41,7 +45,7 @@ const TechStackSection = () => (
     <SectionHeader>
       <FormattedMessage id="header.techStackSection" />
     </SectionHeader>
-    <SectionItemWrapper>
+    <TechStackSectionItemWrapper>
       <TechStackIconWrapper>
         <Icon>
           <DiHtml5 />
@@ -90,7 +94,7 @@ const TechStackSection = () => (
         </Icon>
         <TechStackText>Gatsby</TechStackText>
       </TechStackIconWrapper>
-    </SectionItemWrapper>
+    </TechStackSectionItemWrapper>
   </TechStackSectionWrapper>
 );
 
