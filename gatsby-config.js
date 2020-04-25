@@ -48,6 +48,14 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: path.join(__dirname, 'static'),
+        },
+      },
+    },
     'react-country-flag',
     `gatsby-plugin-smoothscroll`,
   ],

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import ReactCountryFlag from 'react-country-flag';
 import { FormattedMessage, changeLocale } from 'gatsby-plugin-intl';
-import { rem } from 'polished';
+import { rem, lighten } from 'polished';
 
 import { colors, breakPoints } from 'styles/base';
 
@@ -12,8 +12,9 @@ const NavBarWrapper = styled.nav`
   position: fixed;
   top: 0;
   right: ${rem(-100)};
+  z-index: 1;
   padding: ${rem(10)};
-  background-color: ${colors.alpha};
+  background-color: ${lighten(0.06, colors.alpha)};
   opacity: ${({ isNavActive }) => (isNavActive ? '0.9' : '0')};
   transform: ${({ isNavActive }) => isNavActive && `translateX(${rem(-100)})`};
   transition: transform 0.5s ease-in-out, opacity 0.4s ease-in-out;
@@ -76,47 +77,64 @@ const NavListLink = styled.button`
   &:hover {
     color: ${colors.gamma};
   }
-
-  &:focus {
-    outline: none;
-  }
 `;
 
 const NavBar = ({ isNavActive }) => (
   <NavBarWrapper isNavActive={isNavActive}>
     <NavList>
-      <NavListItem isNavActive={isNavActive}>
+      <NavListItem>
         <ChangeLocaleWrapper>
-          <ChangeLocaleButton onClick={() => changeLocale('en')}>
+          <ChangeLocaleButton
+            onClick={() => changeLocale('en')}
+            disabled={!isNavActive}
+          >
             <ReactCountryFlag countryCode="GB" />
           </ChangeLocaleButton>
-          <ChangeLocaleButton onClick={() => changeLocale('pl')}>
+          <ChangeLocaleButton
+            onClick={() => changeLocale('pl')}
+            disabled={!isNavActive}
+          >
             <ReactCountryFlag countryCode="PL" />
           </ChangeLocaleButton>
         </ChangeLocaleWrapper>
       </NavListItem>
-      <NavListItem isNavActive={isNavActive}>
-        <NavListLink onClick={() => scrollTo('#landing')}>
+      <NavListItem>
+        <NavListLink
+          onClick={() => scrollTo('#landing')}
+          disabled={!isNavActive}
+        >
           <FormattedMessage id="navTo.landingSection" />
         </NavListLink>
       </NavListItem>
-      <NavListItem isNavActive={isNavActive}>
-        <NavListLink onClick={() => scrollTo('#aboutMe')}>
+      <NavListItem>
+        <NavListLink
+          onClick={() => scrollTo('#aboutMe')}
+          disabled={!isNavActive}
+        >
           <FormattedMessage id="navTo.aboutMeSection" />
         </NavListLink>
       </NavListItem>
-      <NavListItem isNavActive={isNavActive}>
-        <NavListLink onClick={() => scrollTo('#techStack')}>
+      <NavListItem>
+        <NavListLink
+          onClick={() => scrollTo('#techStack')}
+          disabled={!isNavActive}
+        >
           <FormattedMessage id="navTo.techStackSection" />
         </NavListLink>
       </NavListItem>
-      <NavListItem isNavActive={isNavActive}>
-        <NavListLink onClick={() => scrollTo('#projects')}>
+      <NavListItem>
+        <NavListLink
+          onClick={() => scrollTo('#projects')}
+          disabled={!isNavActive}
+        >
           <FormattedMessage id="navTo.projectsSection" />
         </NavListLink>
       </NavListItem>
-      <NavListItem isNavActive={isNavActive}>
-        <NavListLink onClick={() => scrollTo('#contact')}>
+      <NavListItem>
+        <NavListLink
+          onClick={() => scrollTo('#contact')}
+          disabled={!isNavActive}
+        >
           <FormattedMessage id="navTo.contactSection" />
         </NavListLink>
       </NavListItem>

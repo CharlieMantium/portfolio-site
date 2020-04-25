@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
 
-import { colors, breakPoints } from 'styles/base';
+import { breakPoints, colors } from 'styles/base';
 
 export const SectionWrapper = styled.div`
   min-height: 100vh;
@@ -39,6 +39,7 @@ export const Icon = styled.div`
   & * {
     width: 100%;
     height: 100%;
+    fill: ${colors.beta};
   }
 `;
 
@@ -47,15 +48,5 @@ export const IconWrapper = styled.div`
 
   @media (min-width: ${breakPoints.desktop}) {
     width: ${rem(100)};
-  }
-`;
-
-export const SectionHeader = styled.h2`
-  padding: ${rem(3)} ${rem(50)};
-  border: ${rem(1)} solid ${colors.delta};
-  border-radius: ${rem(100)};
-
-  @media (min-width: ${breakPoints.desktop}) {
-    padding: ${rem(5)} ${rem(50)};
   }
 `;

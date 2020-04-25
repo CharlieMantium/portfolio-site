@@ -6,11 +6,8 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 
 import { breakPoints } from 'styles/base';
-import {
-  SectionItemWrapper,
-  SectionHeader,
-  SectionWrapper,
-} from 'components/Section/styled';
+import { SectionItemWrapper, SectionWrapper } from 'components/Section/styled';
+import SectionHeader from 'components/Section/SectionHeader';
 
 const ProjectsSectionItemWrapper = styled(SectionItemWrapper)`
   flex-direction: column;

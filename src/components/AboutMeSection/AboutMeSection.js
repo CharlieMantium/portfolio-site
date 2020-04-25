@@ -6,8 +6,9 @@ import { rem } from 'polished';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 
 import { breakPoints } from 'styles/base';
+import SectionHeader from 'components/Section/SectionHeader';
 
-import { SectionWrapper, SectionHeader } from '../Section/styled';
+import { SectionWrapper } from '../Section/styled';
 
 const StyledImg = styled(Img)`
   width: 100%;

@@ -21,14 +21,10 @@ const HamburgerButton = styled.button`
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   cursor: pointer;
   background-color: inherit;
   border: 0;
-
-  &:focus {
-    outline: none;
-  }
 
   @media (min-width: ${breakPoints.desktop}) {
     margin: ${rem(15)};
