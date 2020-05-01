@@ -32,6 +32,7 @@
   "settings": {
     "import/resolver": {
       "alias": [
+        ["animations", "./src/animations"],
         ["components", "./src/components"],
         ["styles", "./src/styles"]
       ]

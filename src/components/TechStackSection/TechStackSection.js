@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 import { rem } from 'polished';
@@ -12,6 +12,7 @@ import {
 } from 'components/Section/styled';
 import { breakPoints } from 'styles/base';
 import SectionHeader from 'components/Section/SectionHeader';
+import onScrollAnimate from 'animations/scrollAnimation';
 
 import ReduxLogo from '../../../static/ReduxLogo.svg';
 import WebpackLogo from '../../../static/WebpackLogo.svg';
@@ -40,62 +41,70 @@ const TechStackText = styled.p`
   text-align: center;
 `;
 
-const TechStackSection = () => (
-  <TechStackSectionWrapper id="techStack">
-    <SectionHeader>
-      <FormattedMessage id="header.techStackSection" />
-    </SectionHeader>
-    <TechStackSectionItemWrapper>
-      <TechStackIconWrapper>
-        <Icon>
-          <DiHtml5 />
-        </Icon>
-        <TechStackText>HTML 5</TechStackText>
-      </TechStackIconWrapper>
-      <TechStackIconWrapper>
-        <Icon>
-          <DiCss3 />
-        </Icon>
-        <TechStackText>CSS 3</TechStackText>
-      </TechStackIconWrapper>
-      <TechStackIconWrapper>
-        <Icon>
-          <DiJavascript />
-        </Icon>
-        <TechStackText>JavaScript</TechStackText>
-      </TechStackIconWrapper>
-      <TechStackIconWrapper>
-        <Icon>
-          <DiReact />
-        </Icon>
-        <TechStackText>React</TechStackText>
-      </TechStackIconWrapper>
-      <TechStackIconWrapper>
-        <Icon>
-          <DiGit />
-        </Icon>
-        <TechStackText>Git</TechStackText>
-      </TechStackIconWrapper>
-      <TechStackIconWrapper>
-        <Icon>
-          <ReduxLogo />
-        </Icon>
-        <TechStackText>Redux</TechStackText>
-      </TechStackIconWrapper>
-      <TechStackIconWrapper>
-        <Icon>
-          <WebpackLogo />
-        </Icon>
-        <TechStackText>Webpack</TechStackText>
-      </TechStackIconWrapper>
-      <TechStackIconWrapper>
-        <Icon>
-          <GatsbyLogo />
-        </Icon>
-        <TechStackText>Gatsby</TechStackText>
-      </TechStackIconWrapper>
-    </TechStackSectionItemWrapper>
-  </TechStackSectionWrapper>
-);
+const TechStackSection = () => {
+  const animatedSectionWrapper = useRef(null);
+  const id = 'techStack';
+
+  useEffect(() => {
+    onScrollAnimate(animatedSectionWrapper, id);
+  }, []);
+  return (
+    <TechStackSectionWrapper id={id} ref={animatedSectionWrapper}>
+      <SectionHeader>
+        <FormattedMessage id="header.techStackSection" />
+      </SectionHeader>
+      <TechStackSectionItemWrapper>
+        <TechStackIconWrapper>
+          <Icon>
+            <DiHtml5 />
+          </Icon>
+          <TechStackText>HTML 5</TechStackText>
+        </TechStackIconWrapper>
+        <TechStackIconWrapper>
+          <Icon>
+            <DiCss3 />
+          </Icon>
+          <TechStackText>CSS 3</TechStackText>
+        </TechStackIconWrapper>
+        <TechStackIconWrapper>
+          <Icon>
+            <DiJavascript />
+          </Icon>
+          <TechStackText>JavaScript</TechStackText>
+        </TechStackIconWrapper>
+        <TechStackIconWrapper>
+          <Icon>
+            <DiReact />
+          </Icon>
+          <TechStackText>React</TechStackText>
+        </TechStackIconWrapper>
+        <TechStackIconWrapper>
+          <Icon>
+            <DiGit />
+          </Icon>
+          <TechStackText>Git</TechStackText>
+        </TechStackIconWrapper>
+        <TechStackIconWrapper>
+          <Icon>
+            <ReduxLogo />
+          </Icon>
+          <TechStackText>Redux</TechStackText>
+        </TechStackIconWrapper>
+        <TechStackIconWrapper>
+          <Icon>
+            <WebpackLogo />
+          </Icon>
+          <TechStackText>Webpack</TechStackText>
+        </TechStackIconWrapper>
+        <TechStackIconWrapper>
+          <Icon>
+            <GatsbyLogo />
+          </Icon>
+          <TechStackText>Gatsby</TechStackText>
+        </TechStackIconWrapper>
+      </TechStackSectionItemWrapper>
+    </TechStackSectionWrapper>
+  );
+};
 
 export default TechStackSection;

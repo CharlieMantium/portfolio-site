@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import { rem } from 'polished';
@@ -8,6 +8,7 @@ import { FormattedMessage } from 'gatsby-plugin-intl';
 import { breakPoints } from 'styles/base';
 import { SectionItemWrapper, SectionWrapper } from 'components/Section/styled';
 import SectionHeader from 'components/Section/SectionHeader';
+import onScrollAnimate from 'animations/scrollAnimation';
 
 const ProjectsSectionItemWrapper = styled(SectionItemWrapper)`
   flex-direction: column;
@@ -56,8 +57,16 @@ const ProjectsSection = () => {
       }
     }
   `);
+
+  const animatedSectionWrapper = useRef(null);
+  const id = 'projects';
+
+  useEffect(() => {
+    onScrollAnimate(animatedSectionWrapper, id);
+  }, []);
+
   return (
-    <SectionWrapper id="projects">
+    <SectionWrapper id={id} ref={animatedSectionWrapper}>
       <SectionHeader>
         <FormattedMessage id="header.projectsSection" />
       </SectionHeader>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 import { FaLinkedin, FaRegEnvelope, FaPhoneSquare } from 'react-icons/fa';
@@ -13,6 +13,7 @@ import {
   SectionItemWrapper,
   SectionWrapper,
 } from 'components/Section/styled';
+import onScrollAnimate from 'animations/scrollAnimation';
 
 const ContactSectionContentWrapper = styled.div`
   display: flex;
@@ -40,52 +41,61 @@ const ContactIconWrapper = styled(IconWrapper)`
   margin-right: ${rem(10)};
 `;
 
-const ContactSection = () => (
-  <SectionWrapper id="contact">
-    <SectionHeader>
-      <FormattedMessage id="header.contactSection" />
-    </SectionHeader>
-    <ContactSectionContentWrapper>
-      <ContactSectionItemWrapper>
-        <a
-          href="https://www.linkedin.com/in/karol-zieniewicz"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+const ContactSection = () => {
+  const animatedSectionWrapper = useRef(null);
+  const id = 'contact';
+
+  useEffect(() => {
+    onScrollAnimate(animatedSectionWrapper, id);
+  }, []);
+
+  return (
+    <SectionWrapper id={id} ref={animatedSectionWrapper}>
+      <SectionHeader>
+        <FormattedMessage id="header.contactSection" />
+      </SectionHeader>
+      <ContactSectionContentWrapper>
+        <ContactSectionItemWrapper>
+          <a
+            href="https://www.linkedin.com/in/karol-zieniewicz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ContactIconWrapper>
+              <Icon>
+                <FaLinkedin />
+              </Icon>
+            </ContactIconWrapper>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/karol-zieniewicz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p>
+              <FormattedMessage id="linkTo.linkedIn" />
+            </p>
+          </a>
+        </ContactSectionItemWrapper>
+        <ContactSectionItemWrapper>
           <ContactIconWrapper>
             <Icon>
-              <FaLinkedin />
+              <FaRegEnvelope />
             </Icon>
           </ContactIconWrapper>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/karol-zieniewicz"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <p>
-            <FormattedMessage id="linkTo.linkedIn" />
-          </p>
-        </a>
-      </ContactSectionItemWrapper>
-      <ContactSectionItemWrapper>
-        <ContactIconWrapper>
-          <Icon>
-            <FaRegEnvelope />
-          </Icon>
-        </ContactIconWrapper>
-        <p>karol.zieniewicz@gmail.com</p>
-      </ContactSectionItemWrapper>
-      <ContactSectionItemWrapper>
-        <ContactIconWrapper>
-          <Icon>
-            <FaPhoneSquare />
-          </Icon>
-        </ContactIconWrapper>
-        <p>+48 697 333 486</p>
-      </ContactSectionItemWrapper>
-    </ContactSectionContentWrapper>
-  </SectionWrapper>
-);
+          <p>karol.zieniewicz@gmail.com</p>
+        </ContactSectionItemWrapper>
+        <ContactSectionItemWrapper>
+          <ContactIconWrapper>
+            <Icon>
+              <FaPhoneSquare />
+            </Icon>
+          </ContactIconWrapper>
+          <p>+48 697 333 486</p>
+        </ContactSectionItemWrapper>
+      </ContactSectionContentWrapper>
+    </SectionWrapper>
+  );
+};
 
 export default ContactSection;
