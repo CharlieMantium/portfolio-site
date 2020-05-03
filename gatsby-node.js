@@ -18,6 +18,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
             test: /scrollmagic/,
             use: loaders.null(),
           },
+          {
+            test: /scrollmagic-plugin-gsap/,
+            use: loaders.null(),
+          },
         ],
       },
     });

@@ -8,7 +8,7 @@ import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 
 import { breakPoints } from 'styles/base';
 
-if (ScrollMagic) ScrollMagicPluginGsap(ScrollMagic, gsap);
+ScrollMagicPluginGsap(ScrollMagic, gsap);
 
 const SectionWrapper = styled.div`
   min-height: 100vh;
