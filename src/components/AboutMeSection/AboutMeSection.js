@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { createRef } from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import { useStaticQuery, graphql } from 'gatsby';
@@ -7,9 +7,8 @@ import { FormattedMessage } from 'gatsby-plugin-intl';
 
 import { breakPoints } from 'styles/base';
 import SectionHeader from 'components/Section/SectionHeader';
-import onScrollAnimate from 'animations/scrollAnimation';
 
-import { SectionWrapper } from '../Section/styled';
+import Wrapper from '../Section/SectionWrapper';
 
 const StyledImg = styled(Img)`
   width: 100%;
@@ -37,15 +36,10 @@ const AboutMeSection = () => {
     }
   `);
 
-  const animatedSectionWrapper = useRef(null);
-  const id = 'aboutMe';
-
-  useEffect(() => {
-    onScrollAnimate(animatedSectionWrapper, id);
-  }, []);
+  const sectionWrapperRef = createRef();
 
   return (
-    <SectionWrapper id={id} ref={animatedSectionWrapper}>
+    <Wrapper id="aboutMe" ref={sectionWrapperRef}>
       <SectionHeader>
         <FormattedMessage id="header.aboutMeSection" />
       </SectionHeader>
@@ -60,7 +54,7 @@ const AboutMeSection = () => {
       <SectionText>
         <FormattedMessage id="description.aboutMeSection" />
       </SectionText>
-    </SectionWrapper>
+    </Wrapper>
   );
 };
 

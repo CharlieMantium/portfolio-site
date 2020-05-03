@@ -1,24 +1,23 @@
-import React, { useEffect, useRef } from 'react';
+import React, { createRef } from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 import { rem } from 'polished';
 import { DiCss3, DiGit, DiHtml5, DiJavascript, DiReact } from 'react-icons/di';
 
 import {
-  SectionWrapper,
   SectionItemWrapper,
   Icon,
   IconWrapper,
 } from 'components/Section/styled';
+import Wrapper from 'components/Section/SectionWrapper';
 import { breakPoints } from 'styles/base';
 import SectionHeader from 'components/Section/SectionHeader';
-import onScrollAnimate from 'animations/scrollAnimation';
 
 import ReduxLogo from '../../../static/ReduxLogo.svg';
 import WebpackLogo from '../../../static/WebpackLogo.svg';
 import GatsbyLogo from '../../../static/GatsbyLogo.svg';
 
-const TechStackSectionWrapper = styled(SectionWrapper)`
+const TechStackSectionWrapper = styled(Wrapper)`
   justify-content: flex-start;
 `;
 
@@ -42,14 +41,10 @@ const TechStackText = styled.p`
 `;
 
 const TechStackSection = () => {
-  const animatedSectionWrapper = useRef(null);
-  const id = 'techStack';
+  const sectionWrapperRef = createRef();
 
-  useEffect(() => {
-    onScrollAnimate(animatedSectionWrapper, id);
-  }, []);
   return (
-    <TechStackSectionWrapper id={id} ref={animatedSectionWrapper}>
+    <TechStackSectionWrapper id="techStack" ref={sectionWrapperRef}>
       <SectionHeader>
         <FormattedMessage id="header.techStackSection" />
       </SectionHeader>

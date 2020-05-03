@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { createRef } from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 import { FaLinkedin, FaRegEnvelope, FaPhoneSquare } from 'react-icons/fa';
@@ -11,9 +11,8 @@ import {
   Icon,
   IconWrapper,
   SectionItemWrapper,
-  SectionWrapper,
 } from 'components/Section/styled';
-import onScrollAnimate from 'animations/scrollAnimation';
+import Wrapper from 'components/Section/SectionWrapper';
 
 const ContactSectionContentWrapper = styled.div`
   display: flex;
@@ -42,15 +41,10 @@ const ContactIconWrapper = styled(IconWrapper)`
 `;
 
 const ContactSection = () => {
-  const animatedSectionWrapper = useRef(null);
-  const id = 'contact';
-
-  useEffect(() => {
-    onScrollAnimate(animatedSectionWrapper, id);
-  }, []);
+  const sectionWrapperRef = createRef();
 
   return (
-    <SectionWrapper id={id} ref={animatedSectionWrapper}>
+    <Wrapper id="contact" ref={sectionWrapperRef}>
       <SectionHeader>
         <FormattedMessage id="header.contactSection" />
       </SectionHeader>
@@ -94,7 +88,7 @@ const ContactSection = () => {
           <p>+48 697 333 486</p>
         </ContactSectionItemWrapper>
       </ContactSectionContentWrapper>
-    </SectionWrapper>
+    </Wrapper>
   );
 };
 
