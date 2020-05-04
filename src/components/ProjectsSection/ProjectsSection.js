@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import { rem } from 'polished';
@@ -6,7 +6,8 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 
 import { breakPoints } from 'styles/base';
-import { SectionItemWrapper, SectionWrapper } from 'components/Section/styled';
+import { SectionItemWrapper } from 'components/Section/styled';
+import Wrapper from 'components/Section/SectionWrapper';
 import SectionHeader from 'components/Section/SectionHeader';
 
 const ProjectsSectionItemWrapper = styled(SectionItemWrapper)`
@@ -56,8 +57,11 @@ const ProjectsSection = () => {
       }
     }
   `);
+
+  const sectionWrapperRef = createRef();
+
   return (
-    <SectionWrapper id="projects">
+    <Wrapper id="projects" ref={sectionWrapperRef}>
       <SectionHeader>
         <FormattedMessage id="header.projectsSection" />
       </SectionHeader>
@@ -116,7 +120,7 @@ const ProjectsSection = () => {
           />
         </ProjectsSectionItemText>
       </ProjectsSectionItemWrapper>
-    </SectionWrapper>
+    </Wrapper>
   );
 };
 
