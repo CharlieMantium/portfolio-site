@@ -47,6 +47,7 @@ const StyledWrapper = styled.div`
   background: ${colors.alpha};
   color: ${colors.beta};
   font-family: ${fonts.families.basicFont};
+  overflow: hidden;
 `;
 
 const Layout = ({ children }) => (

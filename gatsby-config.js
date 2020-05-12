@@ -49,11 +49,9 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: 'gatsby-plugin-svgr',
       options: {
-        rule: {
-          include: path.join(__dirname, 'static'),
-        },
+        include: path.join(__dirname, 'static'),
       },
     },
     'react-country-flag',
