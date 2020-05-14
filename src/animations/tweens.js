@@ -25,24 +25,30 @@ export const dropItemTween = item =>
     }
   );
 
-export const enterSpanTween = (span, direction) => {
-  const tweenParams = side => {
-    switch (side) {
-      case 'fromLeft':
-        return [{ x: '-=300' }, { x: '+=300' }];
-      case 'fromRight':
-        return [{ x: '+=300' }, { x: '-=300' }];
-      case 'fromBottom':
-        return [{ y: '+=300' }, { y: '-=300' }];
-      case 'fromTop':
-        return [{ y: '-=300' }, { y: '+=300' }];
-      default:
-        return [{ y: '-=300' }, { y: '+=300' }];
-    }
-  };
+export const enterSpanFromLeftTween = span =>
   gsap.fromTo(
     span,
-    { autoAlpha: 0, ...tweenParams(direction)[0] },
-    { duration: 0.5, autoAlpha: 1, ...tweenParams(direction)[1] }
+    { autoAlpha: 0, x: '-=300' },
+    { duration: 0.5, autoAlpha: 1, x: '+=300' }
   );
-};
+
+export const enterSpanFromRightTween = span =>
+  gsap.fromTo(
+    span,
+    { autoAlpha: 0, x: '+=300' },
+    { duration: 0.5, autoAlpha: 1, x: '-=300' }
+  );
+
+export const enterSpanFromBottomTween = span =>
+  gsap.fromTo(
+    span,
+    { autoAlpha: 0, y: '+=300' },
+    { duration: 0.5, autoAlpha: 1, y: '-=300' }
+  );
+
+export const enterSpanFromTopTween = span =>
+  gsap.fromTo(
+    span,
+    { autoAlpha: 0, y: '-=300' },
+    { duration: 0.5, autoAlpha: 1, y: '+=300' }
+  );

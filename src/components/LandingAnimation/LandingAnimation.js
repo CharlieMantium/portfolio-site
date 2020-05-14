@@ -4,7 +4,7 @@ import { rem } from 'polished';
 
 import { colors, fonts } from 'styles/base';
 import { buttonAppearTween } from 'animations/tweens';
-import { firstClickTl, nextClickTl } from 'animations/timeLines';
+import { masterTl } from 'animations/timeLines';
 
 import SideCloud from '../SVG/SideCloud';
 
@@ -53,8 +53,8 @@ const SideCloudsWrapper = styled.div`
 `;
 
 const LandingAnimation = () => {
-  const [clicks, setClicks] = useState(0);
-  const handelAnimationButtonClick = () => setClicks(clicks + 1);
+  const [isAnimationPlaying, setAnimationPlay] = useState(false);
+  const handelAnimationButtonClick = () => setAnimationPlay(true);
 
   const animationButtonRef = createRef();
   const spanHiRef = createRef();
@@ -76,26 +76,17 @@ const LandingAnimation = () => {
     const rightSideCloud = rightSideCloudRef.current;
 
     buttonAppearTween(animationButton);
-
-    switch (clicks) {
-      case 1:
-        firstClickTl(spanHi, animationButton, leftSideCloud, rightSideCloud);
-        break;
-      case 2:
-        nextClickTl(spanMy, 'fromLeft');
-        break;
-      case 3:
-        nextClickTl(spanName, 'fromRight');
-        break;
-      case 4:
-        nextClickTl(spanIs, 'fromBottom');
-        break;
-      case 5:
-        nextClickTl(spanKarol, 'fromTop');
-        break;
-      default:
-        break;
-    }
+    if (isAnimationPlaying === true)
+      masterTl(
+        animationButton,
+        spanHi,
+        leftSideCloud,
+        rightSideCloud,
+        spanMy,
+        spanName,
+        spanIs,
+        spanKarol
+      );
   });
 
   return (
