@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { rem } from 'polished';
 
 import { colors, fonts } from 'styles/base';
-import { buttonAppearTween } from 'animations/tweens';
+import { itemAppearTween } from 'animations/tweens';
 import { masterTl } from 'animations/timeLines';
 
 import SideCloud from '../SVG/SideCloud';
@@ -66,26 +66,17 @@ const LandingAnimation = () => {
   const rightSideCloudRef = createRef();
 
   useEffect(() => {
-    const animationButton = animationButtonRef.current;
-    const spanHi = spanHiRef.current;
-    const spanMy = spanMyRef.current;
-    const spanName = spanNameRef.current;
-    const spanIs = spanIsRef.current;
-    const spanKarol = spanKarolRef.current;
-    const leftSideCloud = leftSideCloudRef.current;
-    const rightSideCloud = rightSideCloudRef.current;
-
-    buttonAppearTween(animationButton);
+    itemAppearTween(animationButtonRef.current);
     if (isAnimationPlaying === true)
       masterTl(
-        animationButton,
-        spanHi,
-        leftSideCloud,
-        rightSideCloud,
-        spanMy,
-        spanName,
-        spanIs,
-        spanKarol
+        animationButtonRef.current,
+        spanHiRef.current,
+        leftSideCloudRef.current,
+        rightSideCloudRef.current,
+        spanMyRef.current,
+        spanNameRef.current,
+        spanIsRef.current,
+        spanKarolRef.current
       );
   });
 

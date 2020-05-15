@@ -1,16 +1,17 @@
 import gsap from 'gsap';
 
 import {
-  dropButtonTween,
   dropItemTween,
-  enterSpanFromLeftTween,
-  enterSpanFromRightTween,
-  enterSpanFromBottomTween,
-  enterSpanFromTopTween,
+  moveItemTween,
+  enterItemFromLeftTween,
+  enterItemFromRightTween,
+  enterItemFromBottomTween,
+  enterItemFromTopTween,
 } from './tweens';
 
 export const sideCloudsTl = (left, right) => {
   const tl = gsap.timeline({ defaults: { ease: 'none' } });
+
   return tl
     .addLabel('start')
     .to(left, { duration: 1, x: '-=50', autoAlpha: 1 })
@@ -30,13 +31,14 @@ export const masterTl = (
   spanKarolDetails
 ) => {
   const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+
   return tl
     .addLabel('start')
-    .add(dropButtonTween(button))
+    .add(moveItemTween(button))
     .add(dropItemTween(spanHi), 'start')
     .add(sideCloudsTl(leftCloud, rightCloud), '-=0.7')
-    .add(enterSpanFromLeftTween(spanMyDetails))
-    .add(enterSpanFromRightTween(spanNameDetails))
-    .add(enterSpanFromBottomTween(spanIsDetails))
-    .add(enterSpanFromTopTween(spanKarolDetails));
+    .add(enterItemFromLeftTween(spanMyDetails))
+    .add(enterItemFromRightTween(spanNameDetails))
+    .add(enterItemFromBottomTween(spanIsDetails))
+    .add(enterItemFromTopTween(spanKarolDetails));
 };

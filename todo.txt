@@ -1,2 +1,2 @@
 TODO: change favicon
-TODO: contact - na desktop wyglada jak na mobile => powinny sie ustawiac obok siebie (tak jak jest - na malych ekranach)
+TODO: translation in LandingAnimation component

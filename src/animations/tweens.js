@@ -1,21 +1,21 @@
 import gsap from 'gsap';
 
-export const buttonAppearTween = button =>
-  gsap.to(button, {
+export const itemAppearTween = itemRef =>
+  gsap.to(itemRef, {
     autoAlpha: 1,
     duration: 2,
   });
 
-export const dropButtonTween = button =>
-  gsap.to(button, {
+export const moveItemTween = itemRef =>
+  gsap.to(itemRef, {
     y: '+=220',
     ease: 'power4.out',
     duration: 1,
   });
 
-export const dropItemTween = item =>
+export const dropItemTween = itemRef =>
   gsap.fromTo(
-    item,
+    itemRef,
     { y: '-=300', autoAlpha: 0 },
     {
       y: '+=300',
@@ -25,30 +25,30 @@ export const dropItemTween = item =>
     }
   );
 
-export const enterSpanFromLeftTween = span =>
+export const enterItemFromLeftTween = itemRef =>
   gsap.fromTo(
-    span,
+    itemRef,
     { autoAlpha: 0, x: '-=300' },
     { duration: 0.5, autoAlpha: 1, x: '+=300' }
   );
 
-export const enterSpanFromRightTween = span =>
+export const enterItemFromRightTween = itemRef =>
   gsap.fromTo(
-    span,
+    itemRef,
     { autoAlpha: 0, x: '+=300' },
     { duration: 0.5, autoAlpha: 1, x: '-=300' }
   );
 
-export const enterSpanFromBottomTween = span =>
+export const enterItemFromBottomTween = itemRef =>
   gsap.fromTo(
-    span,
+    itemRef,
     { autoAlpha: 0, y: '+=300' },
     { duration: 0.5, autoAlpha: 1, y: '-=300' }
   );
 
-export const enterSpanFromTopTween = span =>
+export const enterItemFromTopTween = itemRef =>
   gsap.fromTo(
-    span,
+    itemRef,
     { autoAlpha: 0, y: '-=300' },
     { duration: 0.5, autoAlpha: 1, y: '+=300' }
   );
