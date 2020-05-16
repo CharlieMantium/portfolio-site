@@ -13,9 +13,9 @@ import Wrapper from 'components/Section/SectionWrapper';
 import { breakPoints } from 'styles/base';
 import SectionHeader from 'components/Section/SectionHeader';
 
-import ReduxLogo from '../../../static/ReduxLogo.svg';
-import WebpackLogo from '../../../static/WebpackLogo.svg';
-import GatsbyLogo from '../../../static/GatsbyLogo.svg';
+import { ReactComponent as ReduxLogo } from '../../../static/ReduxLogo.svg';
+import { ReactComponent as WebpackLogo } from '../../../static/WebpackLogo.svg';
+import { ReactComponent as GatsbyLogo } from '../../../static/GatsbyLogo.svg';
 
 const TechStackSectionWrapper = styled(Wrapper)`
   justify-content: flex-start;
