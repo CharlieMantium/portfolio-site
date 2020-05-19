@@ -1,9 +1,10 @@
 import gsap from 'gsap';
 
-export const itemAppearTween = itemRef =>
+export const appearItemTween = (itemRef, duration, delay = 0) =>
   gsap.to(itemRef, {
     autoAlpha: 1,
-    duration: 2,
+    duration,
+    delay,
   });
 
 export const moveItemTween = itemRef =>
@@ -25,30 +26,37 @@ export const dropItemTween = itemRef =>
     }
   );
 
-export const enterItemFromLeftTween = itemRef =>
+export const enterItemFromLeftTween = (itemRef, distance) =>
   gsap.fromTo(
     itemRef,
-    { autoAlpha: 0, x: '-=300' },
-    { duration: 0.5, autoAlpha: 1, x: '+=300' }
+    { autoAlpha: 0, x: `-=${distance}` },
+    {
+      duration: 0.5,
+      autoAlpha: 1,
+      x: `+=${distance}`,
+    }
   );
 
-export const enterItemFromRightTween = itemRef =>
+export const enterItemFromRightTween = (itemRef, distance) =>
   gsap.fromTo(
     itemRef,
-    { autoAlpha: 0, x: '+=300' },
-    { duration: 0.5, autoAlpha: 1, x: '-=300' }
+    { autoAlpha: 0, x: `+=${distance}` },
+    { duration: 0.5, autoAlpha: 1, x: `-=${distance}` }
   );
 
-export const enterItemFromBottomTween = itemRef =>
+export const enterItemFromBottomTween = (itemRef, distance) =>
   gsap.fromTo(
     itemRef,
-    { autoAlpha: 0, y: '+=300' },
-    { duration: 0.5, autoAlpha: 1, y: '-=300' }
+    { autoAlpha: 0, y: `+=${distance}` },
+    { duration: 0.5, autoAlpha: 1, y: `-=${distance}` }
   );
 
-export const enterItemFromTopTween = itemRef =>
+export const enterItemFromTopTween = (itemRef, distance) =>
   gsap.fromTo(
     itemRef,
-    { autoAlpha: 0, y: '-=300' },
-    { duration: 0.5, autoAlpha: 1, y: '+=300' }
+    { autoAlpha: 0, y: `-=${distance}` },
+    { duration: 0.5, autoAlpha: 1, y: `+=${distance}` }
   );
+
+export const hideItemTween = (itemRef, duration) =>
+  gsap.to(itemRef, { autoAlpha: 0, duration });

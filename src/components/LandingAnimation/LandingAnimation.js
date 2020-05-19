@@ -3,10 +3,14 @@ import styled from 'styled-components';
 import { rem } from 'polished';
 
 import { colors, fonts } from 'styles/base';
-import { itemAppearTween } from 'animations/tweens';
+import { appearItemTween } from 'animations/tweens';
 import { masterTl } from 'animations/timeLines';
 
 import SideCloud from '../SVG/SideCloud';
+import Cloud from '../SVG/Cloud';
+import bigCloud from '../../../static/bigCloud.svg';
+import spiralCloud from '../../../static/spiralCloud.svg';
+import mushroomCloud from '../../../static/mushroomCloud.svg';
 
 const LandingAnimationWrapper = styled.div`
   position: relative;
@@ -57,26 +61,40 @@ const LandingAnimation = () => {
   const handelAnimationButtonClick = () => setAnimationPlay(true);
 
   const animationButtonRef = createRef();
-  const spanHiRef = createRef();
-  const spanMyRef = createRef();
-  const spanNameRef = createRef();
-  const spanIsRef = createRef();
-  const spanKarolRef = createRef();
+  const hiSpanRef = createRef();
+  const mySpanRef = createRef();
+  const hiMySpanRef = createRef();
+  const nameSpanRef = createRef();
+  const hiMyNameSpanRef = createRef();
+  const isSpanRef = createRef();
+  const hiMyNameIsSpanRef = createRef();
+  const karolSpanRef = createRef();
+  const hiMyNameIsKarolSpanRef = createRef();
   const leftSideCloudRef = createRef();
   const rightSideCloudRef = createRef();
+  const bigCloudRef = createRef();
+  const spiralCloudRef = createRef();
+  const mushroomCloudRef = createRef();
 
   useEffect(() => {
-    itemAppearTween(animationButtonRef.current);
+    appearItemTween(animationButtonRef.current, 2);
     if (isAnimationPlaying === true)
       masterTl(
         animationButtonRef.current,
-        spanHiRef.current,
+        hiSpanRef.current,
+        mySpanRef.current,
+        hiMySpanRef.current,
+        nameSpanRef.current,
+        hiMyNameSpanRef.current,
+        isSpanRef.current,
+        hiMyNameIsSpanRef.current,
+        karolSpanRef.current,
+        hiMyNameIsKarolSpanRef.current,
         leftSideCloudRef.current,
         rightSideCloudRef.current,
-        spanMyRef.current,
-        spanNameRef.current,
-        spanIsRef.current,
-        spanKarolRef.current
+        bigCloudRef.current,
+        spiralCloudRef.current,
+        mushroomCloudRef.current
       );
   });
 
@@ -88,15 +106,22 @@ const LandingAnimation = () => {
       >
         Press to say &apos;Hello!&apos;
       </StartButton>
-      <StyledSpan ref={spanHiRef}>Hi!</StyledSpan>
-      <StyledSpan ref={spanMyRef}>My</StyledSpan>
-      <StyledSpan ref={spanNameRef}>name</StyledSpan>
-      <StyledSpan ref={spanIsRef}>is</StyledSpan>
-      <StyledSpan ref={spanKarolRef}>Karol</StyledSpan>
+      <StyledSpan ref={hiSpanRef}>Hi!</StyledSpan>
+      <StyledSpan ref={mySpanRef}>My</StyledSpan>
+      <StyledSpan ref={hiMySpanRef}>Hi! My</StyledSpan>
+      <StyledSpan ref={nameSpanRef}>name</StyledSpan>
+      <StyledSpan ref={hiMyNameSpanRef}>Hi! My name</StyledSpan>
+      <StyledSpan ref={isSpanRef}>is</StyledSpan>
+      <StyledSpan ref={hiMyNameIsSpanRef}>Hi! My name is</StyledSpan>
+      <StyledSpan ref={karolSpanRef}>Karol</StyledSpan>
+      <StyledSpan ref={hiMyNameIsKarolSpanRef}>Hi! My name is Karol</StyledSpan>
       <SideCloudsWrapper>
         <SideCloud ref={leftSideCloudRef} side="left" />
         <SideCloud ref={rightSideCloudRef} side="right" />
       </SideCloudsWrapper>
+      <Cloud ref={bigCloudRef} cloudSrc={bigCloud} />
+      <Cloud ref={spiralCloudRef} cloudSrc={spiralCloud} />
+      <Cloud ref={mushroomCloudRef} cloudSrc={mushroomCloud} />
     </LandingAnimationWrapper>
   );
 };
