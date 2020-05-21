@@ -19,18 +19,18 @@ const CloudWrapper = styled.div`
   width: 100%;
 `;
 
-const Cloud = React.forwardRef(({ cloudSrc }, ref) => (
+const Cloud = React.forwardRef(({ src }, ref) => (
   <CloudWrapper>
-    <StyledImg ref={ref} src={cloudSrc} alt="Cloud of Dust" />
+    <StyledImg ref={ref} src={src} alt="Cloud of Dust" />
   </CloudWrapper>
 ));
 
 Cloud.propTypes = {
-  cloudSrc: PropTypes.string,
+  src: PropTypes.string,
 };
 
 Cloud.defaultProps = {
-  cloudSrc: bigCloud,
+  src: bigCloud,
 };
 
 export default Cloud;
