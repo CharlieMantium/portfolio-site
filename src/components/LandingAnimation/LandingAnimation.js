@@ -119,9 +119,9 @@ const LandingAnimation = () => {
         <SideCloud ref={leftSideCloudRef} side="left" />
         <SideCloud ref={rightSideCloudRef} side="right" />
       </SideCloudsWrapper>
-      <Cloud ref={bigCloudRef} cloudSrc={bigCloud} />
-      <Cloud ref={spiralCloudRef} cloudSrc={spiralCloud} />
-      <Cloud ref={mushroomCloudRef} cloudSrc={mushroomCloud} />
+      <Cloud ref={bigCloudRef} src={bigCloud} />
+      <Cloud ref={spiralCloudRef} src={spiralCloud} />
+      <Cloud ref={mushroomCloudRef} src={mushroomCloud} />
     </LandingAnimationWrapper>
   );
 };
