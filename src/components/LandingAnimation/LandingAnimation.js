@@ -8,6 +8,7 @@ import { masterTl } from 'animations/timeLines';
 
 import SideCloud from '../SVG/SideCloud';
 import Cloud from '../SVG/Cloud';
+import Debris from '../SVG/Debris';
 import bigCloud from '../../../static/bigCloud.svg';
 import spiralCloud from '../../../static/spiralCloud.svg';
 import mushroomCloud from '../../../static/mushroomCloud.svg';
@@ -75,6 +76,10 @@ const LandingAnimation = () => {
   const bigCloudRef = createRef();
   const spiralCloudRef = createRef();
   const mushroomCloudRef = createRef();
+  const debrisOneRef = createRef();
+  const debrisTwoRef = createRef();
+  const debrisThreeRef = createRef();
+  const debrisFourRef = createRef();
 
   useEffect(() => {
     appearItemTween(animationButtonRef.current, 2);
@@ -94,7 +99,13 @@ const LandingAnimation = () => {
         rightSideCloudRef.current,
         bigCloudRef.current,
         spiralCloudRef.current,
-        mushroomCloudRef.current
+        mushroomCloudRef.current,
+        [
+          debrisOneRef.current,
+          debrisTwoRef.current,
+          debrisThreeRef.current,
+          debrisFourRef.current,
+        ]
       );
   });
 
@@ -122,6 +133,10 @@ const LandingAnimation = () => {
       <Cloud ref={bigCloudRef} src={bigCloud} />
       <Cloud ref={spiralCloudRef} src={spiralCloud} />
       <Cloud ref={mushroomCloudRef} src={mushroomCloud} />
+      <Debris ref={debrisOneRef} />
+      <Debris ref={debrisTwoRef} />
+      <Debris ref={debrisThreeRef} />
+      <Debris ref={debrisFourRef} />
     </LandingAnimationWrapper>
   );
 };
