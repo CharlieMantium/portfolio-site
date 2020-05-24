@@ -28,41 +28,48 @@ export const sideCloudsTl = (left, right) => {
 };
 
 export const debrisFlyTl = debrisRef => {
-  const tl = gsap.timeline({ defaults: { ease: 'none' } });
-  gsap.set(debrisRef, { transformOrigin: '50% 50%' });
-  const maxX = Math.floor(500 - Math.random() * 1000);
-  const maxY = -Math.floor(Math.random() * 300);
-  const path = [
-    { x: 0, y: 0 },
-    { x: maxX / 2, y: maxY },
-    { x: maxX, y: 0 },
-  ];
+  const mainTl = gsap.timeline({ defaults: { ease: 'none' } });
+  const eachDebrisTlsArray = debrisRef.map(debris => {
+    const singleTl = gsap.timeline({ defaults: { ease: 'none' } });
+    gsap.set(debris, { transformOrigin: '50% 50%' });
+    const maxX = Math.floor(500 - Math.random() * 1000);
+    const maxY = -Math.floor(Math.random() * 300);
+    const path = [
+      { x: 0, y: 0 },
+      { x: maxX / 2, y: maxY },
+      { x: maxX, y: 0 },
+    ];
 
-  return tl
-    .to(debrisRef, {
-      duration: 0.7,
-      autoAlpha: 1,
-      motionPath: {
-        path,
-        start: 0,
-        end: 0.5,
-      },
-      rotation: '180',
-    })
-    .to(debrisRef, {
-      duration: 0.7,
-      autoAlpha: 0,
-      motionPath: { path, start: 0.66, end: 1 },
-      rotation: '-180',
-    })
-    .to(debrisRef, { x: 0, y: 0, duration: 0.1 });
+    return singleTl
+      .to(debris, {
+        duration: 0.7,
+        autoAlpha: 1,
+        motionPath: {
+          path,
+          start: 0,
+          end: 0.5,
+        },
+        rotation: '180',
+      })
+      .to(debris, {
+        duration: 0.7,
+        autoAlpha: 0,
+        motionPath: { path, start: 0.66, end: 1 },
+        rotation: '-180',
+      })
+      .to(debris, { x: 0, y: 0, duration: 0.1 });
+  });
+
+  mainTl.addLabel('start');
+  eachDebrisTlsArray.forEach(tl => mainTl.add(tl, 'start'));
+
+  return mainTl;
 };
 
 export const explosionTl = (cloudRef, debrisRef) => {
   const tl = gsap.timeline({
     defaults: { transformOrigin: '50% 70%', ease: 'slow' },
   });
-  const [debrisOneRef, debrisTwoRef, debrisThreeRef, debrisFourRef] = debrisRef;
 
   return tl
     .addLabel('start')
@@ -72,10 +79,7 @@ export const explosionTl = (cloudRef, debrisRef) => {
       { autoAlpha: 1, scale: 1, duration: 0.1 }
     )
     .to(cloudRef, { autoAlpha: 0, scale: 0.97, duration: 1 })
-    .add(debrisFlyTl(debrisOneRef), 'start')
-    .add(debrisFlyTl(debrisTwoRef), 'start')
-    .add(debrisFlyTl(debrisThreeRef), 'start')
-    .add(debrisFlyTl(debrisFourRef), 'start');
+    .add(debrisFlyTl(debrisRef), 'start');
 };
 
 export const enterNextItemTl = (
