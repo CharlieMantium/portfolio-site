@@ -2,13 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import bigCloud from '../../../static/bigCloud.svg';
+import { StyledImg } from 'components/Section/styled';
 
-const StyledImg = styled.img`
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-`;
+import bigCloud from '../../../static/bigCloud.svg';
 
 const CloudWrapper = styled.div`
   display: flex;
