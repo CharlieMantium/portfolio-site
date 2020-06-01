@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { rem } from 'polished';
 
 import { colors, fonts } from 'styles/base';
-import { appearItemTween } from 'animations/tweens';
-import { masterTl } from 'animations/timeLines';
+import { appearItemTween, hideItemTween } from 'animations/tweens';
+import { masterTl, moveHideItemAndChangeContentTl } from 'animations/timeLines';
 
 import SideCloud from '../SVG/SideCloud';
 import Cloud from '../SVG/Cloud';
@@ -59,7 +59,13 @@ const SideCloudsWrapper = styled.div`
 
 const LandingAnimation = () => {
   const [isAnimationPlaying, setAnimationPlay] = useState(false);
-  const handelAnimationButtonClick = () => setAnimationPlay(true);
+  const [isAnimationReplaying, setAnimationReplay] = useState(false);
+  const [animationButtonText, setAnimationButtonText] = useState(
+    'Press to say "Hello!"'
+  );
+  const handelAnimationButtonClick = () => {
+    setAnimationPlay(true);
+  };
 
   const animationButtonRef = createRef();
   const hiSpanRef = createRef();
@@ -83,7 +89,20 @@ const LandingAnimation = () => {
 
   useEffect(() => {
     appearItemTween(animationButtonRef.current, 2);
-    if (isAnimationPlaying === true)
+  }, [isAnimationPlaying]);
+
+  useEffect(() => {
+    if (isAnimationPlaying) {
+      if (isAnimationReplaying) {
+        hideItemTween(animationButtonRef.current, 2, 1);
+      } else {
+        moveHideItemAndChangeContentTl(
+          animationButtonRef.current,
+          setAnimationButtonText,
+          ['Replay?']
+        );
+        setAnimationReplay(true);
+      }
       masterTl(
         animationButtonRef.current,
         hiSpanRef.current,
@@ -107,6 +126,8 @@ const LandingAnimation = () => {
           debrisFourRef.current,
         ]
       );
+      setAnimationPlay(false);
+    }
   });
 
   return (
@@ -115,7 +136,7 @@ const LandingAnimation = () => {
         ref={animationButtonRef}
         onClick={handelAnimationButtonClick}
       >
-        Press to say &apos;Hello!&apos;
+        {animationButtonText}
       </StartButton>
       <StyledSpan ref={hiSpanRef}>Hi!</StyledSpan>
       <StyledSpan ref={mySpanRef}>My</StyledSpan>

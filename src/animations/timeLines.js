@@ -3,7 +3,6 @@ import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 
 import {
   dropItemTween,
-  moveItemTween,
   enterItemFromLeftTween,
   enterItemFromRightTween,
   enterItemFromBottomTween,
@@ -13,6 +12,21 @@ import {
 } from './tweens';
 
 gsap.registerPlugin(MotionPathPlugin);
+
+export const moveHideItemAndChangeContentTl = (
+  itemRef,
+  changeContent,
+  newContent
+) => {
+  const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+  return tl
+    .to(itemRef, {
+      y: '+=220',
+      duration: 1,
+    })
+    .to(itemRef, { autoAlpha: 0, delay: 1 })
+    .eventCallback('onComplete', changeContent, [newContent]);
+};
 
 export const sideCloudsTl = (left, right) => {
   const tl = gsap.timeline({ defaults: { ease: 'none' } });
@@ -122,10 +136,10 @@ export const masterTl = (
   const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
   return tl
+    .add(hideItemTween(hiMyNameIsKarolSpan, 1))
     .addLabel('start')
-    .add(moveItemTween(button))
     .add(dropItemTween(hiSpan), 'start')
-    .add(sideCloudsTl(leftCloud, rightCloud), '-=0.7')
+    .add(sideCloudsTl(leftCloud, rightCloud), 'start+=0.3')
     .add(
       enterNextItemTl(
         enterItemFromLeftTween,
@@ -166,5 +180,6 @@ export const masterTl = (
         debris
       )
     )
-    .add(sideCloudsTl(leftCloud, rightCloud), '-=2.5');
+    .add(sideCloudsTl(leftCloud, rightCloud), '-=2.5')
+    .add(appearItemTween(button, 2));
 };
