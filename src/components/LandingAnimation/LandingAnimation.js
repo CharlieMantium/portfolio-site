@@ -64,7 +64,7 @@ const LandingAnimation = () => {
     'Press to say "Hello!"'
   );
   const handelAnimationButtonClick = () => {
-    setAnimationPlay(true);
+    if (isAnimationPlaying === false) setAnimationPlay(true);
   };
 
   const animationButtonRef = createRef();
@@ -124,11 +124,12 @@ const LandingAnimation = () => {
           debrisTwoRef.current,
           debrisThreeRef.current,
           debrisFourRef.current,
-        ]
+        ],
+        setAnimationPlay,
+        false
       );
-      setAnimationPlay(false);
     }
-  });
+  }, [isAnimationPlaying]);
 
   return (
     <LandingAnimationWrapper>

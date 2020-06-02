@@ -131,7 +131,9 @@ export const masterTl = (
   bigCloud,
   spiralCloud,
   mushroomCloud,
-  debris
+  debris,
+  setAnimationPlay,
+  isAnimationPlaying
 ) => {
   const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
@@ -181,5 +183,6 @@ export const masterTl = (
       )
     )
     .add(sideCloudsTl(leftCloud, rightCloud), '-=2.5')
-    .add(appearItemTween(button, 2));
+    .add(appearItemTween(button, 2))
+    .eventCallback('onComplete', setAnimationPlay, [isAnimationPlaying]);
 };
