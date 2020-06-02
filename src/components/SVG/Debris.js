@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FormattedMessage } from 'gatsby-plugin-intl';
 import { rem } from 'polished';
 
 import { StyledImg } from 'components/Section/styled';
@@ -16,7 +17,11 @@ const Wrapper = styled.div`
 
 const Debris = React.forwardRef((props, ref) => (
   <Wrapper>
-    <StyledImg ref={ref} src={debris} alt="Debris" />
+    <FormattedMessage id="alternativeDescription.debris">
+      {formattedValue => (
+        <StyledImg ref={ref} src={debris} alt={formattedValue} />
+      )}
+    </FormattedMessage>
   </Wrapper>
 ));
 

@@ -16,7 +16,7 @@ gsap.registerPlugin(MotionPathPlugin);
 export const moveHideItemAndChangeContentTl = (
   itemRef,
   changeContent,
-  newContent
+  newContentId
 ) => {
   const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
   return tl
@@ -25,7 +25,7 @@ export const moveHideItemAndChangeContentTl = (
       duration: 1,
     })
     .to(itemRef, { autoAlpha: 0, delay: 1 })
-    .eventCallback('onComplete', changeContent, [newContent]);
+    .eventCallback('onComplete', changeContent, [newContentId]);
 };
 
 export const sideCloudsTl = (left, right) => {

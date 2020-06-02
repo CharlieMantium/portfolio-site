@@ -1,4 +1,17 @@
 {
+  "animation": {
+    "play": "Click to say Hello!",
+    "replay": "Replay?",
+    "hiSpan": "Hi!",
+    "mySpan": "my",
+    "nameSpan": "name",
+    "isSpan": "is",
+    "karolSpan": "Karol",
+    "hiMySpan": "Hi! My",
+    "hiMyNameSpan": "Hi! My name",
+    "hiMyNameIsSpan": "Hi! My name is",
+    "hiMyNameIsKarolSpan": "Hi! My name is Karol!"
+  },
   "header": {
     "aboutMeSection": "About me",
     "contactSection": "Contact me",
@@ -24,6 +37,8 @@
   "alternativeDescription": {
     "authorsPhoto": "Black and white, artsy photography showing the author of this site.",
     "hangman": "Screenshot of Hangman game main view",
-    "schoolApp": "Screenshot of SchoolApp application login screen"
+    "schoolApp": "Screenshot of SchoolApp application login screen",
+    "cloud": "Cloud of dust",
+    "debris": "Debris"
   }
 }

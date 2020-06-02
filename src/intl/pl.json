@@ -1,4 +1,17 @@
 {
+  "animation": {
+    "play": "Kliknij by się przywitać!",
+    "replay": "Obejrzyj ponownie?",
+    "hiSpan": "Cześć!",
+    "mySpan": "mam",
+    "nameSpan": "na",
+    "isSpan": "imię",
+    "karolSpan": "Karol",
+    "hiMySpan": "Cześć! Mam",
+    "hiMyNameSpan": "Cześć! Mam na",
+    "hiMyNameIsSpan": "Cześć! Mam na imię",
+    "hiMyNameIsKarolSpan": "Cześć! Mam na imię Karol!"
+  },
   "header": {
     "aboutMeSection": "O mnie",
     "contactSection": "Kontakt",
@@ -24,6 +37,8 @@
   "alternativeDescription": {
     "authorsPhoto": "Czarno-białe zdjęcie rozmarzonego autora tej strony.",
     "hangman": "Zrzut ekranu startowego gry Hangman",
-    "schoolApp": "Zrzut ekranu logowania aplikacji SchoolApp"
+    "schoolApp": "Zrzut ekranu logowania aplikacji SchoolApp",
+    "cloud": "Chmura kurzu",
+    "debris": "Odłamek"
   }
 }

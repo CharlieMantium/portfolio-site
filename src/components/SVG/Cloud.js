@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FormattedMessage } from 'gatsby-plugin-intl';
 import PropTypes from 'prop-types';
 
 import { StyledImg } from 'components/Section/styled';
@@ -17,7 +18,9 @@ const CloudWrapper = styled.div`
 
 const Cloud = React.forwardRef(({ src }, ref) => (
   <CloudWrapper>
-    <StyledImg ref={ref} src={src} alt="Cloud of Dust" />
+    <FormattedMessage id="alternativeDescription.cloud">
+      {formattedValue => <StyledImg ref={ref} src={src} alt={formattedValue} />}
+    </FormattedMessage>
   </CloudWrapper>
 ));
 

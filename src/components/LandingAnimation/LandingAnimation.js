@@ -1,5 +1,6 @@
 import React, { createRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { FormattedMessage } from 'gatsby-plugin-intl';
 import { rem } from 'polished';
 
 import { colors, fonts } from 'styles/base';
@@ -60,8 +61,8 @@ const SideCloudsWrapper = styled.div`
 const LandingAnimation = () => {
   const [isAnimationPlaying, setAnimationPlay] = useState(false);
   const [isAnimationReplaying, setAnimationReplay] = useState(false);
-  const [animationButtonText, setAnimationButtonText] = useState(
-    'Press to say "Hello!"'
+  const [animationButtonTextId, setAnimationButtonTextId] = useState(
+    'animation.play'
   );
   const handelAnimationButtonClick = () => {
     if (isAnimationPlaying === false) setAnimationPlay(true);
@@ -98,8 +99,8 @@ const LandingAnimation = () => {
       } else {
         moveHideItemAndChangeContentTl(
           animationButtonRef.current,
-          setAnimationButtonText,
-          ['Replay?']
+          setAnimationButtonTextId,
+          ['animation.replay']
         );
         setAnimationReplay(true);
       }
@@ -137,17 +138,35 @@ const LandingAnimation = () => {
         ref={animationButtonRef}
         onClick={handelAnimationButtonClick}
       >
-        {animationButtonText}
+        <FormattedMessage id={animationButtonTextId} />
       </StartButton>
-      <StyledSpan ref={hiSpanRef}>Hi!</StyledSpan>
-      <StyledSpan ref={mySpanRef}>My</StyledSpan>
-      <StyledSpan ref={hiMySpanRef}>Hi! My</StyledSpan>
-      <StyledSpan ref={nameSpanRef}>name</StyledSpan>
-      <StyledSpan ref={hiMyNameSpanRef}>Hi! My name</StyledSpan>
-      <StyledSpan ref={isSpanRef}>is</StyledSpan>
-      <StyledSpan ref={hiMyNameIsSpanRef}>Hi! My name is</StyledSpan>
-      <StyledSpan ref={karolSpanRef}>Karol</StyledSpan>
-      <StyledSpan ref={hiMyNameIsKarolSpanRef}>Hi! My name is Karol</StyledSpan>
+      <StyledSpan ref={hiSpanRef}>
+        <FormattedMessage id="animation.hiSpan" />
+      </StyledSpan>
+      <StyledSpan ref={mySpanRef}>
+        <FormattedMessage id="animation.mySpan" />
+      </StyledSpan>
+      <StyledSpan ref={hiMySpanRef}>
+        <FormattedMessage id="animation.hiMySpan" />
+      </StyledSpan>
+      <StyledSpan ref={nameSpanRef}>
+        <FormattedMessage id="animation.nameSpan" />
+      </StyledSpan>
+      <StyledSpan ref={hiMyNameSpanRef}>
+        <FormattedMessage id="animation.hiMyNameSpan" />
+      </StyledSpan>
+      <StyledSpan ref={isSpanRef}>
+        <FormattedMessage id="animation.isSpan" />
+      </StyledSpan>
+      <StyledSpan ref={hiMyNameIsSpanRef}>
+        <FormattedMessage id="animation.hiMyNameIsSpan" />
+      </StyledSpan>
+      <StyledSpan ref={karolSpanRef}>
+        <FormattedMessage id="animation.karolSpan" />
+      </StyledSpan>
+      <StyledSpan ref={hiMyNameIsKarolSpanRef}>
+        <FormattedMessage id="animation.hiMyNameIsKarolSpan" />
+      </StyledSpan>
       <SideCloudsWrapper>
         <SideCloud ref={leftSideCloudRef} side="left" />
         <SideCloud ref={rightSideCloudRef} side="right" />
