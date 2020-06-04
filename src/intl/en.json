@@ -1,16 +1,16 @@
 {
   "animation": {
-    "play": "Click to say Hello!",
+    "play": "Click to say 'Hello!'",
     "replay": "Replay?",
-    "hiSpan": "Hi!",
-    "mySpan": "my",
-    "nameSpan": "name",
-    "isSpan": "is",
-    "karolSpan": "Karol",
-    "hiMySpan": "Hi! My",
-    "hiMyNameSpan": "Hi! My name",
-    "hiMyNameIsSpan": "Hi! My name is",
-    "hiMyNameIsKarolSpan": "Hi! My name is Karol!"
+    "firstParagraph": "Hi!",
+    "secondParagraph": "My",
+    "thirdParagraph": "name",
+    "fourthParagraph": "is",
+    "fifthParagraph": "Karol",
+    "firstToSecondParagraph": "Hi! My",
+    "firstToThirdParagraph": "Hi! My name",
+    "firstToFourthParagraph": "Hi! My name is",
+    "firstToFifthParagraph": "Hi! My name is Karol!"
   },
   "header": {
     "aboutMeSection": "About me",

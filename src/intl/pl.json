@@ -1,16 +1,16 @@
 {
   "animation": {
     "play": "Kliknij by się przywitać!",
-    "replay": "Obejrzyj ponownie?",
-    "hiSpan": "Cześć!",
-    "mySpan": "mam",
-    "nameSpan": "na",
-    "isSpan": "imię",
-    "karolSpan": "Karol",
-    "hiMySpan": "Cześć! Mam",
-    "hiMyNameSpan": "Cześć! Mam na",
-    "hiMyNameIsSpan": "Cześć! Mam na imię",
-    "hiMyNameIsKarolSpan": "Cześć! Mam na imię Karol!"
+    "replay": "Jeszcze raz?",
+    "firstParagraph": "Cześć!",
+    "secondParagraph": "Mam",
+    "thirdParagraph": "na",
+    "fourthParagraph": "imię",
+    "fifthParagraph": "Karol",
+    "firstToSecondParagraph": "Cześć! Mam",
+    "firstToThirdParagraph": "Cześć! Mam na",
+    "firstToFourthParagraph": "Cześć! Mam na imię",
+    "firstToFifthParagraph": "Cześć! Mam na imię Karol!"
   },
   "header": {
     "aboutMeSection": "O mnie",

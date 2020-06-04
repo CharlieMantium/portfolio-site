@@ -13,19 +13,20 @@ import {
 
 gsap.registerPlugin(MotionPathPlugin);
 
-export const moveHideItemAndChangeContentTl = (
+export const hideItemAndChangeContentTl = (
   itemRef,
   changeContent,
   newContentId
 ) => {
   const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
-  return tl
-    .to(itemRef, {
-      y: '+=220',
-      duration: 1,
-    })
-    .to(itemRef, { autoAlpha: 0, delay: 1 })
-    .eventCallback('onComplete', changeContent, [newContentId]);
+
+  return tl.to(itemRef, {
+    autoAlpha: 0,
+    duration: 1,
+    delay: 1,
+    onComplete: changeContent,
+    onCompleteParams: [newContentId],
+  });
 };
 
 export const sideCloudsTl = (left, right) => {
@@ -133,12 +134,19 @@ export const masterTl = (
   mushroomCloud,
   debris,
   setAnimationPlay,
-  isAnimationPlaying
+  isAnimationPlaying,
+  changeButtonContentId,
+  newButtonContentId
 ) => {
   const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
   return tl
-    .add(hideItemTween(hiMyNameIsKarolSpan, 1))
+    .add(hideItemTween(hiMyNameIsKarolSpan))
+    .add(
+      hideItemAndChangeContentTl(button, changeButtonContentId, [
+        newButtonContentId,
+      ])
+    )
     .addLabel('start')
     .add(dropItemTween(hiSpan), 'start')
     .add(sideCloudsTl(leftCloud, rightCloud), 'start+=0.3')

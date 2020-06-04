@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 
-export const appearItemTween = (itemRef, duration, delay = 0) =>
+export const appearItemTween = (itemRef, duration = 1, delay = 0) =>
   gsap.to(itemRef, {
     autoAlpha: 1,
     duration,

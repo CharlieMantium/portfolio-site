@@ -4,8 +4,8 @@ import { FormattedMessage } from 'gatsby-plugin-intl';
 import { rem } from 'polished';
 
 import { colors, fonts } from 'styles/base';
-import { appearItemTween, hideItemTween } from 'animations/tweens';
-import { masterTl, moveHideItemAndChangeContentTl } from 'animations/timeLines';
+import { appearItemTween } from 'animations/tweens';
+import { masterTl } from 'animations/timeLines';
 
 import SideCloud from '../SVG/SideCloud';
 import Cloud from '../SVG/Cloud';
@@ -23,7 +23,8 @@ const StartButton = styled.button`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: ${({ isButtonInPlace }) =>
+    isButtonInPlace ? `translate(-50%, ${rem(220)})` : 'translate(-50%, -50%)'};
   z-index: 100;
   padding: ${rem(10)};
   border: ${rem(3)} solid ${colors.delta};
@@ -32,9 +33,10 @@ const StartButton = styled.button`
   opacity: 0;
   font-family: ${fonts.families.headerFont};
   font-size: ${rem(25)};
+  transition: transform 0.5s ease-in-out;
 `;
 
-const StyledSpan = styled.span`
+const StyledParagraph = styled.p`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -60,24 +62,27 @@ const SideCloudsWrapper = styled.div`
 
 const LandingAnimation = () => {
   const [isAnimationPlaying, setAnimationPlay] = useState(false);
-  const [isAnimationReplaying, setAnimationReplay] = useState(false);
+  const [isButtonInPlace, setIsButtonInPlace] = useState(false);
   const [animationButtonTextId, setAnimationButtonTextId] = useState(
     'animation.play'
   );
   const handelAnimationButtonClick = () => {
-    if (isAnimationPlaying === false) setAnimationPlay(true);
+    if (!isAnimationPlaying) {
+      setAnimationPlay(true);
+      setIsButtonInPlace(true);
+    }
   };
 
   const animationButtonRef = createRef();
-  const hiSpanRef = createRef();
-  const mySpanRef = createRef();
-  const hiMySpanRef = createRef();
-  const nameSpanRef = createRef();
-  const hiMyNameSpanRef = createRef();
-  const isSpanRef = createRef();
-  const hiMyNameIsSpanRef = createRef();
-  const karolSpanRef = createRef();
-  const hiMyNameIsKarolSpanRef = createRef();
+  const firstParagraphRef = createRef();
+  const secondParagraphRef = createRef();
+  const firstToSecondParagraphRef = createRef();
+  const thirdParagraphRef = createRef();
+  const firstToThirdParagraphRef = createRef();
+  const fourthParagraphRef = createRef();
+  const firstToFourthParagraphRef = createRef();
+  const fifthParagraphRef = createRef();
+  const firstToFifthParagraphRef = createRef();
   const leftSideCloudRef = createRef();
   const rightSideCloudRef = createRef();
   const bigCloudRef = createRef();
@@ -94,27 +99,17 @@ const LandingAnimation = () => {
 
   useEffect(() => {
     if (isAnimationPlaying) {
-      if (isAnimationReplaying) {
-        hideItemTween(animationButtonRef.current, 2, 1);
-      } else {
-        moveHideItemAndChangeContentTl(
-          animationButtonRef.current,
-          setAnimationButtonTextId,
-          ['animation.replay']
-        );
-        setAnimationReplay(true);
-      }
       masterTl(
         animationButtonRef.current,
-        hiSpanRef.current,
-        mySpanRef.current,
-        hiMySpanRef.current,
-        nameSpanRef.current,
-        hiMyNameSpanRef.current,
-        isSpanRef.current,
-        hiMyNameIsSpanRef.current,
-        karolSpanRef.current,
-        hiMyNameIsKarolSpanRef.current,
+        firstParagraphRef.current,
+        secondParagraphRef.current,
+        firstToSecondParagraphRef.current,
+        thirdParagraphRef.current,
+        firstToThirdParagraphRef.current,
+        fourthParagraphRef.current,
+        firstToFourthParagraphRef.current,
+        fifthParagraphRef.current,
+        firstToFifthParagraphRef.current,
         leftSideCloudRef.current,
         rightSideCloudRef.current,
         bigCloudRef.current,
@@ -127,7 +122,9 @@ const LandingAnimation = () => {
           debrisFourRef.current,
         ],
         setAnimationPlay,
-        false
+        false,
+        setAnimationButtonTextId,
+        'animation.replay'
       );
     }
   }, [isAnimationPlaying]);
@@ -137,36 +134,37 @@ const LandingAnimation = () => {
       <StartButton
         ref={animationButtonRef}
         onClick={handelAnimationButtonClick}
+        isButtonInPlace={isButtonInPlace}
       >
         <FormattedMessage id={animationButtonTextId} />
       </StartButton>
-      <StyledSpan ref={hiSpanRef}>
-        <FormattedMessage id="animation.hiSpan" />
-      </StyledSpan>
-      <StyledSpan ref={mySpanRef}>
-        <FormattedMessage id="animation.mySpan" />
-      </StyledSpan>
-      <StyledSpan ref={hiMySpanRef}>
-        <FormattedMessage id="animation.hiMySpan" />
-      </StyledSpan>
-      <StyledSpan ref={nameSpanRef}>
-        <FormattedMessage id="animation.nameSpan" />
-      </StyledSpan>
-      <StyledSpan ref={hiMyNameSpanRef}>
-        <FormattedMessage id="animation.hiMyNameSpan" />
-      </StyledSpan>
-      <StyledSpan ref={isSpanRef}>
-        <FormattedMessage id="animation.isSpan" />
-      </StyledSpan>
-      <StyledSpan ref={hiMyNameIsSpanRef}>
-        <FormattedMessage id="animation.hiMyNameIsSpan" />
-      </StyledSpan>
-      <StyledSpan ref={karolSpanRef}>
-        <FormattedMessage id="animation.karolSpan" />
-      </StyledSpan>
-      <StyledSpan ref={hiMyNameIsKarolSpanRef}>
-        <FormattedMessage id="animation.hiMyNameIsKarolSpan" />
-      </StyledSpan>
+      <StyledParagraph ref={firstParagraphRef}>
+        <FormattedMessage id="animation.firstParagraph" />
+      </StyledParagraph>
+      <StyledParagraph ref={secondParagraphRef}>
+        <FormattedMessage id="animation.secondParagraph" />
+      </StyledParagraph>
+      <StyledParagraph ref={firstToSecondParagraphRef}>
+        <FormattedMessage id="animation.firstToSecondParagraph" />
+      </StyledParagraph>
+      <StyledParagraph ref={thirdParagraphRef}>
+        <FormattedMessage id="animation.thirdParagraph" />
+      </StyledParagraph>
+      <StyledParagraph ref={firstToThirdParagraphRef}>
+        <FormattedMessage id="animation.firstToThirdParagraph" />
+      </StyledParagraph>
+      <StyledParagraph ref={fourthParagraphRef}>
+        <FormattedMessage id="animation.fourthParagraph" />
+      </StyledParagraph>
+      <StyledParagraph ref={firstToFourthParagraphRef}>
+        <FormattedMessage id="animation.firstToFourthParagraph" />
+      </StyledParagraph>
+      <StyledParagraph ref={fifthParagraphRef}>
+        <FormattedMessage id="animation.fifthParagraph" />
+      </StyledParagraph>
+      <StyledParagraph ref={firstToFifthParagraphRef}>
+        <FormattedMessage id="animation.firstToFifthParagraph" />
+      </StyledParagraph>
       <SideCloudsWrapper>
         <SideCloud ref={leftSideCloudRef} side="left" />
         <SideCloud ref={rightSideCloudRef} side="right" />
