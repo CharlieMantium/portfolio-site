@@ -1,17 +1,10 @@
 import gsap from 'gsap';
 
-export const appearItemTween = (itemRef, duration, delay = 0) =>
+export const appearItemTween = (itemRef, duration = 1, delay = 0) =>
   gsap.to(itemRef, {
     autoAlpha: 1,
     duration,
     delay,
-  });
-
-export const moveItemTween = itemRef =>
-  gsap.to(itemRef, {
-    y: '+=220',
-    ease: 'power4.out',
-    duration: 1,
   });
 
 export const dropItemTween = itemRef =>
@@ -58,5 +51,5 @@ export const enterItemFromTopTween = (itemRef, distance) =>
     { duration: 0.5, autoAlpha: 1, y: `+=${distance}` }
   );
 
-export const hideItemTween = (itemRef, duration) =>
-  gsap.to(itemRef, { autoAlpha: 0, duration });
+export const hideItemTween = (itemRef, duration = 1, delay = 0) =>
+  gsap.to(itemRef, { autoAlpha: 0, duration, delay });

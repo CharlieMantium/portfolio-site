@@ -1,5 +1,6 @@
 import React, { createRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { FormattedMessage } from 'gatsby-plugin-intl';
 import { rem } from 'polished';
 
 import { colors, fonts } from 'styles/base';
@@ -22,7 +23,8 @@ const StartButton = styled.button`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: ${({ isButtonInPlace }) =>
+    isButtonInPlace ? `translate(-50%, ${rem(220)})` : 'translate(-50%, -50%)'};
   z-index: 100;
   padding: ${rem(10)};
   border: ${rem(3)} solid ${colors.delta};
@@ -31,9 +33,10 @@ const StartButton = styled.button`
   opacity: 0;
   font-family: ${fonts.families.headerFont};
   font-size: ${rem(25)};
+  transition: transform 0.5s ease-in-out;
 `;
 
-const StyledSpan = styled.span`
+const StyledMessage = styled.p`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -59,18 +62,27 @@ const SideCloudsWrapper = styled.div`
 
 const LandingAnimation = () => {
   const [isAnimationPlaying, setAnimationPlay] = useState(false);
-  const handelAnimationButtonClick = () => setAnimationPlay(true);
+  const [isButtonInPlace, setIsButtonInPlace] = useState(false);
+  const [animationButtonTextId, setAnimationButtonTextId] = useState(
+    'animation.play'
+  );
+  const handelAnimationButtonClick = () => {
+    if (!isAnimationPlaying) {
+      setAnimationPlay(true);
+      setIsButtonInPlace(true);
+    }
+  };
 
   const animationButtonRef = createRef();
-  const hiSpanRef = createRef();
-  const mySpanRef = createRef();
-  const hiMySpanRef = createRef();
-  const nameSpanRef = createRef();
-  const hiMyNameSpanRef = createRef();
-  const isSpanRef = createRef();
-  const hiMyNameIsSpanRef = createRef();
-  const karolSpanRef = createRef();
-  const hiMyNameIsKarolSpanRef = createRef();
+  const firstMessageRef = createRef();
+  const secondMessageRef = createRef();
+  const firstToSecondMessageRef = createRef();
+  const thirdMessageRef = createRef();
+  const firstToThirdMessageRef = createRef();
+  const fourthMessageRef = createRef();
+  const firstToFourthMessageRef = createRef();
+  const fifthMessageRef = createRef();
+  const firstToFifthMessageRef = createRef();
   const leftSideCloudRef = createRef();
   const rightSideCloudRef = createRef();
   const bigCloudRef = createRef();
@@ -83,18 +95,21 @@ const LandingAnimation = () => {
 
   useEffect(() => {
     appearItemTween(animationButtonRef.current, 2);
-    if (isAnimationPlaying === true)
+  }, [isAnimationPlaying]);
+
+  useEffect(() => {
+    if (isAnimationPlaying) {
       masterTl(
         animationButtonRef.current,
-        hiSpanRef.current,
-        mySpanRef.current,
-        hiMySpanRef.current,
-        nameSpanRef.current,
-        hiMyNameSpanRef.current,
-        isSpanRef.current,
-        hiMyNameIsSpanRef.current,
-        karolSpanRef.current,
-        hiMyNameIsKarolSpanRef.current,
+        firstMessageRef.current,
+        secondMessageRef.current,
+        firstToSecondMessageRef.current,
+        thirdMessageRef.current,
+        firstToThirdMessageRef.current,
+        fourthMessageRef.current,
+        firstToFourthMessageRef.current,
+        fifthMessageRef.current,
+        firstToFifthMessageRef.current,
         leftSideCloudRef.current,
         rightSideCloudRef.current,
         bigCloudRef.current,
@@ -105,27 +120,51 @@ const LandingAnimation = () => {
           debrisTwoRef.current,
           debrisThreeRef.current,
           debrisFourRef.current,
-        ]
+        ],
+        setAnimationPlay,
+        false,
+        setAnimationButtonTextId,
+        'animation.replay'
       );
-  });
+    }
+  }, [isAnimationPlaying]);
 
   return (
     <LandingAnimationWrapper>
       <StartButton
         ref={animationButtonRef}
         onClick={handelAnimationButtonClick}
+        isButtonInPlace={isButtonInPlace}
       >
-        Press to say &apos;Hello!&apos;
+        <FormattedMessage id={animationButtonTextId} />
       </StartButton>
-      <StyledSpan ref={hiSpanRef}>Hi!</StyledSpan>
-      <StyledSpan ref={mySpanRef}>My</StyledSpan>
-      <StyledSpan ref={hiMySpanRef}>Hi! My</StyledSpan>
-      <StyledSpan ref={nameSpanRef}>name</StyledSpan>
-      <StyledSpan ref={hiMyNameSpanRef}>Hi! My name</StyledSpan>
-      <StyledSpan ref={isSpanRef}>is</StyledSpan>
-      <StyledSpan ref={hiMyNameIsSpanRef}>Hi! My name is</StyledSpan>
-      <StyledSpan ref={karolSpanRef}>Karol</StyledSpan>
-      <StyledSpan ref={hiMyNameIsKarolSpanRef}>Hi! My name is Karol</StyledSpan>
+      <StyledMessage ref={firstMessageRef}>
+        <FormattedMessage id="animation.firstMessage" />
+      </StyledMessage>
+      <StyledMessage ref={secondMessageRef}>
+        <FormattedMessage id="animation.secondMessage" />
+      </StyledMessage>
+      <StyledMessage ref={firstToSecondMessageRef}>
+        <FormattedMessage id="animation.firstToSecondMessage" />
+      </StyledMessage>
+      <StyledMessage ref={thirdMessageRef}>
+        <FormattedMessage id="animation.thirdMessage" />
+      </StyledMessage>
+      <StyledMessage ref={firstToThirdMessageRef}>
+        <FormattedMessage id="animation.firstToThirdMessage" />
+      </StyledMessage>
+      <StyledMessage ref={fourthMessageRef}>
+        <FormattedMessage id="animation.fourthMessage" />
+      </StyledMessage>
+      <StyledMessage ref={firstToFourthMessageRef}>
+        <FormattedMessage id="animation.firstToFourthMessage" />
+      </StyledMessage>
+      <StyledMessage ref={fifthMessageRef}>
+        <FormattedMessage id="animation.fifthMessage" />
+      </StyledMessage>
+      <StyledMessage ref={firstToFifthMessageRef}>
+        <FormattedMessage id="animation.firstToFifthMessage" />
+      </StyledMessage>
       <SideCloudsWrapper>
         <SideCloud ref={leftSideCloudRef} side="left" />
         <SideCloud ref={rightSideCloudRef} side="right" />

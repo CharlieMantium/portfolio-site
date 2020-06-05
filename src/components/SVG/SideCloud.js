@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'gatsby-plugin-intl';
 import PropTypes from 'prop-types';
 
 import { StyledImg } from 'components/Section/styled';
@@ -8,11 +9,15 @@ import rightSideCloud from '../../../static/rightSideCloud.svg';
 
 const SideCloud = React.forwardRef(({ side }, ref) => (
   <div>
-    <StyledImg
-      ref={ref}
-      src={side === 'left' ? leftSideCloud : rightSideCloud}
-      alt="Dust cloud"
-    />
+    <FormattedMessage id="alternativeDescription.cloud">
+      {formattedValue => (
+        <StyledImg
+          ref={ref}
+          src={side === 'left' ? leftSideCloud : rightSideCloud}
+          alt={formattedValue}
+        />
+      )}
+    </FormattedMessage>
   </div>
 ));
 
