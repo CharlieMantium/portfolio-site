@@ -2,15 +2,15 @@
   "animation": {
     "play": "Click to say 'Hello!'",
     "replay": "Replay?",
-    "firstParagraph": "Hi!",
-    "secondParagraph": "My",
-    "thirdParagraph": "name",
-    "fourthParagraph": "is",
-    "fifthParagraph": "Karol",
-    "firstToSecondParagraph": "Hi! My",
-    "firstToThirdParagraph": "Hi! My name",
-    "firstToFourthParagraph": "Hi! My name is",
-    "firstToFifthParagraph": "Hi! My name is Karol!"
+    "firstMessage": "Hi!",
+    "secondMessage": "My",
+    "thirdMessage": "name",
+    "fourthMessage": "is",
+    "fifthMessage": "Karol",
+    "firstToSecondMessage": "Hi! My",
+    "firstToThirdMessage": "Hi! My name",
+    "firstToFourthMessage": "Hi! My name is",
+    "firstToFifthMessage": "Hi! My name is Karol!"
   },
   "header": {
     "aboutMeSection": "About me",

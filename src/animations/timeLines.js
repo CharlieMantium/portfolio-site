@@ -24,8 +24,7 @@ export const hideItemAndChangeContentTl = (
     autoAlpha: 0,
     duration: 1,
     delay: 1,
-    onComplete: changeContent,
-    onCompleteParams: [newContentId],
+    onComplete: () => changeContent(newContentId),
   });
 };
 

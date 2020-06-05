@@ -2,15 +2,15 @@
   "animation": {
     "play": "Kliknij by się przywitać!",
     "replay": "Jeszcze raz?",
-    "firstParagraph": "Cześć!",
-    "secondParagraph": "Mam",
-    "thirdParagraph": "na",
-    "fourthParagraph": "imię",
-    "fifthParagraph": "Karol",
-    "firstToSecondParagraph": "Cześć! Mam",
-    "firstToThirdParagraph": "Cześć! Mam na",
-    "firstToFourthParagraph": "Cześć! Mam na imię",
-    "firstToFifthParagraph": "Cześć! Mam na imię Karol!"
+    "firstMessage": "Cześć!",
+    "secondMessage": "Mam",
+    "thirdMessage": "na",
+    "fourthMessage": "imię",
+    "fifthMessage": "Karol",
+    "firstToSecondMessage": "Cześć! Mam",
+    "firstToThirdMessage": "Cześć! Mam na",
+    "firstToFourthMessage": "Cześć! Mam na imię",
+    "firstToFifthMessage": "Cześć! Mam na imię Karol!"
   },
   "header": {
     "aboutMeSection": "O mnie",

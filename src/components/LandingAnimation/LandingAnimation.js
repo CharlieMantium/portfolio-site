@@ -36,7 +36,7 @@ const StartButton = styled.button`
   transition: transform 0.5s ease-in-out;
 `;
 
-const StyledParagraph = styled.p`
+const StyledMessage = styled.p`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -74,15 +74,15 @@ const LandingAnimation = () => {
   };
 
   const animationButtonRef = createRef();
-  const firstParagraphRef = createRef();
-  const secondParagraphRef = createRef();
-  const firstToSecondParagraphRef = createRef();
-  const thirdParagraphRef = createRef();
-  const firstToThirdParagraphRef = createRef();
-  const fourthParagraphRef = createRef();
-  const firstToFourthParagraphRef = createRef();
-  const fifthParagraphRef = createRef();
-  const firstToFifthParagraphRef = createRef();
+  const firstMessageRef = createRef();
+  const secondMessageRef = createRef();
+  const firstToSecondMessageRef = createRef();
+  const thirdMessageRef = createRef();
+  const firstToThirdMessageRef = createRef();
+  const fourthMessageRef = createRef();
+  const firstToFourthMessageRef = createRef();
+  const fifthMessageRef = createRef();
+  const firstToFifthMessageRef = createRef();
   const leftSideCloudRef = createRef();
   const rightSideCloudRef = createRef();
   const bigCloudRef = createRef();
@@ -101,15 +101,15 @@ const LandingAnimation = () => {
     if (isAnimationPlaying) {
       masterTl(
         animationButtonRef.current,
-        firstParagraphRef.current,
-        secondParagraphRef.current,
-        firstToSecondParagraphRef.current,
-        thirdParagraphRef.current,
-        firstToThirdParagraphRef.current,
-        fourthParagraphRef.current,
-        firstToFourthParagraphRef.current,
-        fifthParagraphRef.current,
-        firstToFifthParagraphRef.current,
+        firstMessageRef.current,
+        secondMessageRef.current,
+        firstToSecondMessageRef.current,
+        thirdMessageRef.current,
+        firstToThirdMessageRef.current,
+        fourthMessageRef.current,
+        firstToFourthMessageRef.current,
+        fifthMessageRef.current,
+        firstToFifthMessageRef.current,
         leftSideCloudRef.current,
         rightSideCloudRef.current,
         bigCloudRef.current,
@@ -138,33 +138,33 @@ const LandingAnimation = () => {
       >
         <FormattedMessage id={animationButtonTextId} />
       </StartButton>
-      <StyledParagraph ref={firstParagraphRef}>
-        <FormattedMessage id="animation.firstParagraph" />
-      </StyledParagraph>
-      <StyledParagraph ref={secondParagraphRef}>
-        <FormattedMessage id="animation.secondParagraph" />
-      </StyledParagraph>
-      <StyledParagraph ref={firstToSecondParagraphRef}>
-        <FormattedMessage id="animation.firstToSecondParagraph" />
-      </StyledParagraph>
-      <StyledParagraph ref={thirdParagraphRef}>
-        <FormattedMessage id="animation.thirdParagraph" />
-      </StyledParagraph>
-      <StyledParagraph ref={firstToThirdParagraphRef}>
-        <FormattedMessage id="animation.firstToThirdParagraph" />
-      </StyledParagraph>
-      <StyledParagraph ref={fourthParagraphRef}>
-        <FormattedMessage id="animation.fourthParagraph" />
-      </StyledParagraph>
-      <StyledParagraph ref={firstToFourthParagraphRef}>
-        <FormattedMessage id="animation.firstToFourthParagraph" />
-      </StyledParagraph>
-      <StyledParagraph ref={fifthParagraphRef}>
-        <FormattedMessage id="animation.fifthParagraph" />
-      </StyledParagraph>
-      <StyledParagraph ref={firstToFifthParagraphRef}>
-        <FormattedMessage id="animation.firstToFifthParagraph" />
-      </StyledParagraph>
+      <StyledMessage ref={firstMessageRef}>
+        <FormattedMessage id="animation.firstMessage" />
+      </StyledMessage>
+      <StyledMessage ref={secondMessageRef}>
+        <FormattedMessage id="animation.secondMessage" />
+      </StyledMessage>
+      <StyledMessage ref={firstToSecondMessageRef}>
+        <FormattedMessage id="animation.firstToSecondMessage" />
+      </StyledMessage>
+      <StyledMessage ref={thirdMessageRef}>
+        <FormattedMessage id="animation.thirdMessage" />
+      </StyledMessage>
+      <StyledMessage ref={firstToThirdMessageRef}>
+        <FormattedMessage id="animation.firstToThirdMessage" />
+      </StyledMessage>
+      <StyledMessage ref={fourthMessageRef}>
+        <FormattedMessage id="animation.fourthMessage" />
+      </StyledMessage>
+      <StyledMessage ref={firstToFourthMessageRef}>
+        <FormattedMessage id="animation.firstToFourthMessage" />
+      </StyledMessage>
+      <StyledMessage ref={fifthMessageRef}>
+        <FormattedMessage id="animation.fifthMessage" />
+      </StyledMessage>
+      <StyledMessage ref={firstToFifthMessageRef}>
+        <FormattedMessage id="animation.firstToFifthMessage" />
+      </StyledMessage>
       <SideCloudsWrapper>
         <SideCloud ref={leftSideCloudRef} side="left" />
         <SideCloud ref={rightSideCloudRef} side="right" />
