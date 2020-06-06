@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 import PropTypes from 'prop-types';
 
+import { breakPoints } from 'styles/base';
 import { StyledImg } from 'components/Section/styled';
 
 import bigCloud from '../../../static/bigCloud.svg';
@@ -14,6 +15,10 @@ const CloudWrapper = styled.div`
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
+
+  @media (min-width: ${breakPoints.largeMobile}) {
+    width: 65%;
+  }
 `;
 
 const Cloud = React.forwardRef(({ src }, ref) => (
