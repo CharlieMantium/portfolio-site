@@ -10,9 +10,9 @@ import bigCloud from '../../../static/bigCloud.svg';
 const CloudWrapper = styled.div`
   display: flex;
   position: absolute;
-  top: 50%;
+  bottom: 50%;
   left: 50%;
-  transform: translate(-50%, -70%);
+  transform: translateX(-50%);
   width: 100%;
 `;
 

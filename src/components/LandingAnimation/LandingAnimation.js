@@ -21,10 +21,10 @@ const LandingAnimationWrapper = styled.div`
 
 const StartButton = styled.button`
   position: absolute;
-  top: 50%;
+  bottom: 50%;
   left: 50%;
   transform: ${({ isButtonInPlace }) =>
-    isButtonInPlace ? `translate(-50%, ${rem(220)})` : 'translate(-50%, -50%)'};
+    isButtonInPlace ? `translate(-50%, ${rem(220)})` : 'translateX(-50%)'};
   z-index: 100;
   padding: ${rem(10)};
   border: ${rem(3)} solid ${colors.delta};
@@ -38,9 +38,10 @@ const StartButton = styled.button`
 
 const StyledMessage = styled.p`
   position: absolute;
-  top: 50%;
+  bottom: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  margin: 0;
   padding: ${rem(10)};
   border: ${rem(3)} solid ${colors.delta};
   border-radius: ${rem(5)};
@@ -55,9 +56,9 @@ const StyledMessage = styled.p`
 const SideCloudsWrapper = styled.div`
   display: flex;
   position: absolute;
-  top: 50%;
+  bottom: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
 `;
 
 const LandingAnimation = () => {
