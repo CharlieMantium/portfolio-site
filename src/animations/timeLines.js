@@ -80,19 +80,27 @@ export const debrisFlyTl = debrisRef => {
   return mainTl;
 };
 
-export const explosionTl = (cloudRef, debrisRef) => {
+export const explosionTl = (cloudRef, debrisRef, isSpinning = false) => {
   const tl = gsap.timeline({
-    defaults: { transformOrigin: '50% 70%', ease: 'slow' },
+    defaults: {
+      transformOrigin: isSpinning ? '50% 50%' : '50% 70%',
+      ease: 'slow',
+    },
   });
 
   return tl
     .addLabel('start')
     .fromTo(
       cloudRef,
-      { autoAlpha: 0, scale: 0 },
+      { autoAlpha: 0, scale: 0, y: isSpinning ? '30%' : undefined },
       { autoAlpha: 1, scale: 1, duration: 0.1 }
     )
-    .to(cloudRef, { autoAlpha: 0, scale: 0.97, duration: 1 })
+    .to(cloudRef, {
+      autoAlpha: 0,
+      scale: 0.97,
+      rotation: isSpinning ? '+=360' : 0,
+      duration: 1,
+    })
     .add(debrisFlyTl(debrisRef), 'start');
 };
 
@@ -102,7 +110,8 @@ export const enterNextItemTl = (
   currentSpan,
   newSpan,
   cloud,
-  debris
+  debris,
+  isSpinning
 ) => {
   const tl = gsap.timeline({ defaults: { ease: 'none' } });
 
@@ -111,7 +120,7 @@ export const enterNextItemTl = (
     .add(hideItemTween(currentSpan, 0.1))
     .add(hideItemTween(enteringSpan, 0.3), '-=0.3')
     .addLabel('explosion')
-    .add(explosionTl(cloud, debris))
+    .add(explosionTl(cloud, debris, isSpinning))
     .add(appearItemTween(newSpan, 2, 0.5), 'explosion');
 };
 
@@ -166,7 +175,8 @@ export const masterTl = (
         hiMySpan,
         hiMyNameSpan,
         spiralCloud,
-        debris
+        debris,
+        true
       )
     )
     .add(
