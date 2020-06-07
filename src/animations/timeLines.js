@@ -92,7 +92,7 @@ export const explosionTl = (cloudRef, debrisRef, isSpinning = false) => {
     .addLabel('start')
     .fromTo(
       cloudRef,
-      { autoAlpha: 0, scale: 0, y: isSpinning && '30%' },
+      { autoAlpha: 0, scale: 0, y: isSpinning ? '30%' : undefined },
       { autoAlpha: 1, scale: 1, duration: 0.1 }
     )
     .to(cloudRef, {
