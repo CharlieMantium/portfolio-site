@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import scrollTo from 'gatsby-plugin-smoothscroll';
@@ -7,16 +7,17 @@ import { FormattedMessage, changeLocale } from 'gatsby-plugin-intl';
 import { rem, lighten } from 'polished';
 
 import { colors, breakPoints } from 'styles/base';
+import useDisableMenuOnOutsideClick from 'hooks/useDisableMenuOnOutsideClick';
 
 const NavBarWrapper = styled.nav`
   position: fixed;
   top: 0;
-  right: ${rem(-100)};
-  z-index: 1;
-  padding: ${rem(10)};
+  right: ${rem(-200)};
+  z-index: 200;
+  padding: ${rem(20)} ${rem(30)} ${rem(20)} ${rem(20)};
   background-color: ${lighten(0.06, colors.alpha)};
   opacity: ${({ isNavActive }) => (isNavActive ? '0.9' : '0')};
-  transform: ${({ isNavActive }) => isNavActive && `translateX(${rem(-100)})`};
+  transform: ${({ isNavActive }) => isNavActive && `translateX(${rem(-200)})`};
   transition: transform 0.5s ease-in-out, opacity 0.4s ease-in-out;
   box-shadow: 0 ${rem(1)} ${rem(5)} 0 ${colors.epsilon};
 
@@ -36,6 +37,7 @@ const ChangeLocaleWrapper = styled.div`
 `;
 
 const ChangeLocaleButton = styled.button`
+  padding: 0 ${rem(12)} 0 0;
   background: none;
   border: none;
   cursor: pointer;
@@ -44,7 +46,7 @@ const ChangeLocaleButton = styled.button`
 const NavList = styled.ul`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -57,10 +59,11 @@ const NavList = styled.ul`
 `;
 
 const NavListItem = styled.li`
-  padding: ${rem(8)} 0;
+  padding: ${rem(30)} ${rem(40)};
 
   &:first-child {
     align-self: flex-start;
+    padding: 0;
   }
 
   @media (min-width: ${breakPoints.largeMobile}) {
@@ -79,75 +82,82 @@ const NavListLink = styled.button`
   }
 `;
 
-const NavBar = ({ isNavActive }) => (
-  <NavBarWrapper isNavActive={isNavActive}>
-    <NavList>
-      <NavListItem>
-        <ChangeLocaleWrapper>
-          <ChangeLocaleButton
-            onClick={() => changeLocale('en')}
+const NavBar = ({ isNavActive, setNavActive }) => {
+  const navBarRef = createRef(null);
+  useDisableMenuOnOutsideClick(navBarRef, setNavActive);
+
+  return (
+    <NavBarWrapper isNavActive={isNavActive} ref={navBarRef}>
+      <NavList>
+        <NavListItem>
+          <ChangeLocaleWrapper>
+            <ChangeLocaleButton
+              onClick={() => changeLocale('en')}
+              disabled={!isNavActive}
+            >
+              <ReactCountryFlag countryCode="GB" />
+            </ChangeLocaleButton>
+            <ChangeLocaleButton
+              onClick={() => changeLocale('pl')}
+              disabled={!isNavActive}
+            >
+              <ReactCountryFlag countryCode="PL" />
+            </ChangeLocaleButton>
+          </ChangeLocaleWrapper>
+        </NavListItem>
+        <NavListItem>
+          <NavListLink
+            onClick={() => scrollTo('#landing')}
             disabled={!isNavActive}
           >
-            <ReactCountryFlag countryCode="GB" />
-          </ChangeLocaleButton>
-          <ChangeLocaleButton
-            onClick={() => changeLocale('pl')}
+            <FormattedMessage id="navTo.landingSection" />
+          </NavListLink>
+        </NavListItem>
+        <NavListItem>
+          <NavListLink
+            onClick={() => scrollTo('#aboutMe')}
             disabled={!isNavActive}
           >
-            <ReactCountryFlag countryCode="PL" />
-          </ChangeLocaleButton>
-        </ChangeLocaleWrapper>
-      </NavListItem>
-      <NavListItem>
-        <NavListLink
-          onClick={() => scrollTo('#landing')}
-          disabled={!isNavActive}
-        >
-          <FormattedMessage id="navTo.landingSection" />
-        </NavListLink>
-      </NavListItem>
-      <NavListItem>
-        <NavListLink
-          onClick={() => scrollTo('#aboutMe')}
-          disabled={!isNavActive}
-        >
-          <FormattedMessage id="navTo.aboutMeSection" />
-        </NavListLink>
-      </NavListItem>
-      <NavListItem>
-        <NavListLink
-          onClick={() => scrollTo('#techStack')}
-          disabled={!isNavActive}
-        >
-          <FormattedMessage id="navTo.techStackSection" />
-        </NavListLink>
-      </NavListItem>
-      <NavListItem>
-        <NavListLink
-          onClick={() => scrollTo('#projects')}
-          disabled={!isNavActive}
-        >
-          <FormattedMessage id="navTo.projectsSection" />
-        </NavListLink>
-      </NavListItem>
-      <NavListItem>
-        <NavListLink
-          onClick={() => scrollTo('#contact')}
-          disabled={!isNavActive}
-        >
-          <FormattedMessage id="navTo.contactSection" />
-        </NavListLink>
-      </NavListItem>
-    </NavList>
-  </NavBarWrapper>
-);
+            <FormattedMessage id="navTo.aboutMeSection" />
+          </NavListLink>
+        </NavListItem>
+        <NavListItem>
+          <NavListLink
+            onClick={() => scrollTo('#techStack')}
+            disabled={!isNavActive}
+          >
+            <FormattedMessage id="navTo.techStackSection" />
+          </NavListLink>
+        </NavListItem>
+        <NavListItem>
+          <NavListLink
+            onClick={() => scrollTo('#projects')}
+            disabled={!isNavActive}
+          >
+            <FormattedMessage id="navTo.projectsSection" />
+          </NavListLink>
+        </NavListItem>
+        <NavListItem>
+          <NavListLink
+            onClick={() => scrollTo('#contact')}
+            disabled={!isNavActive}
+          >
+            <FormattedMessage id="navTo.contactSection" />
+          </NavListLink>
+        </NavListItem>
+      </NavList>
+    </NavBarWrapper>
+  );
+};
 
 NavBar.propTypes = {
   isNavActive: PropTypes.bool,
+  setNavActive: PropTypes.func,
 };
 
 NavBar.defaultProps = {
   isNavActive: false,
+  setNavActive: () => {},
 };
 
 export default NavBar;

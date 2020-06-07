@@ -3,7 +3,7 @@ import { rem } from 'polished';
 
 import { breakPoints, colors } from 'styles/base';
 
-export const SectionWrapper = styled.div`
+export const StyledSectionWrapper = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -55,4 +55,18 @@ export const StyledImg = styled.img`
   width: 100%;
   height: 100%;
   opacity: 0;
+`;
+
+export const Line = styled.hr`
+  width: ${rem(50)};
+  border: 0;
+  height: 1px;
+  background-image: ${({ isReversed }) =>
+    isReversed
+      ? `linear-gradient(to right, ${colors.beta}, ${colors.alpha})`
+      : `linear-gradient(to right, ${colors.alpha}, ${colors.beta})`};
+
+  @media (min-width: ${breakPoints.largeMobile}) {
+    width: ${rem(200)};
+  }
 `;

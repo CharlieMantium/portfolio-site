@@ -34,6 +34,7 @@
       "alias": [
         ["animations", "./src/animations"],
         ["components", "./src/components"],
+        ["hooks", "./src/hooks"],
         ["styles", "./src/styles"]
       ]
     }

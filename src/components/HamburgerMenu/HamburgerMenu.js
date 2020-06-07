@@ -21,7 +21,7 @@ const HamburgerButton = styled.button`
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 2;
+  z-index: 300;
   cursor: pointer;
   background-color: inherit;
   border: 0;

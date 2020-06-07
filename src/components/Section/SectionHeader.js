@@ -3,26 +3,12 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { rem } from 'polished';
 
-import { breakPoints, colors } from 'styles/base';
+import { Line } from 'components/Section/styled';
 
 const SectionHeaderWrapper = styled.div`
   display: flex;
   align-items: center;
   padding: ${rem(20)} 0;
-`;
-
-const Line = styled.hr`
-  width: ${rem(50)};
-  border: 0;
-  height: 1px;
-  background-image: ${({ isReversed }) =>
-    isReversed
-      ? `linear-gradient(to right, ${colors.beta}, ${colors.alpha})`
-      : `linear-gradient(to right, ${colors.alpha}, ${colors.beta})`};
-
-  @media (min-width: ${breakPoints.largeMobile}) {
-    width: ${rem(200)};
-  }
 `;
 
 const HeaderText = styled.h2`
