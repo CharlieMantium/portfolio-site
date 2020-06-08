@@ -28,11 +28,14 @@
   },
   "linkTo": {
     "linkedIn": "Znajdź mnie na LinkedIn",
-    "hangman": "<a>{appName}</a> - znana i lubiana gra słowna",
-    "schoolApp": "<a>{appName}</a> - kolorowa i wygodna aplikacja do tworzenia tygodniowego planu zajęć"
+    "hangman": "<a>{appName}</a> - znana i lubiana gra słowna. Do jej napisania użyłem HTML, SCSS i Vanilla JS.",
+    "schoolApp": "<a>{appName}</a> - kolorowa i wygodna aplikacja do planowania tygodnia zajęć szkolnych. Do jej napisania użyłem React (z Redux) oraz Styled Components."
   },
   "description": {
-    "aboutMeSection": "Jestem początkującym front-end developerem samoukiem. Czuję się gotowy by rozpocząć swą pierwszą pracę, by jeszcze szybciej poszerzać i rozwijać swe umiejętności."
+    "aboutMeSection": {
+      "partOne": "Nazywam się Karol Zieniewicz. Dwa lata temu odkryłem w sobie nową pasję i zagłębiłem się w niesamowity i fascynujący świat Front-Endu. Od tamtej pory spędzam każdą wolną chwilę rozwijając swoje umiejętności w rozmaitych technologiach poprzez kursy on-line, jak i tworząc swoje własne projekty. Obecnie moim głównym celem jest znalezienie pierwszej pracy jako Junior Front-End Developer. Jestem przekonany, że będzie to olbrzymi krok na mojej drodze do rozwoju i szansa na zebranie cennego doświadczenia.",
+      "partTwo": "Gdy nie koduję spędzam czas z moją wspaniałą rodziną – moją żoną, synkiem, psem i królikiem. Poza tym wraz z żoną jesteśmy wielkimi fanami horrorów. Moim ukochanym hobby jest piwowarstwo domowe, które jest równie relaksujące co satysfakcjonujące."
+    }
   },
   "alternativeDescription": {
     "authorsPhoto": "Czarno-białe zdjęcie rozmarzonego autora tej strony.",

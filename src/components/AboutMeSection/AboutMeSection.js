@@ -52,7 +52,10 @@ const AboutMeSection = () => {
         )}
       </FormattedMessage>
       <SectionText>
-        <FormattedMessage id="description.aboutMeSection" />
+        <FormattedMessage id="description.aboutMeSection.partOne" />
+      </SectionText>
+      <SectionText>
+        <FormattedMessage id="description.aboutMeSection.partTwo" />
       </SectionText>
     </Wrapper>
   );
