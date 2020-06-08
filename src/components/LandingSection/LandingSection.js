@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { rem } from 'polished';
 
 import { StyledSectionWrapper } from 'components/Section/styled';
 import HamburgerMenu from 'components/HamburgerMenu/HamburgerMenu';
@@ -7,6 +8,7 @@ import NavBar from 'components/NavBar/NavBar';
 import LandingAnimation from 'components/LandingAnimation/LandingAnimation';
 
 const LandingSectionWrapper = styled(StyledSectionWrapper)`
+  padding: ${rem(50)} ${rem(5)};
   justify-content: center;
 `;
 
