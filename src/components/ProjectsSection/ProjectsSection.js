@@ -21,6 +21,7 @@ const ProjectsSectionItemWrapper = styled(SectionItemWrapper)`
 
 const StyledImg = styled(Img)`
   width: 100%;
+  border-radius: ${rem(10)};
 
   @media (min-width: ${breakPoints.desktop}) {
     width: 40%;
