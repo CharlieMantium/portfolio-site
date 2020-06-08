@@ -3,14 +3,14 @@
     "play": "Click to say 'Hello!'",
     "replay": "Replay?",
     "firstMessage": "Hi!",
-    "secondMessage": "My",
-    "thirdMessage": "name",
-    "fourthMessage": "is",
-    "fifthMessage": "Karol",
-    "firstToSecondMessage": "Hi! My",
-    "firstToThirdMessage": "Hi! My name",
-    "firstToFourthMessage": "Hi! My name is",
-    "firstToFifthMessage": "Hi! My name is Karol!"
+    "secondMessage": "HTML",
+    "thirdMessage": "CSS",
+    "fourthMessage": "JS",
+    "fifthMessage": "REACT",
+    "firstToSecondMessage": "My name is Karol",
+    "firstToThirdMessage": "I'm a Junior Front-End Developer",
+    "firstToFourthMessage": "I made this site",
+    "firstToFifthMessage": "Scroll down to check my projects :)"
   },
   "header": {
     "aboutMeSection": "About me",

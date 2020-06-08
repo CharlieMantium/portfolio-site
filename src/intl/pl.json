@@ -3,14 +3,14 @@
     "play": "Kliknij by się przywitać!",
     "replay": "Jeszcze raz?",
     "firstMessage": "Cześć!",
-    "secondMessage": "Mam",
-    "thirdMessage": "na",
-    "fourthMessage": "imię",
-    "fifthMessage": "Karol",
-    "firstToSecondMessage": "Cześć! Mam",
-    "firstToThirdMessage": "Cześć! Mam na",
-    "firstToFourthMessage": "Cześć! Mam na imię",
-    "firstToFifthMessage": "Cześć! Mam na imię Karol!"
+    "secondMessage": "HTML",
+    "thirdMessage": "CSS",
+    "fourthMessage": "JS",
+    "fifthMessage": "REACT",
+    "firstToSecondMessage": "Mam na imię Karol",
+    "firstToThirdMessage": "Jestem Junior Front-End developerem",
+    "firstToFourthMessage": "Jestem autorem tej strony",
+    "firstToFifthMessage": "Ponieżej znajdziesz więcej moich projektów :)"
   },
   "header": {
     "aboutMeSection": "O mnie",
