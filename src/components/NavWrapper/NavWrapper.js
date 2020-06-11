@@ -18,7 +18,8 @@ const NavWrapper = () => {
     </div>
   );
 };
-NavWrapper.proptype = {};
+
+NavWrapper.prototype = {};
 
 const clickOutsideConfig = {
   handleClickOutside: () => NavWrapper.handleClickOutside,
