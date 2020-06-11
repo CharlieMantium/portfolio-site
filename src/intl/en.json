@@ -29,13 +29,11 @@
   "linkTo": {
     "linkedIn": "Contact me on LinkedIn",
     "hangman": "<a>{appName}</a> - well known and fun guessing game. Written in HTML, SCSS and Vanilla JS.",
-    "schoolApp": "<a>{appName}</a> - colorful and convenient app to store your weekly classes plan. Written in React (with Redux) and Styled Components."
+    "schoolApp": "<a>{appName}</a> - colorful and convenient app to store your weekly classes plan. Written in React (with Redux) and Styled Components.",
+    "cloudGraphicsSource": "Cloud grphics designed by <a>{linkText}</a>"
   },
   "description": {
-    "aboutMeSection": {
-      "partOne": "My name is Karol Zieniewicz. Two years ago I found my new passion and I dived into incredible and fascinating world of Front-End technologies. Since then I've been spending most of my free time building my skills with variety of technologies via on-line courses and working on my own projects. My main professional goal now is to find my first job as a Junior Front-End Developer. I see this step as a great opportunity to further improve and gain real-life experience.",
-      "partTwo": "When not coding, I'm enjoying my life with my wonderful family - my wife, my little son, a dog and a bunny rabbit. Other than that, I'm a big fan of horror movies and luckily, my wife is, as well. I'm also really interested in home brewing. I find it very relaxing and rewarding."
-    }
+    "aboutMeSection": "My name is Karol Zieniewicz. Two years ago I found my new passion and I dived into incredible and fascinating world of Front-End technologies. Since then I've been spending most of my free time building my skills with variety of technologies via on-line courses and working on my own projects. My main professional goal now is to find my first job as a Junior Front-End Developer. I see this step as a great opportunity to further improve and gain real-life experience.{breakingLine}When not coding, I'm enjoying my life with my wonderful family - my wife, my little son, a dog and a bunny rabbit. Other than that, I'm a big fan of horror movies and luckily, my wife is, as well. I'm also really interested in home brewing. I find it very relaxing and rewarding."
   },
   "alternativeDescription": {
     "authorsPhoto": "Black and white, artsy photography showing the author of this site.",

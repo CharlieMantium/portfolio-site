@@ -18,6 +18,7 @@ export const fonts = {
     headerFont: 'Alfa Slab One',
   },
   sizes: {
+    xs: '0.7rem',
     lFontSize: '1.1rem',
     xlFontSize: '3rem',
     xxlFontSize: '5rem',

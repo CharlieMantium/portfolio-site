@@ -52,10 +52,17 @@ const AboutMeSection = () => {
         )}
       </FormattedMessage>
       <SectionText>
-        <FormattedMessage id="description.aboutMeSection.partOne" />
-      </SectionText>
-      <SectionText>
-        <FormattedMessage id="description.aboutMeSection.partTwo" />
+        <FormattedMessage
+          id="description.aboutMeSection"
+          values={{
+            breakingLine: (
+              <>
+                <br />
+                <br />
+              </>
+            ),
+          }}
+        />
       </SectionText>
     </Wrapper>
   );

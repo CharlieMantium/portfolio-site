@@ -34,7 +34,7 @@ const Wrapper = React.forwardRef(({ children, id }, ref) => {
   }
 
   return (
-    <StyledSectionWrapper ref={ref && ref} id={id}>
+    <StyledSectionWrapper ref={ref} id={id}>
       {children}
     </StyledSectionWrapper>
   );

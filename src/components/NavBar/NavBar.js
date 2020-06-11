@@ -7,7 +7,6 @@ import { FormattedMessage, changeLocale } from 'gatsby-plugin-intl';
 import { rem, lighten } from 'polished';
 
 import { colors, breakPoints } from 'styles/base';
-import useDisableMenuOnOutsideClick from 'hooks/useDisableMenuOnOutsideClick';
 
 const NavBarWrapper = styled.nav`
   position: fixed;
@@ -23,7 +22,7 @@ const NavBarWrapper = styled.nav`
 
   @media (min-width: ${breakPoints.largeMobile}) {
     top: ${rem(-65)};
-    right: auto;
+    right: 0;
     width: 100%;
     padding: ${rem(20)} 0;
     transform: ${({ isNavActive }) => isNavActive && `translateY(${rem(65)})`};
@@ -53,7 +52,7 @@ const NavList = styled.ul`
 
   @media (min-width: ${breakPoints.largeMobile}) {
     flex-direction: row;
-    padding: 0 ${rem(70)} 0 ${rem(20)};
+    padding: 0 ${rem(100)} 0 ${rem(20)};
     justify-content: space-between;
   }
 `;
@@ -82,9 +81,8 @@ const NavListLink = styled.button`
   }
 `;
 
-const NavBar = ({ isNavActive, setNavActive }) => {
+const NavBar = ({ isNavActive }) => {
   const navBarRef = createRef(null);
-  useDisableMenuOnOutsideClick(navBarRef, setNavActive);
 
   return (
     <NavBarWrapper isNavActive={isNavActive} ref={navBarRef}>
@@ -152,12 +150,10 @@ const NavBar = ({ isNavActive, setNavActive }) => {
 
 NavBar.propTypes = {
   isNavActive: PropTypes.bool,
-  setNavActive: PropTypes.func,
 };
 
 NavBar.defaultProps = {
   isNavActive: false,
-  setNavActive: () => {},
 };
 
 export default NavBar;

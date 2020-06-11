@@ -85,7 +85,6 @@ const ProjectsSection = () => {
                   href="https://charliemantium.github.io/hangman/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  display="block"
                 >
                   {chunks}
                 </a>
