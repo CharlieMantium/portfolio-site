@@ -19,6 +19,8 @@ const NavWrapper = () => {
   );
 };
 
+NavWrapper.proptype = {};
+
 const clickOutsideConfig = {
   handleClickOutside: () => NavWrapper.handleClickOutside,
 };
