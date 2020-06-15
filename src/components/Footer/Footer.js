@@ -16,33 +16,30 @@ const FooterSideText = styled.p`
   text-align: center;
 `;
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
-  return (
-    <footer>
-      <FooterMainText>
-        Karol Zieniewicz &reg;&nbsp;
-        {currentYear}
-      </FooterMainText>
-      <FooterSideText>
-        <FormattedMessage
-          id="linkTo.cloudGraphicsSource"
-          values={{
-            a: (...chunks) => (
-              <a
-                href="http://www.freepik.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {chunks}
-              </a>
-            ),
-            linkText: 'pch.vector / Freepik',
-          }}
-        />
-      </FooterSideText>
-    </footer>
-  );
-};
+const Footer = () => (
+  <footer>
+    <FooterMainText>
+      Karol Zieniewicz &reg;&nbsp;
+      {new Date().getFullYear()}
+    </FooterMainText>
+    <FooterSideText>
+      <FormattedMessage
+        id="linkTo.cloudGraphicsSource"
+        values={{
+          a: (...chunks) => (
+            <a
+              href="http://www.freepik.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {chunks}
+            </a>
+          ),
+          linkText: 'pch.vector / Freepik',
+        }}
+      />
+    </FooterSideText>
+  </footer>
+);
 
 export default Footer;
