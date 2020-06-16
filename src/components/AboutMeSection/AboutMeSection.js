@@ -51,9 +51,13 @@ const AboutMeSection = () => {
           />
         )}
       </FormattedMessage>
-      <SectionText>
-        <FormattedMessage id="description.aboutMeSection" />
-      </SectionText>
+      <FormattedMessage
+        id="description.aboutMeSection"
+        values={{
+          p1: (...chunks) => <SectionText>{chunks}</SectionText>,
+          p2: (...chunks) => <SectionText>{chunks}</SectionText>,
+        }}
+      />
     </Wrapper>
   );
 };

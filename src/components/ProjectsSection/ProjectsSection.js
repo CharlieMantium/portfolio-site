@@ -12,6 +12,7 @@ import SectionHeader from 'components/Section/SectionHeader';
 
 const ProjectsSectionItemWrapper = styled(SectionItemWrapper)`
   flex-direction: column;
+  margin: ${rem(30)} 0;
 
   @media (min-width: ${breakPoints.desktop}) {
     flex-direction: ${({ isReversed }) => (isReversed ? 'row-reverse' : 'row')};
@@ -20,6 +21,7 @@ const ProjectsSectionItemWrapper = styled(SectionItemWrapper)`
 
 const StyledImg = styled(Img)`
   width: 100%;
+  border-radius: ${rem(10)};
 
   @media (min-width: ${breakPoints.desktop}) {
     width: 40%;
@@ -31,7 +33,7 @@ const ProjectsSectionItemText = styled.p`
 
   @media (min-width: ${breakPoints.desktop}) {
     width: 60%;
-    padding: 0 ${rem(20)};
+    padding: 0 ${rem(50)};
     text-align: ${({ isReversed }) => (isReversed ? 'right' : 'left')};
   }
 `;
@@ -83,7 +85,6 @@ const ProjectsSection = () => {
                   href="https://charliemantium.github.io/hangman/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  display="block"
                 >
                   {chunks}
                 </a>

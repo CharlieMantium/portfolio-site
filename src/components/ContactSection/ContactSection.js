@@ -23,7 +23,7 @@ const ContactSectionContentWrapper = styled.div`
   @media (min-width: ${breakPoints.largeMobile}) {
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 0 ${rem(250)} 0;
+    padding: 0 0 ${rem(300)} 0;
   }
 `;
 

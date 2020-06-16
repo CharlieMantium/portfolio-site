@@ -1,2 +1,0 @@
-TODO: change favicon
-TODO: translation in LandingAnimation component

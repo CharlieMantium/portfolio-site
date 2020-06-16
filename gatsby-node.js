@@ -6,6 +6,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
       alias: {
         animations: path.resolve(__dirname, 'src/animations'),
         components: path.resolve(__dirname, 'src/components'),
+        hooks: path.resolve(__dirname, 'src/hooks'),
         styles: path.resolve(__dirname, 'src/styles'),
       },
     },
