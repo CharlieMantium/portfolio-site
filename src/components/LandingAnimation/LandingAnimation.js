@@ -33,6 +33,7 @@ const StartButton = styled.button`
   opacity: 0;
   font-family: ${fonts.families.headerFont};
   font-size: ${rem(25)};
+  cursor: pointer;
   transition: transform 0.5s ease-in-out;
 `;
 
