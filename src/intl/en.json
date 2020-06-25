@@ -28,6 +28,7 @@
   },
   "linkTo": {
     "linkedIn": "Contact me on LinkedIn",
+    "github": "Check my GitHub",
     "hangman": "<a>{appName}</a> - well known and fun guessing game. Written in HTML, SCSS and Vanilla JS.",
     "schoolApp": "<a>{appName}</a> - colorful and convenient app to store your weekly classes plan. Written in React (with Redux) and Styled Components.",
     "cloudGraphicsSource": "Cloud graphics designed by <a>{linkText}</a>"

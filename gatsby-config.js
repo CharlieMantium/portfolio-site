@@ -56,5 +56,13 @@ module.exports = {
     },
     'react-country-flag',
     `gatsby-plugin-smoothscroll`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Karol Zieniewicz - portfolio site`,
+        short_name: `Karol Zieniewicz - portfolio`,
+        theme_color: `#003049`,
+      },
+    },
   ],
 };

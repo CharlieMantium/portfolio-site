@@ -28,6 +28,7 @@
   },
   "linkTo": {
     "linkedIn": "Znajdź mnie na LinkedIn",
+    "github": "Odwiedź mojego GitHub'a",
     "hangman": "<a>{appName}</a> - znana i lubiana gra słowna. Do jej napisania użyłem HTML, SCSS i Vanilla JS.",
     "schoolApp": "<a>{appName}</a> - kolorowa i wygodna aplikacja do planowania tygodnia zajęć szkolnych. Do jej napisania użyłem React (z Redux) oraz Styled Components.",
     "cloudGraphicsSource": "Grafiki chmur stworzone przez <a>{linkText}</a>"

@@ -1,7 +1,12 @@
 import React, { createRef } from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'gatsby-plugin-intl';
-import { FaLinkedin, FaRegEnvelope, FaPhoneSquare } from 'react-icons/fa';
+import {
+  FaLinkedin,
+  FaRegEnvelope,
+  FaPhoneSquare,
+  FaGithubSquare,
+} from 'react-icons/fa';
 import { rem } from 'polished';
 
 import { breakPoints } from 'styles/base';
@@ -22,17 +27,18 @@ const ContactSectionContentWrapper = styled.div`
 
   @media (min-width: ${breakPoints.largeMobile}) {
     flex-direction: row;
-    justify-content: space-between;
-    padding: 0 0 ${rem(300)} 0;
+    flex-wrap: wrap;
   }
 `;
 
 const ContactSectionItemWrapper = styled(SectionItemWrapper)`
   justify-content: flex-start;
-  padding: ${rem(50)} 0;
+  padding: ${rem(30)} 0;
 
   @media (min-width: ${breakPoints.largeMobile}) {
     flex-direction: column;
+    width: 50%;
+    padding: ${rem(60)} 0;
   }
 `;
 
@@ -68,6 +74,28 @@ const ContactSection = () => {
           >
             <p>
               <FormattedMessage id="linkTo.linkedIn" />
+            </p>
+          </a>
+        </ContactSectionItemWrapper>
+        <ContactSectionItemWrapper>
+          <a
+            href="https://github.com/CharlieMantium"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ContactIconWrapper>
+              <Icon>
+                <FaGithubSquare />
+              </Icon>
+            </ContactIconWrapper>
+          </a>
+          <a
+            href="https://github.com/CharlieMantium"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p>
+              <FormattedMessage id="linkTo.github" />
             </p>
           </a>
         </ContactSectionItemWrapper>

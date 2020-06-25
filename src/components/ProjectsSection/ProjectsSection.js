@@ -19,13 +19,17 @@ const ProjectsSectionItemWrapper = styled(SectionItemWrapper)`
   }
 `;
 
-const StyledImg = styled(Img)`
+const StyledLink = styled.a`
   width: 100%;
   border-radius: ${rem(10)};
 
   @media (min-width: ${breakPoints.desktop}) {
     width: 40%;
   }
+`;
+
+const StyledImg = styled(Img)`
+  border-radius: ${rem(10)};
 `;
 
 const ProjectsSectionItemText = styled.p`
@@ -70,10 +74,16 @@ const ProjectsSection = () => {
       <ProjectsSectionItemWrapper>
         <FormattedMessage id="alternativeDescription.hangman">
           {formattedValue => (
-            <StyledImg
-              fluid={images.hangman.childImageSharp.fluid}
-              alt={formattedValue}
-            />
+            <StyledLink
+              href="https://charliemantium.github.io/hangman/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <StyledImg
+                fluid={images.hangman.childImageSharp.fluid}
+                alt={formattedValue}
+              />
+            </StyledLink>
           )}
         </FormattedMessage>
         <ProjectsSectionItemText>
@@ -97,10 +107,16 @@ const ProjectsSection = () => {
       <ProjectsSectionItemWrapper isReversed>
         <FormattedMessage id="alternativeDescription.schoolApp">
           {formattedValue => (
-            <StyledImg
-              fluid={images.schoolApp.childImageSharp.fluid}
-              alt={formattedValue}
-            />
+            <StyledLink
+              href="https://mantium-school-app.herokuapp.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <StyledImg
+                fluid={images.schoolApp.childImageSharp.fluid}
+                alt={formattedValue}
+              />
+            </StyledLink>
           )}
         </FormattedMessage>
         <ProjectsSectionItemText isReversed>
