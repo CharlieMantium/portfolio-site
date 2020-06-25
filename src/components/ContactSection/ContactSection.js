@@ -33,7 +33,7 @@ const ContactSectionContentWrapper = styled.div`
 
 const ContactSectionItemWrapper = styled(SectionItemWrapper)`
   justify-content: flex-start;
-  padding: ${rem(30)} 0;
+  padding: ${rem(40)} 0;
 
   @media (min-width: ${breakPoints.largeMobile}) {
     flex-direction: column;
