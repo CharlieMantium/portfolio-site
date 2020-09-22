@@ -72,39 +72,6 @@ const ProjectsSection = () => {
         <FormattedMessage id="header.projectsSection" />
       </SectionHeader>
       <ProjectsSectionItemWrapper>
-        <FormattedMessage id="alternativeDescription.hangman">
-          {formattedValue => (
-            <StyledLink
-              href="https://charliemantium.github.io/hangman/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <StyledImg
-                fluid={images.hangman.childImageSharp.fluid}
-                alt={formattedValue}
-              />
-            </StyledLink>
-          )}
-        </FormattedMessage>
-        <ProjectsSectionItemText>
-          <FormattedMessage
-            id="linkTo.hangman"
-            values={{
-              a: (...chunks) => (
-                <a
-                  href="https://charliemantium.github.io/hangman/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {chunks}
-                </a>
-              ),
-              appName: 'Hangman',
-            }}
-          />
-        </ProjectsSectionItemText>
-      </ProjectsSectionItemWrapper>
-      <ProjectsSectionItemWrapper isReversed>
         <FormattedMessage id="alternativeDescription.schoolApp">
           {formattedValue => (
             <StyledLink
@@ -133,6 +100,39 @@ const ProjectsSection = () => {
                 </a>
               ),
               appName: 'SchoolApp',
+            }}
+          />
+        </ProjectsSectionItemText>
+      </ProjectsSectionItemWrapper>
+      <ProjectsSectionItemWrapper isReversed>
+        <FormattedMessage id="alternativeDescription.hangman">
+          {formattedValue => (
+            <StyledLink
+              href="https://charliemantium.github.io/hangman/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <StyledImg
+                fluid={images.hangman.childImageSharp.fluid}
+                alt={formattedValue}
+              />
+            </StyledLink>
+          )}
+        </FormattedMessage>
+        <ProjectsSectionItemText>
+          <FormattedMessage
+            id="linkTo.hangman"
+            values={{
+              a: (...chunks) => (
+                <a
+                  href="https://charliemantium.github.io/hangman/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {chunks}
+                </a>
+              ),
+              appName: 'Hangman',
             }}
           />
         </ProjectsSectionItemText>
